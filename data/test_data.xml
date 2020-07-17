@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<test_data xmlns="http://www.w3school.com.cn"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.w3school.com.cn xsd/data.xsd">
+
+    <data_set name="网页地址">
+        <data url="地址" value="https://passport.tfsandbox-dev.jcloudec.com/service-passport-view/login"/>
+    </data_set>
+
+    <data_set name="登录账户">
+        <data name="用户名" value="test01"/>
+        <data name="密码" value="qwer12345"/>
+    </data_set>
+
+    #生活订单消费码
+    <data_set name="消费码">
+        <data consumerCode="消费码" value="900000000"/>
+    </data_set>
+
+    #自提码
+    <data_set name="自提码">
+        <data code="自提码" value="9000000001"/>
+    </data_set>
+
+</test_data>
