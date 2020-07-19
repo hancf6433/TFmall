@@ -1,25 +1,35 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<test_data xmlns="http://www.w3school.com.cn"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.w3school.com.cn xsd/data.xsd">
+<test_data>
+    <!--商城地址-->
+    <loginUrl>
+        <url>https://passport.tfsandbox-dev.jcloudec.com/service-passport-view/login</url>
+    </loginUrl>
 
-    <data_set name="网页地址">
-        <data url="地址" value="https://passport.tfsandbox-dev.jcloudec.com/service-passport-view/login"/>
-    </data_set>
+    <!--登录用户信息-->
+    <userInfo>
+        <name>test01</name>
+        <password>qwer12345</password>password>
+    </userInfo>
 
-    <data_set name="登录账户">
-        <data name="用户名" value="test01"/>
-        <data name="密码" value="qwer12345"/>
-    </data_set>
+    <!--订单消费码-->
+    <code>
+        <lifecode>900000000</lifecode>
+        <mallcode>900000001</mallcode>
+    </code>
 
-    #生活订单消费码
-    <data_set name="消费码">
-        <data consumerCode="消费码" value="900000000"/>
-    </data_set>
+    <!--商品信息-->
+    <goodsInfo>
+        <goodsName>python脚本自动发布商品</goodsName>
+        <goodsIntroduction>python自动化测试 商品介绍</goodsIntroduction>
+        <packList>python脚本自动发布商品清单内容</packList>
+        <inventory>58</inventory>
+        <price>76.77</price>
 
-    #自提码
-    <data_set name="自提码">
-        <data code="自提码" value="9000000001"/>
-    </data_set>
+    </goodsInfo>>
+
 
 </test_data>
+
+
+
+
