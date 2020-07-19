@@ -120,7 +120,7 @@ class BaseSelenium(object):
         return self.driver
 
 
-    def save_picture(self,name):
+    def save1_picture(self,name):
         file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'screenshots')  # 获取截图保存地址
         now = time.strftime('%Y_%m_%d %H_%M_%S')  # 获取当前时间
         picture = file_path + '/' + now + '_' + name + '.png'  # 拼接截图保存地址

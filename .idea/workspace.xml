@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7aa81bed-af3c-4b48-955a-e5b5902a1729" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/position/position.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/case111" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/function/goodsManagement.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/function/sumbitOrder.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/function/test_data.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test data.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/case/test03_订单管理.py" afterPath="$PROJECT_DIR$/case/test03_订单管理.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/test_data.xml" afterPath="$PROJECT_DIR$/data/test_data.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/function/baseSelenium.py" afterPath="$PROJECT_DIR$/function/baseSelenium.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/function/function.py" afterPath="$PROJECT_DIR$/function/function.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,59 +30,14 @@
     <SUITE FILE_PATH="coverage/TFmall$Nosetests_in_position_py.coverage" NAME="Nosetests in position.py Coverage Results" MODIFIED="1592817521093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/position" />
     <SUITE FILE_PATH="coverage/TFmall$Nosetests_in_browser_py.coverage" NAME="Nosetests in browser.py Coverage Results" MODIFIED="1592816149986" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/browser" />
     <SUITE FILE_PATH="coverage/TFmall$runtest.coverage" NAME="runtest Coverage Results" MODIFIED="1594128951766" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/TFmall$function.coverage" NAME="function Coverage Results" MODIFIED="1593690469829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/function" />
+    <SUITE FILE_PATH="coverage/TFmall$function.coverage" NAME="function Coverage Results" MODIFIED="1595159428626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/function" />
     <SUITE FILE_PATH="coverage/TFmall$Nosetests_for_test02__commodity_management.coverage" NAME="Nosetests for test02_商品管理.commodity_management Coverage Results" MODIFIED="1595153291299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/TFmall$browser.coverage" NAME="browser Coverage Results" MODIFIED="1593679947394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/browser" />
     <SUITE FILE_PATH="coverage/TFmall$Nosetests_in_test02__py.coverage" NAME="Nosetests in test02_商品管理.py Coverage Results" MODIFIED="1595153402189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
-    <SUITE FILE_PATH="coverage/TFmall$Nosetests_in_test03__py.coverage" NAME="Nosetests in test03_订单管理.py Coverage Results" MODIFIED="1594178123357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
+    <SUITE FILE_PATH="coverage/TFmall$Nosetests_in_test03__py.coverage" NAME="Nosetests in test03_订单管理.py Coverage Results" MODIFIED="1595159605484" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="function.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/function/function.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#27#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_data.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/test_data.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="17" column="11" lean-forward="false" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="browser.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/browser/browser.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test02_商品管理.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/case/test02_商品管理.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="48" column="7" lean-forward="true" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
-              <folding>
-                <element signature="e#61#76#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -106,14 +69,14 @@
         <option value="$PROJECT_DIR$/case/test01_登录商户.py" />
         <option value="$PROJECT_DIR$/case/test04_物流管理.py" />
         <option value="$PROJECT_DIR$/function/test_data.py" />
-        <option value="$PROJECT_DIR$/case/test03_订单管理.py" />
-        <option value="$PROJECT_DIR$/function/baseSelenium.py" />
         <option value="$PROJECT_DIR$/function/sumbitOrder.py" />
         <option value="$PROJECT_DIR$/function/readXml.py" />
         <option value="$PROJECT_DIR$/case/mtest01_登录商户.py" />
-        <option value="$PROJECT_DIR$/function/function.py" />
-        <option value="$PROJECT_DIR$/data/test_data.xml" />
         <option value="$PROJECT_DIR$/case/test02_商品管理.py" />
+        <option value="$PROJECT_DIR$/function/baseSelenium.py" />
+        <option value="$PROJECT_DIR$/data/test_data.xml" />
+        <option value="$PROJECT_DIR$/case/test03_订单管理.py" />
+        <option value="$PROJECT_DIR$/function/function.py" />
       </list>
     </option>
   </component>
@@ -124,10 +87,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="664" />
-    <option name="y" value="3" />
-    <option name="width" value="694" />
-    <option name="height" value="695" />
+    <option name="x" value="602" />
+    <option name="y" value="36" />
+    <option name="width" value="782" />
+    <option name="height" value="661" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -155,6 +118,26 @@
             <path>
               <item name="TFmall" type="b2602c69:ProjectViewProjectNode" />
               <item name="TFmall" type="462c0819:PsiDirectoryNode" />
+              <item name="browser" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TFmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TFmall" type="462c0819:PsiDirectoryNode" />
+              <item name="case" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TFmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TFmall" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TFmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TFmall" type="462c0819:PsiDirectoryNode" />
+              <item name="function" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TFmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TFmall" type="462c0819:PsiDirectoryNode" />
               <item name="screenshots" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -167,7 +150,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TFmall2222" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
@@ -192,7 +175,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Nosetests in test02_商品管理.py">
+  <component name="RunManager" selected="Python tests.Nosetests in test03_订单管理.py">
     <configuration name="Nosetests for test02_商品管理.commodity_management" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -257,7 +240,7 @@
       <option name="_new_target" value="&quot;$PROJECT_DIR$/case/test03_订单管理.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
     </configuration>
-    <configuration name="readXml" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="function" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -270,25 +253,25 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="TFmall" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/function/readXml.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/function/function.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python tests.Nosetests in test03_订单管理.py" />
-      <item index="1" class="java.lang.String" itemvalue="Python.readXml" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Nosetests in mtest01_登录商户.py" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Nosetests in test02_商品管理.py" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Nosetests for test02_商品管理.commodity_management" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Nosetests in mtest01_登录商户.py" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Nosetests in test02_商品管理.py" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Nosetests for test02_商品管理.commodity_management" />
+      <item index="4" class="java.lang.String" itemvalue="Python.function" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Nosetests in test02_商品管理.py" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Nosetests in mtest01_登录商户.py" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Nosetests for test02_商品管理.commodity_management" />
-        <item index="3" class="java.lang.String" itemvalue="Python.readXml" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Nosetests in test03_订单管理.py" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Nosetests in test03_订单管理.py" />
+        <item index="1" class="java.lang.String" itemvalue="Python.function" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Nosetests in test02_商品管理.py" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Nosetests in mtest01_登录商户.py" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Nosetests for test02_商品管理.commodity_management" />
       </list>
     </recent_temporary>
   </component>
@@ -317,54 +300,61 @@
       <option name="project" value="LOCAL" />
       <updated>1595153910100</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="优化部分脚本">
+      <created>1595154058157</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1595154058157</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Nosetests_for_test02_商品管理_commodity_management - 2020.07.19 at 18h 08m 10s.xml">
-      <configuration name="Nosetests for test02_商品管理.commodity_management" configurationId="tests" />
+    <history-entry file="Nosetests_in_test03_订单管理_py - 2020.07.19 at 19h 37m 54s.xml">
+      <configuration name="Nosetests in test03_订单管理.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_for_test02_商品管理_commodity_management - 2020.07.19 at 18h 08m 38s.xml">
-      <configuration name="Nosetests for test02_商品管理.commodity_management" configurationId="tests" />
+    <history-entry file="Nosetests_in_test03_订单管理_py - 2020.07.19 at 19h 39m 04s.xml">
+      <configuration name="Nosetests in test03_订单管理.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_mtest01_登录商户_py - 2020.07.19 at 18h 09m 14s.xml">
-      <configuration name="Nosetests in mtest01_登录商户.py" configurationId="tests" />
+    <history-entry file="Nosetests_in_test03_订单管理_py - 2020.07.19 at 19h 41m 36s.xml">
+      <configuration name="Nosetests in test03_订单管理.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_test02_商品管理_py - 2020.07.17 at 18h 05m 28s.xml">
-      <configuration name="Nosetests in test02_商品管理.py" configurationId="tests" />
+    <history-entry file="Nosetests_in_test03_订单管理_py - 2020.07.19 at 19h 47m 41s.xml">
+      <configuration name="Nosetests in test03_订单管理.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_test02_商品管理_py - 2020.07.17 at 18h 07m 30s.xml">
-      <configuration name="Nosetests in test02_商品管理.py" configurationId="tests" />
+    <history-entry file="Nosetests_in_test03_订单管理_py - 2020.07.19 at 19h 48m 40s.xml">
+      <configuration name="Nosetests in test03_订单管理.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_test02_商品管理_py - 2020.07.17 at 18h 10m 03s.xml">
-      <configuration name="Nosetests in test02_商品管理.py" configurationId="tests" />
+    <history-entry file="Nosetests_in_test03_订单管理_py - 2020.07.19 at 19h 48m 55s.xml">
+      <configuration name="Nosetests in test03_订单管理.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_test02_商品管理_py - 2020.07.17 at 18h 19m 56s.xml">
-      <configuration name="Nosetests in test02_商品管理.py" configurationId="tests" />
+    <history-entry file="Nosetests_in_test03_订单管理_py - 2020.07.19 at 19h 49m 16s.xml">
+      <configuration name="Nosetests in test03_订单管理.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_test02_商品管理_py - 2020.07.17 at 18h 23m 20s.xml">
-      <configuration name="Nosetests in test02_商品管理.py" configurationId="tests" />
+    <history-entry file="Nosetests_in_test03_订单管理_py - 2020.07.19 at 19h 51m 55s.xml">
+      <configuration name="Nosetests in test03_订单管理.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_test02_商品管理_py - 2020.07.17 at 18h 29m 15s.xml">
-      <configuration name="Nosetests in test02_商品管理.py" configurationId="tests" />
+    <history-entry file="Nosetests_in_test03_订单管理_py - 2020.07.19 at 19h 52m 49s.xml">
+      <configuration name="Nosetests in test03_订单管理.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_test02_商品管理_py - 2020.07.19 at 18h 10m 52s.xml">
-      <configuration name="Nosetests in test02_商品管理.py" configurationId="tests" />
+    <history-entry file="Nosetests_in_test03_订单管理_py - 2020.07.19 at 19h 54m 43s.xml">
+      <configuration name="Nosetests in test03_订单管理.py" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22401172" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1107595" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21835443" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29648608" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -373,7 +363,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -415,45 +404,13 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/case/test02_商品管理.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="20" column="33" lean-forward="false" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-          <folding>
-            <element signature="e#61#76#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/case/mtest01_登录商户.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="10" column="40" lean-forward="false" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#15#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runtest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="8" column="42" lean-forward="false" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/function/baseSelenium.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="851">
-          <caret line="37" column="34" lean-forward="false" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/case/test03_订单管理.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -480,6 +437,7 @@
           <caret line="22" column="76" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="76" />
           <folding>
             <element signature="e#61#76#0" expanded="true" />
+            <element signature="e#3552#5206#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -622,13 +580,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/function/goodsManagement.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/case/test_05_订单管理.py" />
     <entry file="file://$PROJECT_DIR$/case/test05_订单管理.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -640,20 +591,6 @@
     <entry file="file://$PROJECT_DIR$/case/test_03_物流管理.py" />
     <entry file="file://$PROJECT_DIR$/case/test_02_订单管理.py" />
     <entry file="file://$PROJECT_DIR$/case/test01_登录商户.py" />
-    <entry file="file://$PROJECT_DIR$/function/test_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/case/test04_物流管理.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="49" column="17" lean-forward="false" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/function/sumbitOrder.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -678,54 +615,12 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/case/test03_订单管理.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/function/baseSelenium.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="97" column="21" lean-forward="true" selection-start-line="97" selection-start-column="21" selection-end-line="97" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/test_data.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="17" column="11" lean-forward="false" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/case/mtest01_登录商户.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#15#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/function/readXml.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="9" column="9" lean-forward="false" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
           <folding>
             <element signature="e#117#150#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/function/function.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -748,21 +643,113 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/browser/browser.py">
+    <entry file="file://$PROJECT_DIR$/function/test_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        <state relative-caret-position="322">
+          <caret line="14" column="15" lean-forward="true" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test data.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/case/test04_物流管理.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="920">
+          <caret line="49" column="17" lean-forward="false" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/case/mtest01_登录商户.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/function/goodsManagement.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="12" lean-forward="true" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screenshots/2020_07_19 19_34_50_无待发货订单.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screenshots/2020_07_19 19_41_21_点击确认发货.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screenshots/2020_07_19 19_54_29_点击确认发货.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/function/function.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="31" column="8" lean-forward="true" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/case/test02_商品管理.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="48" column="7" lean-forward="true" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
+        <state relative-caret-position="185">
+          <caret line="23" column="85" lean-forward="false" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="85" />
           <folding>
             <element signature="e#61#76#0" expanded="true" />
+            <element signature="e#3552#5206#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/case/test03_订单管理.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="35" column="30" lean-forward="true" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/function/baseSelenium.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="115" column="38" lean-forward="true" selection-start-line="107" selection-start-column="3" selection-end-line="115" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/test_data.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/browser/browser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -1,48 +1,47 @@
-import unittest,os
+import unittest
 from time import sleep
 from function import *
-from baseSelenium import *
-from test_data import *
-
+# from baseSelenium import *
+from readXml import *
 
 '''订单管理'''
 class order_management(unittest.TestCase):
     def test_code_check(self):
         '''券码核销'''
+        # driver = browser().resue_browser()
+        # js = 'window.scrollTo(0,400);'
+        # driver.execute_script(js)
+        # sleep(2)
+        # find_element().element((By.XPATH,'//*[@id="6172$Menu"]/li[1]/a')).click()   #点击券码校验
+        # find_element().element((By.ID,'orderCode')).send_keys(readxml("mallcode"))  #输入券码
+        # find_element().element((By.XPATH,'//button/span')).click()   #点击查询
+
+    def test_confirm_delivery(self):
+        '''待发货订单确认发货'''
         driver = browser().resue_browser()
-        js = 'window.scrollTo(0,400);'
-        driver.execute_script(js)
-        sleep(2)
-        position().xpath('//*[@id="6172$Menu"]/li[1]/a').click()  #点击券码校验
-        wait_element().wait_id('orderCode')         #等待页面加载
-        code=get_code()                             #获取券码
-        position().id('orderCode').send_keys(code)  #输入券码
-        position().xpath('//button/span').click()   #点击查询
-        // body / div / div / span / div / div / div / span
-
-
-
-    # def test_confirm_delivery(self):
-    #     '''待发货订单确认发货'''
-    #     driver = browser().resue_browser()
-    #     js='window.scrollTo(0,200);'
-    #     driver.execute_script(js)
-    #     sleep(0.5)
-    #     for i in range(2,12):
-    #         orderS=driver.find_element_by_xpath('//tbody/tr[%d]/td[11]'%(i+2)).text #获取订单状态
-    #         if orderS=='待发货':
-    #             driver.find_element_by_xpath("//tbody/tr[%d]/td[12]/div/div/a"%(i+2)).click()
-    #             sleep(1)
-    #             driver.find_element_by_class_name('ant-select-selection__placeholder').click()
-    #             sleep(0.5)
-    #             driver.find_element_by_xpath("//div[@class='modifyPriceWrap__panelPaid___24hNM-Et']//li[1]").click()
-    #             driver.find_element_by_id('logisticsNo').send_keys('7890123456')
-    #             driver.find_element_by_xpath("//div[@class ='ant-modal-footer']/button[2]/span").click() #确认发货
-    #             save_picture(driver,'发货成功')
-    #             break
-    #         else:
-    #             save_picture(driver,'无待发货订单')
-
+        scroll_length(600)
+        sleep(0.5)
+        find_element().element((By.XPATH, '//*[@id="6172$Menu"]/li[2]/a')).click()   #点击商城订单
+        find_element().elements((By.CSS_SELECTOR,".ant-select-selection__rendered"))[0].click()  #点击全部
+        find_element().element((By.XPATH,"//body/div[2]/div/div/div/ul/li[3]")).click()  #筛选待发货订单
+        find_element().element((By.XPATH,'//div[@class="r-action"]/button')).click()      #点击查询
+        scroll_length(200)
+        if isElementExist((By.XPATH,"//form[1]/div[2]/div[2]/div/div/div/div/div[2]")):
+            save_picture("无待发货订单")
+        else:
+            orderNo=find_element().element((By.XPATH,"//tbody/tr[1]/td[2]/div/div/div[1]/span[2]")).text  #取第一个待发货订单的订单号
+            driver.refresh()
+            find_element().element((By.ID,"orderNo")).send_keys(orderNo)
+            find_element().element((By.XPATH, '//div[@class="r-action"]/button')).click()  # 点击查询
+            scroll_length(200)
+            find_element().element((By.XPATH, "//tbody/tr[2]/td[13]/div/div/a")).click()  # 点击确认发货
+            find_element().element((By.CLASS_NAME, 'ant-select-selection__placeholder')).click() #选择物流公司
+            find_element().element((By.XPATH, "//div[@class='modifyPriceWrap__panelPaid___24hNM-Et']//li[1]")).click()
+            find_element().element((By.ID, 'logisticsNo')).send_keys(readxml("logisticsNo"))  #输入物流单号
+            find_element().element((By.XPATH, "//div[@class ='ant-modal-footer']/button[2]/span")).click()  # 确认发货
+            save_picture("点击确认发货")
+            orderS = find_element().element((By.XPATH, '//tbody/tr[2]/td[11]' )).text  # 获取订单状态
+            self.assertEqual(orderS,'待收货')
 
 if __name__=='__main__':
     unittest.main()

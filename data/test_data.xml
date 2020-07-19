@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
+<!--测试过程中需要使用到的数据-->
 <test_data>
     <!--商城地址-->
     <loginUrl>
@@ -24,8 +25,14 @@
         <packList>python脚本自动发布商品清单内容</packList>
         <inventory>58</inventory>
         <price>76.77</price>
+    </goodsInfo>
 
-    </goodsInfo>>
+    <!--确认发货时物流信息-->
+    <logisticsInfo>
+        <logisticsNo>90357434343</logisticsNo>
+
+
+    </logisticsInfo>
 
 
 </test_data>
