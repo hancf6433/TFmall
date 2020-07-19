@@ -5,18 +5,17 @@ from selenium.webdriver.support.wait import WebDriverWait
 import time
 import os
 
-'''定位元素'''
-class find_element(browser):
-    def element(self, locator, timeout=20):
-        '''等待元素出现并定位元素 - 单个元素，参数locator是元祖类型'''
-        driver = browser().resue_browser()
-        element = WebDriverWait(driver,timeout,1).until(EC.presence_of_element_located(locator))
-        return element
-    def elements(self, locator, timeout=20):
-        '''等待元素出现并定位元素 - 一组元素，参数locator是元祖类型'''
-        driver = browser().resue_browser()
-        elements = WebDriverWait(driver,timeout,1).until(EC.presence_of_all_elements_located(locator))
-        return elements
+def element(locator, timeout=5):
+    '''等待元素出现并定位元素 - 单个元素，参数locator是元祖类型'''
+    driver = browser().resue_browser()
+    element = WebDriverWait(driver,timeout,1).until(EC.presence_of_element_located(locator))
+    return element
+
+def elements(locator, timeout=5):
+    '''等待元素出现并定位元素 - 一组元素，参数locator是元祖类型'''
+    driver = browser().resue_browser()
+    elements = WebDriverWait(driver,timeout,1).until(EC.presence_of_all_elements_located(locator))
+    return elements
 
 def save_picture(pictureName):
     driver = browser().resue_browser()
