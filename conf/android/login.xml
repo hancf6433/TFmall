@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--其他页面：天府安逸主页面-->
+<page name="login" xmlns="http://www.w3school.com.cn"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.w3school.com.cn ../xsd/ui.xsd">
+    <ui name="非登录页注册按钮11">poot(resource_id="com.ionicframework.cgbank122507:id/btn_register")</ui>
+    <ui name="登录页用户名输入框11">poot(resource_id="com.minxing.client:id/et_user")</ui>
+    <ui name="登录页密码输入框11">poot(resource_id="com.minxing.client:id/et_password")</ui>
+</page>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--其他页面：通讯录主页面-->
+<page name="creditCard" xmlns="http://www.w3school.com.cn"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.w3school.com.cn ../xsd/ui.xsd">
+    <ui name="我的应用信用卡">poot(text="信用卡")</ui>
+    <ui name="信用卡首页">poot(text="我的二维码")</ui>
+    <ui name="我的二维码">poot(text="我的二维码")</ui>
+    <ui name="信用卡抢单按钮">poot(text="抢单")</ui>
+    <ui name="抢单列表">poot(part_text="目前总计客户")</ui>
+    <ui name="抢单列表搜索图标">poot(text="抢单",clazz='android.view.View').sibling()[-1]</ui>
+    <ui name="搜索输入框">poot(text="搜索").sibling()[1]</ui>
+    <ui name="搜索按钮">poot(text="搜索")</ui>
+    <ui name="搜索列表">poot(text="搜索结果:")</ui>
+    <ui name="专属客户搜索图标">poot(text="我的客户",clazz='android.view.View').sibling()[-1]</ui>
+    <ui name="信用卡我的待办按钮">poot(text="我的待办")</ui>
+    <ui name="我的待办列表">poot(text="复核")</ui>
+    <ui name="面签按钮">poot(text="面签")</ui>
+    <ui name="专属客户列表">poot(text="专属客户")</ui>
+    <ui name="非专属客户按钮">poot(text="非专属客户")</ui>
+    <ui name="非专属客户列表">poot(text="请输入客户身份证号进行信息搜索")</ui>
+    <ui name="身份证输入框">poot(clazz='android.widget.EditText')</ui>
+    <ui name="非专属客户搜索按钮">poot(text="搜索")</ui>
+    <ui name="未输入身份证搜索提示">poot(text="请检查是否输入18位身份证号码")</ui>
+    <ui name="确定按钮">poot(textM="确定.*")</ui>
+    <ui name="输入身份证搜索提示">poot(text="未找到该用户申请业务记录")</ui>
+    <ui name="补件按钮">poot(text="补件")</ui>
+    <ui name="我的补件列表">poot(text="补件客户")</ui>
+    <ui name="补件列表搜索图标">poot(text="补件客户",clazz='android.view.View').sibling()[-1]</ui>
+    <ui name="搜索的补件客户">poot(text="搜索结果:")</ui>
+    <ui name="帮助按钮">poot(text="我的二维码",clazz='android.view.View').sibling()[-1]</ui>
+    <ui name="我的帮助列表">poot(text="帮助列表")</ui>
+    <ui name="我的客户按钮">poot(text="我的客户")</ui>
+    <ui name="申请进度查询按钮">poot(text="申请进度查询")</ui>
+    <ui name="进度查询列表搜索图标">poot(text="进度查询列表",clazz='android.view.View').sibling()[-1]</ui>
+    <ui name="搜索客户申请进度结果">poot(text="搜索结果")</ui>
+    <ui name="客户管理按钮">poot(text="客户管理")</ui>
+    <ui name="客户管理列表搜索图标">poot(text="客户管理",clazz='android.view.View').sibling()[-1]</ui>
+    <ui name="搜索客户管理列表用户结果">poot(text="test")</ui>
+    <ui name="申请进度查询列表">poot(text="进度查询列表")</ui>
+    <ui name="客户管理列表">poot(text="成功核发")</ui>
+    <ui name="未激活按钮">poot(text="未激活")</ui>
+    <ui name="逾期按钮">poot(text="逾期")</ui>
+    <ui name="输入少于18位身份证号码提示">poot(text="请检查是否输入18位身份证号码")</ui>
+    <ui name="输入非数字提示">poot(text="未找到该用户申请业务记录")</ui>
+    <ui name="帮助内容">poot(text="一、信用卡进件环节常见问题")</ui>
+    <ui name="帮助详情内容">poot(text="（一）客户办理标准卡的客户类型及需提供的材料")</ui>
+    <ui name="成功核发按钮">poot(text="成功核发")</ui>
+</page>

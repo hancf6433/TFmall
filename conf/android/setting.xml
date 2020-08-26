@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--其他页面：天府安逸主页面-->
+<page name="setting" xmlns="http://www.w3school.com.cn"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.w3school.com.cn ../xsd/ui.xsd">
+    <ui name="我的页面确定退出按钮111">poot(text="确定")</ui>
+</page>

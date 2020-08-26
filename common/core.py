@@ -1,0 +1,732 @@
+# -*- encoding=utf-8 -*-
+'''
+封装和相关框架方法
+'''
+import functools
+import json
+import time
+from typing import Union
+
+from airtest.core.android.adb import ADB
+from airtest.core.cv import Template
+from airtest.core.helper import logwrap
+from poco.exceptions import PocoNoSuchNodeException
+from poot.core.uIProxy import UiProxy
+
+import common.setting as ST
+from common.globall import g
+from poco.proxy import UIObjectProxy
+from airtest.utils.logger import get_logger
+from airtest.core.api import (device,swipe,assert_not_exists,assert_exists,wait,exists,install, wake, start_app,stop_app,uninstall,home,assert_equal,assert_not_equal,text,keyevent,touch)
+from airtest.core.helper import log
+#加上airtest.是方便获取到父日志记录器
+LOGGING = get_logger("airtest.||%s||" % __name__)
+#动作输出器
+def infowrap(fux):
+    '''
+    装饰器：动作装饰器
+    :param fux:
+    :return:
+    '''
+    LOGGING.warn("加载动作：<%s>" % fux.__name__[1:])
+    @functools.wraps(fux)
+    def wrappear(self,*args,**kwargs):
+        method="<%s>:" % fux.__name__[1:]
+        data=method
+        for arg in args:
+            data+="%s ," % str(arg)
+        for key,value in kwargs.items():
+            data+="%s=%s ," % (str(key),str(value))
+        LOGGING.warning("--开始："+data[:-2])
+        result=None
+        try:
+            result=fux(self,*args,**kwargs)
+        except PocoNoSuchNodeException as e:
+            # 回到桌面
+            home()
+            # 再次打开app
+            self._start_app(ST.TEST_APP_PACKAGE_NAME)
+            time.sleep(1)
+            try:
+                result = fux(self, *args, **kwargs)
+            except:
+                raise
+            else:
+                return result
+        except:
+            raise
+        else:
+            return result
+        finally:
+            LOGGING.warning("结束：%s%s" % (method,str(result)))
+    return wrappear
+#底层封装
+class BasePorl(object):
+    #查找时间间隔
+    __find_time_gaps=ST.FIND_TIME_GAPS
+    def __init__(self):
+        '''
+        核心封装类
+        '''
+        self.__last_tree="" #type:str
+
+    def __pre_action(self):
+        '''
+        动作执行前
+        :return:
+        '''
+        time.sleep(ST.FIND_TIME_GAPS)
+
+    @infowrap
+    def _exists(self,ui:Union[Template,str],**kw):
+        '''
+        是否存在此控件
+        :param ui:图像实例、QS字符串、POCO链式调用字符串,poco常规查询
+        :param kw:常规查询的其他参数
+        :return:
+        '''
+        # 参数校验
+        self.__para_check(ui, [Template, str])
+        # 逻辑处理
+        if type(ui) == Template:
+            return exists(ui)
+        if type(ui) == str:
+            self.__pre_action()
+            if "poot" in ui:
+                try:
+                    return self.__poot(ui)!=None
+                except:
+                    return False
+            else:
+                try:
+                    u = self.__poco(ui, **kw)
+                    return u.exists()
+                except:
+                    return False
+
+    @infowrap
+    def _len(self,ui:str,**kw):
+        '''
+        计算此ui对象的数目
+        :param ui:QS字符串、POCO链式调用字符串,poco常规查询
+        :param kw:常规查询的其他参数
+        :return:
+        '''
+        self.__para_check(ui, [str])
+        # 逻辑处理
+        if "poot" in ui:
+            return self.__poot(ui).get_node_count()
+        else:
+            u = self.__poco(ui, **kw)
+            return len(u)
+
+
+    @infowrap
+    def _get_text(self,ui:str,**kw):
+        '''
+        返回此控件的文字
+        :param ui: QS字符串、POCO链式调用字符串,常规查询
+        :param kw:常规查询其他参数
+        :return:
+        '''
+        #参数校验
+        self.__para_check(ui,[str])
+        #逻辑处理
+        if "poot" in ui:
+            return self.__poot(ui).get_text()
+        else:
+            u=self.__poco(ui,**kw)
+            if g().activeDevType=="IOS":
+                return u.get_name()
+            else:
+                return u.get_text()
+
+    @infowrap
+    def _is_enabled(self,ui:str,**kw):
+        '''
+        判断控件是否可以操作
+        :param ui:
+        :param kw:
+        :return:
+        '''
+        # 参数校验
+        self.__para_check(ui, [str])
+        # 逻辑处理
+        u = self.__poco(ui, **kw)
+        return u.attr("enabled")
+
+    @infowrap
+    def _click(self,ui:Union[tuple,Template,str],focus:tuple=None,times=None,onlyOne=True,assertExist=True,**kw):
+        '''
+        点击
+        :param ui: 支持：点击【坐标元组】【图像识别】【poco链式字符串】【poot链式字符串】
+        :param focus:点击焦点，仅支持【poco和poot】
+        :param times:点击时长，单位秒，仅支持图像识别】【poco链式字符串】【poot链式字符串】
+        :param onlyOne:多个控件是否都点击，仅支持【poco】
+        :param kw:其他查询参数
+        :return:
+        '''
+        #尝试先等待控件出现
+        if assertExist:
+            if(type(ui) in [Template,str]):
+                self._wait_ui_appear(ui)
+        #检查入参
+        self.__para_check(ui,[tuple,Template,str])
+        #图像
+        if type(ui)==Template:
+            if times==None:
+                touch(ui, 1, **kw)
+            else:
+                touch(ui,times,**kw)
+        #位置
+        if type(ui)==tuple:
+            if g().isThePootUsed():
+                g().activePoot.tap_x_y(ui[0],ui[1])
+            else:
+                g().activePoco.click(ui)
+        #poot和poco链式
+        if type(ui)==str:
+            if "poot" in ui:
+                u=self.__poot(ui)
+                if not onlyOne:
+                    for i in u:
+                        i.tap(focus,times)
+                else:
+                    u.tap(focus,times)
+            else:
+                u=self.__poco(ui)
+                #设置焦点
+                if not onlyOne:
+                    for i in u:
+                        i=self.__set_focus(i,focus)
+                        if times!=None:
+                            i.long_click(times)
+                        else:
+                            i.click()
+                else:
+                        u=self.__set_focus(u,focus)
+                        if times!=None:
+                            u.long_click(times)
+                        else:
+                            u.click()
+
+    def __set_focus(self,ui:UIObjectProxy,focus:tuple):
+        '''
+        设置控件的焦点
+        :param ui:
+        :param focus:
+        :return:
+        '''
+        if focus==None:
+            return ui
+        return ui.focus(focus)
+
+
+    @infowrap
+    def _wait_ui_appear(self,ui:Union[Template,str],actionFunc=None,timeout=ST.TIME_OUT_ABOUT_WAIT_METHOD, intervalfunc=None,**kw) -> object:
+        '''
+        等待对应ui出现
+        :param ui: 图像识别、qs和链式调用字符串、poco常规查询
+        :param timeout: 等待超时时间
+        :param intervalfunc:查找失败调用方法   图像识别专用
+        :param kw:其他查询参数
+        :return:
+        '''
+        #检查参数
+        self.__para_check(ui,[Template,str])
+        #图像
+        if type(ui)==Template:
+            wait(ui,timeout,self.__find_time_gaps,intervalfunc)
+        if type(ui)==str:
+            start = time.time()
+            while not self._exists(ui,**kw):
+                if actionFunc:
+                    actionFunc(self)
+                time.sleep(self.__find_time_gaps)
+                if time.time() - start > timeout:
+                    raise BaseException("等待控件{%s}出现超时：{%s}" % (ui,timeout))
+
+    @infowrap
+    def _wait_ui_disappear(self,ui:Union[Template,str],timeout=ST.TIME_OUT_ABOUT_WAIT_METHOD,**kw):
+        '''
+        等待控件消失
+        :param ui: QS语句、常规查询、ui代理对象、图像识别
+        :param timeout: 超时时间
+        :param kw: 其他附加查询参数
+        :return:None
+        '''
+        # 检查参数
+        self.__para_check(ui, [Template, str])
+        #由于官方提供的方法，不能起到正确的作用，使用自己写的方法替换
+        start = time.time()
+        while self._exists(ui,**kw):
+            time.sleep(self.__find_time_gaps)
+            if time.time() - start > timeout:
+                raise BaseException("等待控件{%s}消失超时：{%s}" % (ui,timeout))
+
+    @infowrap
+    def _text(self,msg, enter=True, **kwargs):
+        '''
+        输入文字(使用输入法输入）
+        :param msg:待输入文字
+        :param enter:是否点击enter回车符
+        :param kwargs:其他参数
+        :return:
+        '''
+        text(str(msg),enter,**kwargs)
+
+    @infowrap
+    def _set_text(self,ui:str,text:Union[str,int,float],**kw):
+        '''
+        给指定控件设置文字
+        :param ui: 控件
+        :param text:要输入的文字
+        :param kw: 其他附加查询参数
+        :return:
+        '''
+        # 参数校验
+        self.__para_check(ui, [str])
+        # 逻辑处理
+        if "poot" in ui:
+            self.__poot(ui).set_text(text)
+        else:
+            u = self.__poco(ui, **kw)
+            if g().activeDevType=="IOS":
+                u.click()
+                if self._exists(g().get_resource_infor('清除文本')):
+                    self._click(g().get_resource_infor('清除文本'))
+                self._text(str(text))
+            else:
+                u.set_text(str(text))
+
+    @infowrap
+    def _click_back(self):
+        '''
+        点击后退按钮
+        :return:
+        '''
+        self.__pre_action()
+        if g().activeDevType=="IOS":
+            self._click((0.06933333333333333, 0.06296851574212893))
+            pass
+        else:
+            self._keyevent('KEYCODE_BACK')
+
+    @infowrap
+    def _wait_multiple_ui_appear(self,uiList:list,timeout=ST.TIME_OUT_ABOUT_WAIT_METHOD)->Union[UIObjectProxy,Template]:
+        '''
+        等待多个控件出现，并将出现的控件返回
+        :param uiList: 待出现控件列表   图像识别、qs和链式调用字符串
+        :param timeout: 超时时间
+        :return: UIObjectProxy
+        '''
+        #参数校验
+        self.__para_check(uiList,[list])
+        #逻辑
+        start = time.time()
+        while True:
+            for ui in uiList:
+                if self._exists(ui):
+                    return ui
+            if time.time() - start > timeout:
+                raise BaseException("所有控件均未在{%s}时间内出现：{%s}" % (timeout,uiList))
+            time.sleep(self.__find_time_gaps)
+
+    @infowrap
+    def _swipe(self, ui1: Union[tuple,Template,str,list],ui2:Union[tuple,Template,list] = None, direction:tuple=None, focus:tuple=None,duration=0.5,**kw):
+        '''
+        根据指定的点或者方向进行滑动
+        :param ui1: 滑动起始点\图像\poco字符串
+        :param ui2: 滑动结束点\图像
+        :param direction: 滑动方向
+        :param duration: 滑动时长
+        :return:
+        '''
+        nowUiTree = self._get_ui_tree()
+        if self.__last_tree == nowUiTree:
+            return True
+        #校验参数
+        self.__para_check(ui1,[tuple,Template,str,list])
+        self.__para_check(ui2,[tuple,Template,list])
+        #逻辑
+        if type(ui1)==Template or type(ui2)==Template:
+            self.__last_tree = self._get_ui_tree()
+            swipe(ui1,ui2,direction,duration,**kw)
+        elif type(ui1)==str:
+            u1 = self.__poco(ui1)
+            self.__last_tree = self._get_ui_tree()
+            u1.swipe(direction,focus,duration)
+        elif type(ui1) in [list,tuple] or type(ui2) in [list,tuple]:
+            self.__last_tree=self._get_ui_tree()
+            g().activePoco.swipe(ui1,ui2,direction,duration)
+
+    @infowrap
+    def _drag_to_center(self,ui:str):
+        '''
+        尝试将ui拖至屏幕中央
+        :param ui1:
+        :return:
+        '''
+        #校验参数
+        self.__para_check(ui,[str])
+        if type(ui)==str:
+            u1 = self.__poco(ui)
+            u1.drag_to((0.5,0.5))
+
+    @infowrap
+    def _drag(self,ui1:Union[Template,str],ui2:Union[Template,str,list,tuple],ui1focus:tuple=None,ui2focus:tuple=None,duration=2):
+        '''
+        从ui1拖动至ui2，支持图像和poco
+        :param ui1:
+        :param ui2:
+        :param ui1focus:
+        :param ui2focus:
+        :param duration:
+        :return:
+        '''
+        #校验参数
+        self.__para_check(ui2, [str, Template,list,tuple])
+        if type(ui1)==str:
+            self.__para_check(ui2,[str])
+            u1 = self.__poco(ui1)
+            self.__set_focus(u1,ui1focus)
+            u2=self.__poco(ui2)
+            self.__set_focus(u2,ui2focus)
+            u1.drag_to(u2, duration)
+        if type(ui1)==Template:
+            self.__para_check(ui2,[Template])
+            swipe(ui1,ui2)
+
+    @infowrap
+    def _scroll(self,ui:str=None,direction:str="vertical",percent:float=0.6,duration:float=2.0,**kw):
+        '''
+        滚动,
+        :param ui:滚动的ui
+        :param direction:滚动的方向
+        :param percent:
+        :param duration:滚动时间 秒
+        :return:if True 已滚动到底部
+        '''
+        nowUiTree=self._get_ui_tree()
+        if self.__last_tree==nowUiTree:
+            return True
+        if ui!=None:
+            self.__para_check(ui,[str])
+            u = self.__poco(ui,**kw)
+            u.scroll(direction, percent, duration)
+            self.__last_tree=self._get_ui_tree()
+        else:
+           if g().isThePootUsed():
+               g().activePoot.scroll(direction=direction,percent=percent,duration=duration*1000)
+           else:
+               g().activePoco.scroll(direction,percent,duration)
+
+    def _get_ui_tree(self):
+        '''
+        获取ui树
+        :return:
+        '''
+        if g().isThePootUsed():
+            return g().activePoot.get_ui()
+        else:
+            ui = g().activePoco.agent.hierarchy.dump()
+            return json.dumps(ui, indent=4)
+
+    @infowrap
+    def _get_pos(self,ui:str,focus:Union[tuple,list]=None,**kw):
+        '''
+        返回此控件的pos
+        :param ui: QS字符串、POCO链式调用字符串
+        :return:
+        '''
+        # 参数校验
+        self.__para_check(ui, [str])
+        # 逻辑处理
+        u = self.__poco(ui, **kw)
+        return u.get_position(focus)
+
+    @infowrap
+    def _get_size(self,ui:str,**kw):
+        '''
+        返回控件尺寸
+        :param ui:
+        :param kw:
+        :return:
+        '''
+        #参数校验
+        self.__para_check(ui,[str])
+        #逻辑处理
+        u = self.__poco(ui, **kw)
+        return u.get_size()
+
+    #参数检查
+    def __para_check(self,para,typeList):
+        '''
+        校验参数是否符合传入的类型列表，如果不符合则抛出错误
+        :param para:
+        :param typeList:
+        :return:
+        '''
+        if type(para) not in typeList:
+            raise ValueError("传入参数错误，仅支持{%s},不支持{%s}" % (typeList,type(para)))
+
+    ###poco相关方法####
+    def __poco(self,name:Union[UIObjectProxy,str]=None,**kw)->Union[UIObjectProxy,None]:
+        '''
+        仅返回uiproxy对象,无论是否存在此控件
+        :param name:常规查询、ui代理对象、链式查询字符串(由airtestide生成的链式字符串）
+        :param kw:其他查询参数
+        :return:UIObjectProxy
+        '''
+        if type(name) is UIObjectProxy:
+            return name
+        if name!=None and len(name)>0 and name[0]=="p":
+            qs=name.replace("poco(",ST.POCO_BEGIN_HEAD)
+            uiObjectProxy=eval(qs)
+            return uiObjectProxy
+        return g().activePoco(name,**kw)
+    ###poot相关方法
+    def __poot(self,chain:str)->UiProxy:
+        '''
+        poot调用,查找到则返回POOT的ui代理，否则返回None
+        :param chain:
+        :return:
+        '''
+        qs=chain.replace("poot(",ST.POOT_BEGIN_HEAD)
+        uiProxy=eval(qs)
+        return uiProxy
+
+    #airtest方法
+    @infowrap
+    def _install(self,filePath):
+        '''
+        安装指定目录文件
+        :param filePath:
+        :return:
+        '''
+        install(filePath)
+
+    @infowrap
+    def _wake(self):
+        '''
+        唤醒设备
+        :return:
+        '''
+        wake()
+
+    @infowrap
+    def _start_app(self,package, activity=None):
+        '''
+        启动指定app
+        :return:
+        '''
+        start_app(package, activity)
+
+
+
+    @infowrap
+    def _stop_app(self,package):
+        '''
+        关闭app
+        :param package:app包名
+        :return:
+        '''
+        stop_app(package)
+
+    @infowrap
+    def _get_screen_size(self):
+        '''
+        获得屏幕尺寸
+        :return:
+        '''
+        if g().isThePootUsed():
+            return g().activePoot.get_screen_size()
+        # print(g().activePoot.get_screen_size())
+        return g().activePoco.get_screen_size()
+
+    @infowrap
+    def _get_top_activity(self):
+        '''
+        仅针对安卓：获得当前activity
+        :return:
+        '''
+        adb:ADB=device()
+        return adb.get_top_activity()
+
+    @infowrap
+    def _multiple_points_swipe(self,uis:Union[tuple],duration=0.8, steps=5,**kw):
+        '''
+        多点滑动
+        :param ui:
+        :return:
+        '''
+        list=[]
+        if type(uis) == tuple:
+            for ui in uis:
+                if "poot" in ui:
+                    g().activePoot.freeze()
+                    list.append(self.__poot(ui).get_focus_x_y())
+                    g().activePoot.clear_freezed()
+                elif "poco" in ui:
+                    x,y=self.__poco(ui, **kw).get_position()
+                    width,height=g().activePoco.get_screen_size()
+                    x=x*width
+                    y=y*height
+                    list.append((x,y))
+                else:
+                    list.append(ui)
+        g().activeDev.minitouch.swipe_along(list,duration,steps)
+
+    @infowrap
+    def _uninstall(self, package):
+        '''
+        卸载app
+        :param package:
+        :return:
+        '''
+        uninstall(package)
+
+    @infowrap
+    def _home(self):
+        '''
+        回到桌面
+        :return:
+        '''
+        home()
+
+    @infowrap
+    def _keyevent(self,keyname, **kwargs):
+        '''
+        执行keyevent
+        :param keyname:
+        :param kwargs:
+        :return:
+        '''
+        keyevent(keyname,**kwargs)
+
+    '''
+    日志
+    '''
+    def log(self,message, traceback=""):
+        '''
+        输出文字到报告
+        :param message: log message
+        :param traceback: log traceback if exists, use traceback.format_exc to get best format
+        :return:
+        '''
+        log(message,traceback)
+
+    '''
+    切换设备
+    '''
+
+    def setActiveDev(self,devName:str):
+        '''
+        切换活动设备，此方法全局只需要调用一次
+        :param devName:
+        :return:
+        '''
+        g().setActiveDev(devName)
+
+    '''
+    断言
+    '''
+    def assert_not_equal(self,first,second,msg=""):
+        '''
+        断言相等
+        :param first:
+        :param second:
+        :param msg:
+        :return:
+        '''
+        assert_not_equal(first,second,msg)
+
+    def assert_contains(self,first,second,msg=""):
+        '''
+        断言second是否被first包含
+        :param first:
+        :param second:
+        :param msg:
+        :return:
+        '''
+        assert_contains(first,second,msg)
+
+    def assert_ui_exists(self, ui:Union[Template,str], msg="",**kw):
+        '''
+        ui对象，断言ui对象是否存在
+        :param ui: 控件
+        :param msg: 附加到报告的信息
+        :param kw:其他参数
+        :return:
+        '''
+        #参数校验
+        self.__para_check(ui, [Template,str])
+        if type(ui)==Template:
+            assert_exists(ui,msg)
+        if type(ui)==str:
+            assert_ui_exists(ui,self._exists(ui),msg)
+
+    def assert_ui_not_exists(self, ui:Union[Template,str], msg="",**kw):
+        '''
+        ui对象，断言ui对象不存在
+        :param ui: 控件
+        :param msg: 附加到报告的信息
+        :param kw:其他参数
+        :return:
+        '''
+        #参数校验
+        self.__para_check(ui, [Template,str])
+        if type(ui)==Template:
+            assert_not_exists(ui,msg)
+        if type(ui)==str:
+            assert_ui_not_exists(ui,not self._exists(ui),msg)
+
+    def assert_equal(self, first, second, msg=""):
+        '''
+        断言相等
+        :param first:第一个
+        :param last:第二个
+        :param msg:信息
+        :return:
+        '''
+        assert_equal(first, second, msg)
+#断言
+@logwrap
+def assert_ui_exists(uiName,assert_res,msg=""):
+    '''
+    因为UIObjectProxy对象直接断言会出错，所以换种方式调用
+    :param uiName: 断言的ui对象
+    :param assert_res: 断言结果
+    :param msg: 附加消息
+    :return:
+    '''
+    if not assert_res:
+        raise AssertionError("%s does not exist in screen, message: %s" % (uiName, msg))
+
+@logwrap
+def assert_ui_not_exists(uiName,assert_res,msg=""):
+    '''
+        因为UIObjectProxy对象直接断言会出错，所以换种方式调用
+        :param uiName: 断言的ui对象
+        :param assert_res: 断言结果
+        :param msg: 附加消息
+        :return:
+        '''
+    if not assert_res:
+        raise AssertionError("%s exist in screen, message: %s" % (uiName, msg))
+
+@logwrap
+def assert_contains(first,second,msg=""):
+    '''
+    断言second是否被first包含
+    :param first:
+    :param second:
+    :param msg:
+    :return:
+    '''
+    if not (second in first):
+        raise AssertionError("%s does not contains %s , message: %s" % (first, second, msg))
+
+
+
+# BasePorl()._get_screen_size()

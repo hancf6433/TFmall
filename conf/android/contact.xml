@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--其他页面：通讯录主页面-->
+<page name="contact" xmlns="http://www.w3school.com.cn"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.w3school.com.cn ../xsd/ui.xsd">
+    <ui name="通讯录页搜索图标">poot(resource_id="com.minxing.client:id/title_right_search_function")</ui>
+    <ui name="通讯录页搜索输入框">poot(text="姓名/拼音/部门名")</ui>
+    <ui name="通讯录搜索的联系人">poot(resource_id="com.minxing.client:id/name",text="ui_test2")</ui>
+    <ui name="通讯录搜索的部门">poot(resource_id="com.minxing.client:id/name",text="科技研发部")</ui>
+    <ui name="通讯录页+号图标">poot(resource_id="com.minxing.client:id/title_right_new_function")</ui>
+    <ui name="通讯录添加联系人页">poot(text="按姓名查找")</ui>
+    <ui name="加为联系人按钮">poot(text=" 加为联系人")</ui>
+    <ui name="通讯录添加的联系人">poot(resource_id="com.minxing.client:id/name",text="ui_test2")</ui>
+    <ui name="添加联系人页公司通讯录按钮">poot(text="公司通讯录")</ui>
+    <ui name="已添加的联系人">poot(resource_id="com.minxing.client:id/name",text="ui_test3")</ui>
+    <ui name="删除联系人按钮">poot(text=" 删除联系人")</ui>
+    <ui name="删除联系人确定按钮">poot(text="确定")</ui>
+    <ui name="公司通讯录添加的联系人">poot(resource_id="com.minxing.client:id/name",text="ui_test3")</ui>
+    <ui name="通讯录页群聊按钮">poot(text="群聊")</ui>
+    <ui name="删除群聊确认按钮">poot(resource_id="com.minxing.client:id/dialog_ok")</ui>
+    <ui name="通讯录页公众号按钮">poot(text="公众号")</ui>
+    <ui name="通讯录页特别关注按钮">poot(text="特别关注")</ui>
+    <ui name="通讯录页公司通讯录按钮">poot(text="公司通讯录")</ui>
+    <ui name="已保存群聊">poot(text="testSaveToContact")</ui>
+    <ui name="联系人信息页特别关注按钮">poot(resource_id="com.minxing.client:id/mx_swith_attention")</ui>
+    <ui name="设置的特别关注">poot(resource_id="com.minxing.client:id/name",text="ui_test2")</ui>
+    <ui name="特别关注删除确定按钮">poot(resource_id="com.minxing.client:id/dialog_ok")</ui>
+    <ui name="联系人信息页取消特别关注按钮">poot(resource_id="com.minxing.client:id/mx_swith_attention")</ui>
+    <ui name="联系人手机号">poot(text="13612345678")</ui>
+    <ui name="发送短信按钮">poot(resource_id="com.minxing.client:id/sms_btn")</ui>
+    <ui name="发送短信页">poot(text="短信/彩信")</ui>
+    <ui name="公司通讯录页关闭按钮">poot(resource_id="com.minxing.client:id/title_to_root")</ui>
+    <ui name="保存至手机按钮">poot(resource_id="com.minxing.client:id/add_to_mobile_btn")</ui>
+    <ui name="保存结果"></ui>
+    <ui name="拨打电话按钮">poot(resource_id="com.minxing.client:id/call_btn")</ui>
+    <ui name="电话页">poot(resource_id="com.android.contacts:id/dialButton")</ui>
+    <ui name="联系人信息页工作圈按钮">poot(text="工作圈")</ui>
+    <ui name="联系人工作圈页">poot(resource_id="com.minxing.client:id/title_name",text="工作圈")</ui>
+    <ui name="联系人信息页文件按钮">poot(text="文件")</ui>
+    <ui name="联系人文件页">poot(resource_id="com.minxing.client:id/title_name",text="文件")</ui>
+    <ui name="搜索的联系人">poot(resource_id="com.minxing.client:id/name",text="丁涛")</ui>
+    <ui name="当前没有数据">poot(resource_id="com.minxing.client:id/nodata")</ui>
+    <ui name="当前没有结果">poot(textM="当前没有结.*")</ui>
+    <ui name="按姓名查找页清除按钮">poot(resource_id="com.minxing.client:id/remove_icon")</ui>
+    <ui name="清除的内容">poot(resource_id="com.minxing.client:id/searchName",text="ui_test2")</ui>
+    <ui name="通讯录联系人ui_test1">poot(resource_id="com.minxing.client:id/name",text="ui_test1")</ui>
+</page>

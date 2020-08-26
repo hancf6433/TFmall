@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--其他页面：天府安逸主页面-->
+<page name="work" xmlns="http://www.w3school.com.cn"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.w3school.com.cn ../xsd/ui.xsd">
+    <ui name="主页面导航栏第四个按钮工作圈">poot(resource_id="com.minxing.client:id/menu_tab_name",text="工作圈")</ui>
+    <ui name="发布按钮">poot(resource_id="com.minxing.client:id/title_right_new_function")</ui>
+    <ui name="发布消息">poot(text="发布消息")</ui>
+    <ui name="文档输入框">poot(resource_id="com.minxing.client:id/text")</ui>
+    <ui name="发送">poot(text="发送")</ui>
+    <ui name="回到工作圈页面">poot(resource_id="com.minxing.client:id/title")</ui>
+    <ui name="失败停留在当前页面">poot(resource_id="com.minxing.client:id/title_right_button")</ui>
+    <ui name="提示">poot(text="提示")</ui>
+    <ui name="确定">poot(text="确定")</ui>
+    <ui name="删除按钮">poot(resource_id="com.minxing.client:id/mx_id_circel_delete")</ui>
+    <ui name="取消">poot(resource_id="com.minxing.client:id/cancel_btn")</ui>
+    <ui name="删除">poot(resource_id="com.minxing.client:id/delete_btn")</ui>
+    <ui name="拍照按钮">poot(resource_id="com.minxing.client:id/add_camera")</ui>
+    <ui name="拍照片">poot(text="拍照片")</ui>
+    <ui name="拍照">poot(resource_id="com.huawei.camera:id/shutter_button")</ui>
+    <ui name="拍照确定">poot(resource_id="com.huawei.camera:id/done_button")</ui>
+    <ui name="图片发送中">poot(resource_id="com.minxing.client:id/cancelBtn")</ui>
+    <ui name="第一个更多按钮">poot(resource_id="com.minxing.client:id/comment_btn")[0]</ui>
+    <ui name="赞">poot(resource_id="com.minxing.client:id/mx_circle_item_text",text='赞')</ui>
+    <ui name="取消赞">poot(resource_id="com.minxing.client:id/mx_circle_item_text",text='取消')</ui>
+    <ui name="点赞成功">poot(resource_id="com.minxing.client:id/like_text")</ui>
+    <ui name="回复">poot(text="回复")</ui>
+    <ui name="测试回复消息">poot(text="测试回复消息")</ui>
+    <ui name="分享">poot(text="分享")</ui>
+    <ui name="分享到工作圈">poot(text="分享到工作圈")</ui>
+    <ui name="分享给同事">poot(text="分享给同事")</ui>
+    <ui name="联系人">poot(resource_id="com.minxing.client:id/conversation_avatar")</ui>
+    <ui name="创建新聊天">poot(text="创建新聊天")</ui>
+    <ui name="公司通讯录">poot(text="公司通讯录")</ui>
+    <ui name="选择框">poot(resource_id="com.minxing.client:id/selectIcon")</ui>
+    <ui name="确定按钮">poot(com.minxing.client:id/select_finish_btn')[1]</ui>
+    <ui name="分享页标题">poot(text='分享',resource_id='com.minxing.client:id/title_name')</ui>
+    <ui name="所有">poot(text='所有',resource_id='com.minxing.client:id/title')</ui>
+    <ui name="创建工作圈">poot(resource_id="com.minxing.client:id/new_workcircle_btn")</ui>
+    <ui name="确定">poot(text="确定")</ui>
+    <ui name="不合法的工作圈名称">poot(text="不合法的工作圈名称")</ui>
+    <ui name="输入框">poot(text="请输入工作圈名称")</ui>
+    <ui name="确定创建">poot(resource_id='com.minxing.client:id/dialog_ok')</ui>
+    <ui name="搜索按钮">poot(resource_id='com.minxing.client:id/mx_search_btn')</ui>
+    <ui name="选择框">poot(resource_id='com.minxing.client:id/selectIcon')[3]</ui>
+    <ui name="确定按钮">poot(resource_id='com.minxing.client:id/select_finish_btn')</ui>
+    <ui name="工作圈测试">poot(text="工作圈测试")</ui>
+    <ui name="新工作圈当前无数据">poot(resource_id='com.minxing.client:id/nodata')</ui>
+    <ui name="成员按钮">poot(resource_id='com.minxing.client:id/member_icon')</ui>
+    <ui name="添加成员按钮">poot(resource_id='com.minxing.client:id/person_avatar')[2]</ui>
+    <ui name="删除成员按钮">poot(resource_id='com.minxing.client:id/person_avatar')[4]</ui>
+    <ui name="删除成员">poot(resource_id='com.minxing.client:id/person_del')[1]</ui>
+    <ui name="成员搜索">poot(resource_id='com.minxing.client:id/mx_search_btn')</ui>
+    <ui name="成员选择">poot(resource_id='com.minxing.client:id/selectIcon')[0]</ui>
+    <ui name="加入工作圈人数3人">poot(text='加入工作圈的用户（3人）')</ui>
+    <ui name="加入工作圈人数2人">poot(text='加入工作圈的用户（2人）')</ui>
+    <ui name="删除工作圈">poot(text="删除工作圈")</ui>
+    <ui name="退出工作圈">poot(text="退出工作圈")</ui>
+    <ui name="更多工作圈">poot(text="更多工作圈")</ui>
+    <ui name="退出">poot(text="退出")</ui>
+    <ui name="创建任务">poot(text="创建任务")</ui>
+    <ui name="组织活动">poot(text="组织活动")</ui>
+    <ui name="添加">poot(text="添加")</ui>
+    <ui name="修改">poot(text="修改")</ui>
+    <ui name="完成任务">poot(resource_id='com.minxing.client:id/cell_check')</ui>
+    <ui name="有一个任务已完成">poot(text="  有1个任务已完成")</ui>
+    <ui name="取消">poot(text="取消")</ui>
+    <ui name="添加话题">poot(resource_id='com.minxing.client:id/add_topic')</ui>
+    <ui name="添加图片">poot(resource_id='com.minxing.client:id/add_camera')</ui>
+    <ui name="话题选项框">poot(resource_id='com.minxing.client:id/imgbtn_checked')[1]</ui>
+    <ui name="保存">poot(text="保存")</ui>
+    <ui name="新建话题">poot(resource_id='com.minxing.client:id/new_topic')</ui>
+
+
+</page>

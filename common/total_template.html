@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!-- saved from url=(0157)file:///C:/Users/yk690/OneDrive/%E6%A1%8C%E9%9D%A2/%E5%A4%A9%E5%BA%9C%E6%89%8B%E6%9C%BA%E9%93%B6%E8%A1%8CUI%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%A5%E5%91%8A.html -->
+<html>
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title lang="zh">{{title}}</title>
+        <style>
+td {
+	border: 1px solid #777;
+	height: 20px;
+	min-width: 4em;
+	padding-left: 1em;
+}
+.td_error {
+	background-color: #f17831;
+}
+.td_fail {
+	background-color: #f8d02e;
+}
+</style>
+        <script>  
+            //绘制饼图  
+            function drawCircle(canvasId, data_arr, color_arr, text_arr)  
+            {  
+                var c = document.getElementById(canvasId);  
+                var ctx = c.getContext("2d");  
+  
+                var radius = c.height / 2 - 20; //半径  
+                var ox = radius + 20, oy = radius + 20; //圆心  
+  
+                var width = 30, height = 10; //图例宽和高  
+                var posX = ox * 2 + 20, posY = 30;   //  
+                var textX = posX + width + 5, textY = posY + 10;  
+  
+                var startAngle = 0; //起始弧度  
+                var endAngle = 0;   //结束弧度  
+                for (var i = 0; i < data_arr.length; i++)  
+                {  
+                    //绘制饼图  
+                    endAngle = endAngle + data_arr[i] * Math.PI * 2; //结束弧度  
+                    ctx.fillStyle = color_arr[i];  
+                    ctx.beginPath();  
+                    ctx.moveTo(ox, oy); //移动到到圆心  
+                    ctx.arc(ox, oy, radius, startAngle, endAngle, false);  
+                    ctx.closePath();  
+                    ctx.fill();  
+                    startAngle = endAngle; //设置起始弧度  
+  
+                    //绘制比例图及文字  
+                    ctx.fillStyle = color_arr[i];  
+                    ctx.fillRect(posX, posY + 20 * i, width, height);  
+                    ctx.moveTo(posX, posY + 20 * i);  
+                    ctx.font = 'bold 12px 微软雅黑';    //斜体 30像素 微软雅黑字体  
+                    ctx.fillStyle = color_arr[i]; //"#000000";  
+                    var percent = text_arr[i] + "：" + 100 * data_arr[i] + "%";  
+                    ctx.fillText(percent, textX, textY + 20 * i);  
+                }  
+            }  
+  
+            function init() {  
+                //绘制饼图  
+                //比例数据和颜色
+                var success={{success}}
+                var fail={{fail}}
+                var error={{error}}
+                var total=success+fail+error
+                var error_p=(error/total).toFixed(2)
+                var fail_p=(fail/total).toFixed(2)
+                var success_p=(1-fail_p-error_p).toFixed(2)
+                var data_arr = [success_p, fail_p, error_p];
+                var color_arr = ["#A2CA48", "#F8D02E", "#F17831"];  
+                var text_arr = ["成功", "失败", "错误"];  
+ 
+                drawCircle("canvas_circle", data_arr, color_arr, text_arr);  
+            }  
+  
+            //页面加载时执行init()函数  
+            window.onload = init;  
+        </script>
+        <!--[if lt IE 9]>
+    <script src="https://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+        </head>
+
+        <body style="width:80%;margin: auto;">
+        <div style="
+    margin: 50px 0px 250px 0px;
+">
+          <div style="
+">
+            <h2 style="
+    margin: 15px 10px 5px 10px;
+">{{title}}</h2>
+            <div style="width: 80%;padding: 10px;margin: 50px 10px 50px 10px;box-shadow: 0 0 9px 3px #d2d2d2;">
+              <div style="float:left;width:48%;margin-top: 20px;">
+                <label style="
+    font-weight: bold;
+">开始时间：</label>{{begin_time}}<br>
+                <br>
+                <label style="
+    font-weight: bold;
+">运行时长：</label>{{duration}}<br>
+                <br>
+                <label style="font-weight: bold;">状&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;态：</label>
+                <label name="successCase" value={{success}} style="color: #a2ca48;">成功{{success}}个，</label>
+                <label name="failCase" value={{fail}} style="color: #f8d02e;">失败{{fail}}个，</label>
+                <label name="errorCase" value={{error}} style="color: #f17831;">错误{{error}}个，</label>
+                <label>总计{{success+fail+error}}个。</label>
+              </div>
+              <div style="float:right;width:48%">
+                <canvas id="canvas_circle" width="350" height="200" style="/* border:2px solid #0026ff; */"> 浏览器不支持绘图 </canvas>
+              </div>
+              <div style="clear:both;"> </div>
+            </div>
+          </div>
+          <div style="
+    width: 80%;
+    padding: 10px;
+    box-shadow: 0 0 9px 3px #d2d2d2;
+    margin: 10px 10px 10px 10px;
+    min-height: 300px;
+">
+            <table style="
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+">
+              <thead style="
+    background-color: white;
+">
+                <tr style="
+    font-weight: bold;
+    font-size: small;
+">
+                  <td>用例</td>
+                  <td>标题</td>
+                  <td>结果</td>
+                  <td>描述</td>
+                  <td>作者</td>
+                </tr>
+              </thead>
+              <tbody style="
+    font-size: small;
+">
+
+                {% for key,value in infor.items() %}
+                <tr>
+                  <td style="
+    word-wrap: break-word;
+">{{key}}</td>
+                  <td>{{value['title']}}</td>
+                  <td class="{{value['class_status']}}"><a href="{{value['log']}}" target="_Blank">{{value['status']}}</a></td>
+                  <td style="max-width: 50px;word-wrap: break-word;">{{value['desc']}}</td>
+                  <td>{{value['author']}}</td>
+                </tr>
+                {% endfor%}
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+</body>
+</html>

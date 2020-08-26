@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--其他页面：通讯录主页面-->
+<page name="attendance" xmlns="http://www.w3school.com.cn"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.w3school.com.cn ../xsd/ui.xsd">
+    <ui name="我的应用智能考勤">poot(text="智能考勤")</ui>
+    <ui name="智能考勤首页">poot(text="进入和打卡请选择相同数字")</ui>
+    <ui name="智能考勤打卡位置选择取消按钮">poot(textM="Cancel.*")</ui>
+    <ui name="考勤记录">poot(textM="考勤记录.*")</ui>
+    <ui name="智能考勤打卡图标">poot(text="打卡")</ui>
+    <ui name="智能考勤确认打卡图标">poot(textM="确认打卡.*")</ui>
+    <ui name="智能考勤取消打卡图标">poot(textM="取消打卡.*")</ui>
+    <ui name="考勤记录按钮">poot(textM="考勤记录.*")</ui>
+    <ui name="考勤统计">poot(text="考勤统计")</ui>
+    <ui name="勤劳小蜜蜂行部日榜">poot(text="勤劳小蜜蜂行部日榜")</ui>
+    <ui name="勤劳小蜜蜂个人排行榜">poot(text="勤劳小蜜蜂个人排行榜")</ui>
+</page>

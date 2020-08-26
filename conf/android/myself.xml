@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--天府手机银行"我的"页面-->
+<page name="myself" xmlns="http://www.w3school.com.cn"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.w3school.com.cn ../xsd/ui.xsd">
+    <!--已登录页面-->
+    <ui name="我的页面设置按钮">poot(text="设置")</ui>
+    <ui name="我的页面退出登录按钮">poot(resource_id="com.ionicframework.cgbank122507:id/btn_login")</ui>
+    <ui name="我的页面确定退出按钮">poot(text="确定")</ui>
+
+
+    <!--未登录-有手机号页面-->
+    <ui name="登录页面手机号">poot(textM="1.*")</ui>
+    <ui name="登录页面更多登录按钮">poot(text="更多登录")</ui>
+    <ui name="登录页面切换账户按钮">poot(text="切换账户")</ui>
+
+    <!--未登录-欢迎回来页面-->
+    <ui name="登录页面欢迎回来">poot(text="手机号/熊猫金融账号")</ui>
+
+    <!--账号，密码，协议-->
+    <ui name="登录页用户名输入框">poot(resource_id="com.ionicframework.cgbank122507:id/tv_hint_account")</ui>
+    <ui name="登录页密码输入框">poot(resource_id="com.ionicframework.cgbank122507:id/tv_hint_pwd")</ui>
+    <ui name="登录页同意协议按钮">poot(resource_id="com.ionicframework.cgbank122507:id/cb_agree")</ui>
+    <ui name="登录页登录按钮">poot(text="登录")</ui>
+
+    <!--登录成功后提示信息不再提醒-->
+    <ui name="登录成功不再提醒按钮">poot(text="不再提醒")</ui>
+
+
+
+
+
+    <ui name="我的页面我的消息按钮">poot(text="我的消息")</ui>
+    <ui name="我的页面我的收藏按钮">poot(text="我的收藏")</ui>
+    <ui name="我的页面我上传的文件">poot(text="我上传的文件")</ui>
+    <ui name="进入我上传的文件页面">poot(text="我上传的文件")</ui>
+    <ui name="我的页面我下载的文件">poot(text="我下载的文件")</ui>
+    <ui name="我的页面我的头像">poot(resource_id="com.minxing.client:id/slid_avatar")</ui>
+    <ui name="我的个人信息页面">poot(text="个人信息")</ui>
+    <ui name="我的页面我的二维码">poot(resource_id="com.minxing.client:id/slid_qr_code")</ui>
+    <ui name="二维码加载成功">poot(resource_id="com.minxing.client:id/user_qr_image")</ui>
+    <ui name="我的姓名">poot(text="林莹")</ui>
+    <ui name="头像">poot(text="头像")</ui>
+    <ui name="右上角更多按钮">poot(resource_id="com.minxing.client:id/title_right_more")</ui>
+    <ui name="拍照">poot(text="拍照")</ui>
+    <ui name="拍照按钮">poot(resource_id="com.huawei.camera:id/shutter_button")</ui>
+    <ui name="拍照完成按钮">poot(resource_id="com.huawei.camera:id/done_button")</ui>
+    <ui name="保存">poot(text="保存")</ui>
+    <ui name="点击设置按钮">poot(resource_id="com.minxing.client:id/slid_setting")</ui>
+    <ui name="安全密码">poot(text="安全密码")</ui>
+    <ui name="手势解锁">poot(resource_id="com.minxing.client:id/setting_gesture_password_switch")</ui>
+    <ui name="最少连接4个点">poot(text="最少连接4个点, 请重新输入")</ui>
+    <ui name="请再次绘制解锁图案">poot(text="请再次绘制解锁图案")</ui>
+    <ui name="设置手势密码">poot(text="设置手势密码")</ui>
+    <ui name="手势验证">poot(text="手势验证")</ui>
+    <ui name="手势验证页面">poot(resource_id="com.minxing.client:id/text_phone_number")</ui>
+    <ui name="打开天府安逸">poot(resource_id="com.minxing.client:id/mx_open_apk_scene_switch")</ui>
+    <ui name="清理缓存">poot(text="清理缓存")</ui>
+    <ui name="清理缓存按钮">poot(resource_id="com.minxing.client:id/clean_cache_button")</ui>
+    <ui name="确认清空">poot(resource_id="com.minxing.client:id/dialog_ok")</ui>
+
+
+</page>

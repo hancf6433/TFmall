@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--其他页面：天府安逸主页面-->
+<page name="vconference" xmlns="http://www.w3school.com.cn"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.w3school.com.cn ../xsd/ui.xsd">
+    <ui name="我的应用视频会议">poot(text="视频会议")</ui>
+    <ui name="视频会议首页">poot(text="加入视频会议")</ui>
+    <ui name="请输入视频会议号输入框">poot(clazz='android.widget.EditText')</ui>
+    <ui name="呼叫">poot(resource_id="com.cisco.jabber.guest:id/jgsdk_call_button")</ui>
+    <ui name="摄像头转换按钮">poot(resource_id="com.cisco.jabber.guest:id/jgsdk_switch_camera")</ui>
+    <ui name="证书无效">poot(text="证书无效")</ui>
+    <ui name="接受">poot(text="接受")</ui>
+    <ui name="点击主界面">poot(resource_id="com.cisco.jabber.guest: id / jgsdk_texture")</ui>
+    <ui name="视频">poot(text="视频",clazz="android.widget.Button")</ui>
+    <ui name="挂断按钮">poot(clazz="android.widget.ImageView")</ui>
+    <ui name="视频已停止">poot(text="视频已停止")</ui>
+    <ui name="加入视频会议">poot(text="加入视频会议")</ui>
+</page>

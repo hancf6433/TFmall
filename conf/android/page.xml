@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<page name="page" xmlns="http://www.w3school.com.cn"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.w3school.com.cn ../xsd/ui.xsd">
+    <ui name="app包名">com.ionicframework.cgbank122507</ui>
+    <ui name="等待圈圈">poot(resource_id="android:id/progress")</ui>
+    <ui name="等待圈圈2">poot(resource_id="android:id/progress")</ui>
+    <ui name="弹窗消息体文本框">poot(resource_id='com.minxing.client:id/main_message')</ui>
+    <ui name="弹窗消息取消按钮">poot(resource_id='com.minxing.client:id/dialog_cancel')</ui>
+    <ui name="弹窗消息确定按钮">poot(resource_id='com.minxing.client:id/dialog_ok')</ui>
+    <ui name="leaks界面">poco("android:id/decor_content_parent")</ui>
+    <ui name="app界面">poco(package="com.ionicframework.cgbank122507")</ui>
+    <ui name="温馨提示弹窗提示文字文本框">poco(text='确定').parent().sibling()[1]</ui>
+    <ui name="温馨提示弹窗确定按钮">poco(text='确定')</ui>
+    <ui name="温馨提示弹窗提示文字文本框2">poco(text="温馨提示").sibling()[1]</ui>
+    <ui name="没有标题的温馨提示弹窗提示文字文本框">poco(text="重新输入").parent().parent().child("android.view.View")</ui>
+    <ui name="有name名的温馨提示信息文本框">poco("com.ionicframework.cgbank122507:id/body")</ui>
+    <ui name="弹窗关闭按钮">poco(text="")</ui>
+    <ui name="登录按钮">@[text='登录']</ui>
+    <ui name="首页按钮">@android.support.v7.app.ActionBar$Tab[0]</ui>
+    <ui name="U盾认证页短信验证码输入框">@[text='请输入短信验证码']>..>..>@android.view.View[2]</ui>
+    <ui name="手机验证码">poco(textMatches="\d{6}")</ui>
+    <ui name="请输入短信验证码文本框">poco(text="请输入短信验证码")</ui>
+    <ui name="立即付款按钮">@[text='立即付款']</ui>
+    <ui name="支付密码输入框">poco("com.ionicframework.cgbank122507:id/pwd_input")</ui>
+    <ui name="请输入密码提示框顶部文本框">poco(textMatches="请输入.*密码")</ui>
+    <ui name="确认按钮">poco(text='确认')</ui>
+    <ui name="同意按钮">poco(text="同意")</ui>
+    <ui name="密码键盘按钮">poco(nameMatches=".+Keyboard___.+",text='${keys}')</ui>
+    <ui name="密码键盘删除按钮">poco("CompleteKeyboard___delete")</ui>
+    <ui name="密码键盘大小写锁定键按钮">poco("CompleteKeyboard___caps")</ui>
+    <ui name="密码键盘数字键盘切换按钮">poco("CompleteKeyboard___num-shift")</ui>
+    <ui name="密码键盘字母键盘切换按钮">poco("CompleteKeyboard___sym-shift")</ui>
+    <ui name="密码键盘熊猫标志">poco("NumberKeyboard___panda")</ui>
+    <ui name="密码键盘空白格">poco(nameMatches=".*board___blank")</ui>
+    <ui name="支付银行卡下拉按钮">poco(text="支付账户").sibling("android.view.View")</ui>
+    <ui name="选择银行卡">poco(textMatches=".+(${top4CardNumbers})")</ui>
+    <ui name="他行卡预留手机号页面">poco(text="请输入手机号")</ui>
+    <ui name="下一步按钮">poco(text=" 下一步 ")</ui>
+    <ui name="请输入短信验证码框">poco(text="请输入短信验证码")</ui>
+    <ui name="天府收银台下一步按钮">poco(text="下一步")</ui>
+    <ui name="暂无可用">poco(text="暂无可用")</ui>
+    <ui name="优惠券按钮">poco(text="优惠券").parent().child()[1].child()</ui>
+    <ui name="可使用的优惠券">poco(text="可使用").parent().parent().child()[2].child().child()</ui>
+    <ui name="天府收银台银行卡弹出选择下拉列表框按钮">poco(textMatches="银行卡支付.*").parent().parent().child("android.view.View")[1]</ui>
+    <ui name="天府收银台银行卡选择界面选择银行卡">poco(textMatches=".+\(${bottomNumberOfCard}\)")</ui>
+    <ui name="添加银行卡">poco(text="添加银行卡")</ui>
+    <ui name="请选择银行卡银行卡选择项">poco(text="icon-theme").sibling(textMatches="${bankName}\(${cardNumber}\)")</ui>
+</page>
