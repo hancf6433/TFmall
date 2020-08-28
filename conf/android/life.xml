@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--天府手机银行"我的"页面-->
+<page name="life" xmlns="http://www.w3school.com.cn"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.w3school.com.cn ../xsd/ui.xsd">
+    <!--商城页面-->
+
+    <ui name="手机银行主导航界面生活">poot(resource_id="com.ionicframework.cgbank122507:id/tab_lable",text="商城")</ui>
+
+    <!--<></ui>-->
+    <!--<></ui>-->
+    <!--<></ui>-->
+    <!--<></ui>-->
+</page>
