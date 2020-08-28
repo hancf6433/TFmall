@@ -3,53 +3,13 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.w3school.com.cn xsd/data.xsd">
 
-    <data_set name="管理员">
-        <data name="用户名" value="001204"/>
-        <data name="密码" value="111111"/>
-    </data_set>
-
-    <data_set name="管理员1">
-        <data name="用户名" value="001204"/>
-        <data name="密码" value="111111"/>
-    </data_set>
-
-    <data_set name="未注册账号">
-        <data name="用户名" value="ui"/>
-        <data name="密码" value="111111"/>
-    </data_set>
-
-    <data_set name="密码错误账号">
-        <data name="用户名" value="ui_test1"/>
-        <data name="密码" value="123456"/>
-    </data_set>
-
-    <data_set name="UI自动化测试账号">
-        <data name="用户名" value="ui_test1"/>
-        <data name="密码" value="111111"/>
-    </data_set>
-
-    <data_set name="UI自动化测试账号2">
-        <data name="用户名" value="ui_test2"/>
-        <data name="密码" value="111111"/>
-    </data_set>
-
-    <data_set name="UI自动化测试账号3">
-        <data name="用户名" value="ui_test3"/>
-        <data name="密码" value="111111"/>
-    </data_set>
-
-    <data_set name="群聊">
-        <data name="发起群聊名称" value="groupChat"/>
-    </data_set>
-
-    <data_set name="智能考勤测试账号">
-        <data name="用户名" value="001201"/>
-        <data name="密码" value="111qqq"/>
-    </data_set>
-
     <data_set name="商城UI自动化测试账号1">
         <data name="用户名" value="13378243003"/>
         <data name="密码" value="123456"/>
+    </data_set>
+
+    <data_set name="搜索商城商品名称">
+            <data name="商品名称" value="耳机"/>
     </data_set>
 
 </test_data>

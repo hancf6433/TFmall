@@ -200,7 +200,7 @@ def render(template_name, output_file=None, **template_vars):
             print("\n${报告路径:%s}\n" % output_file)
         return html
 
-def testLog(f):
+def testLog(f=None):
     '''
     case装饰器，用例需要装饰
     :param f: 

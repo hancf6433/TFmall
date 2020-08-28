@@ -6,15 +6,15 @@ import time
 
 class AnYi(page.Page):
     '''
-    天府安逸首页第一屏
+    天府手机银行首页第一屏
     '''
 
-    @ui("AnYi")
-    def enterMyself(self):
+    @ui("mall")
+    def enterMall(self):
         '''
-        :return:点击我的
+        :return:点击 商城
         '''
-        self._click(g().get_resource_infor('主页面导航栏第五个按钮我的'))
+        self._click(g().get_resource_infor('手机银行主导航界面商城按钮'))
 
     @ui("AnYi")
     def scan(self,assertDict=None):
@@ -41,7 +41,7 @@ class AnYi(page.Page):
         self._text(sendTo)
         #点击查找
         self._click(g().get_resource_infor('查找按钮'))
-        self._wait_ui_apper(g().get_resource_infor('查找用户'))
+        self._wait_ui_appear(g().get_resource_infor('查找用户'))
         self._click(g().get_resource_infor('查找用户'))
         #点击发消息
         time.sleep(2)
@@ -1144,13 +1144,14 @@ class AnYi(page.Page):
         anYi = g().get_resource_infor('主页面导航栏第一个按钮安逸')
         self._wait_ui_apper(anYi,lambda ui:ui._click_back())
 
-    @ui("AnYi")
-    def findContact(self,contactName,assertDict):
+    @ui("mall")
+    def searchGood(self,goodName,assertDict):
         '''
-        :return: #查找联系人
+        :return: #商品
         '''
-        # 点击添加
-        self._click(g().get_resource_infor('安逸页面添加按钮'))
+        self._click(g().get_resource_infor('手机银行主导航界面商城按钮'))  # 点击商城
+        self._click(g().get_resource_infor('商城首页搜索框'))
+
         # 点击添加联系人
         self._click(g().get_resource_infor('添加联系人按钮'))
         # 点击按姓名查找

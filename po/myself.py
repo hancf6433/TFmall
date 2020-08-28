@@ -63,31 +63,31 @@ class Myself(page.Page):
     @ui("myself")
     def clickSettings(self, assertDict=None):
         self._click(g().get_resource_infor('点击设置按钮'))
-        self._wait_ui_apper(g().get_resource_infor('安全密码'))
+        self._wait_ui_appear(g().get_resource_infor('安全密码'))
         self._click(g().get_resource_infor('安全密码'))
         self._click(g().get_resource_infor('手势解锁'))
 
     @ui("myself")
     def closesafepassword(self, assertDict=None):
         self._click(g().get_resource_infor('点击设置按钮'))
-        self._wait_ui_apper(g().get_resource_infor('安全密码'))
+        self._wait_ui_appear(g().get_resource_infor('安全密码'))
         self._click(g().get_resource_infor('安全密码'))
         self._click(g().get_resource_infor("打开天府安逸"))
 
     @ui("myself")
     def setguestureLess(self, assertDict=None):
-        self._wait_ui_apper(g().get_resource_infor('设置手势密码'))
+        self._wait_ui_appear(g().get_resource_infor('设置手势密码'))
         self._multiple_points_swipe(('poot(clazz="android.widget.ImageView")[0]','poot(clazz="android.widget.ImageView")[1]','poot(clazz="android.widget.ImageView")[2]'))
         self._performAssert('最少连接4个点', assertDict)
 
     @ui("myself")
     def setguestureFail(self, assertDict=None):
-        self._wait_ui_apper(g().get_resource_infor('设置手势密码'))
+        self._wait_ui_appear(g().get_resource_infor('设置手势密码'))
         self._multiple_points_swipe(('poot(clazz="android.widget.ImageView")[0]',
                                      'poot(clazz="android.widget.ImageView")[1]',
                                      'poot(clazz="android.widget.ImageView")[2]',
                                      'poot(clazz="android.widget.ImageView")[6]'))
-        self._wait_ui_apper(g().get_resource_infor('请再次绘制解锁图案'))
+        self._wait_ui_appear(g().get_resource_infor('请再次绘制解锁图案'))
         self._multiple_points_swipe(('poot(clazz="android.widget.ImageView")[0]',
                                      'poot(clazz="android.widget.ImageView")[1]',
                                      'poot(clazz="android.widget.ImageView")[2]'))
@@ -95,12 +95,12 @@ class Myself(page.Page):
 
     @ui("myself")
     def setguestureSuccess(self, assertDict=None):
-        self._wait_ui_apper(g().get_resource_infor('设置手势密码'))
+        self._wait_ui_appear(g().get_resource_infor('设置手势密码'))
         self._multiple_points_swipe(('poot(clazz="android.widget.ImageView")[0]',
                                      'poot(clazz="android.widget.ImageView")[1]',
                                      'poot(clazz="android.widget.ImageView")[2]',
                                      'poot(clazz="android.widget.ImageView")[6]'))
-        self._wait_ui_apper(g().get_resource_infor('请再次绘制解锁图案'))
+        self._wait_ui_appear(g().get_resource_infor('请再次绘制解锁图案'))
         self._multiple_points_swipe(('poot(clazz="android.widget.ImageView")[0]',
                                      'poot(clazz="android.widget.ImageView")[1]',
                                      'poot(clazz="android.widget.ImageView")[2]',
@@ -110,7 +110,7 @@ class Myself(page.Page):
     @ui("myself")
     def guestureverify(self, assertDict=None):
         #等待手势验证出现
-        self._wait_ui_apper(g().get_resource_infor('手势验证'))
+        self._wait_ui_appear(g().get_resource_infor('手势验证'))
         self._multiple_points_swipe(('poot(clazz="android.widget.ImageView")[0]',
                                      'poot(clazz="android.widget.ImageView")[1]',
                                      'poot(clazz="android.widget.ImageView")[2]'))
@@ -118,19 +118,19 @@ class Myself(page.Page):
 
     @ui("myself","anyi")
     def guestureverifysuccess(self, assertDict=None):
-        self._wait_ui_apper(g().get_resource_infor('手势验证'))
+        self._wait_ui_appear(g().get_resource_infor('手势验证'))
         self._multiple_points_swipe(('poot(clazz="android.widget.ImageView",clickable="false",index="0")',
                                      'poot(clazz="android.widget.ImageView",clickable="false",index="1")',
                                      'poot(clazz="android.widget.ImageView",clickable="false",index="2")',
                                      'poot(clazz="android.widget.ImageView",clickable="false",index="6")'))
         homeUi = g().get_resource_infor('主页面导航栏第一个按钮安逸')
-        self._wait_ui_apper(homeUi)
+        self._wait_ui_appear(homeUi)
         from po.anyi import AnYi
         return AnYi()
 
     @ui("myself", "anyi")
     def guestureverifyfail(self, assertDict=None):
-        self._wait_ui_apper(g().get_resource_infor('手势验证'))
+        self._wait_ui_appear(g().get_resource_infor('手势验证'))
         self._multiple_points_swipe(('poot(clazz="android.widget.ImageView",clickable="false",index="0")',
                                      'poot(clazz="android.widget.ImageView",clickable="false",index="1")',
                                      'poot(clazz="android.widget.ImageView",clickable="false",index="2")',
@@ -139,7 +139,7 @@ class Myself(page.Page):
 
     @ui("myself", "anyi")
     def modifyguesturepassword(self, assertDict=None):
-        self._wait_ui_apper(g().get_resource_infor('手势验证'))
+        self._wait_ui_appear(g().get_resource_infor('手势验证'))
         self._multiple_points_swipe(('poot(clazz="android.widget.ImageView",clickable="false",index="0")',
                                      'poot(clazz="android.widget.ImageView",clickable="false",index="1")',
                                      'poot(clazz="android.widget.ImageView",clickable="false",index="2")'))
@@ -147,19 +147,19 @@ class Myself(page.Page):
 
     @ui("myself", "anyi")
     def modifyguesturepasswordsuccess(self, assertDict=None):
-        self._wait_ui_apper(g().get_resource_infor('手势验证'))
+        self._wait_ui_appear(g().get_resource_infor('手势验证'))
         self._multiple_points_swipe(('poot(clazz="android.widget.ImageView",clickable="false",index="0")',
                                      'poot(clazz="android.widget.ImageView",clickable="false",index="1")',
                                      'poot(clazz="android.widget.ImageView",clickable="false",index="2")',
                                      'poot(clazz="android.widget.ImageView",clickable="false",index="6")'))
-        self._wait_ui_apper(g().get_resource_infor('安全密码'))
+        self._wait_ui_appear(g().get_resource_infor('安全密码'))
         self._click(g().get_resource_infor('手势解锁'))
-        self._wait_ui_apper(g().get_resource_infor('设置手势密码'))
+        self._wait_ui_appear(g().get_resource_infor('设置手势密码'))
         self._multiple_points_swipe(('poot(clazz="android.widget.ImageView")[0]',
                                      'poot(clazz="android.widget.ImageView")[1]',
                                      'poot(clazz="android.widget.ImageView")[2]',
                                      'poot(clazz="android.widget.ImageView")[8]'))
-        self._wait_ui_apper(g().get_resource_infor('请再次绘制解锁图案'))
+        self._wait_ui_appear(g().get_resource_infor('请再次绘制解锁图案'))
         self._multiple_points_swipe(('poot(clazz="android.widget.ImageView")[0]',
                                      'poot(clazz="android.widget.ImageView")[1]',
                                      'poot(clazz="android.widget.ImageView")[2]',
@@ -168,29 +168,29 @@ class Myself(page.Page):
 
     @ui("myself", "anyi")
     def newguesturepasswordsuccess(self, assertDict=None):
-        self._wait_ui_apper(g().get_resource_infor('手势验证'))
+        self._wait_ui_appear(g().get_resource_infor('手势验证'))
         self._multiple_points_swipe(('poot(clazz="android.widget.ImageView",clickable="false",index="0")',
                                      'poot(clazz="android.widget.ImageView",clickable="false",index="1")',
                                      'poot(clazz="android.widget.ImageView",clickable="false",index="2")',
                                      'poot(clazz="android.widget.ImageView",clickable="false",index="8")'))
         homeUi = g().get_resource_infor('主页面导航栏第一个按钮安逸')
-        self._wait_ui_apper(homeUi)
+        self._wait_ui_appear(homeUi)
         from po.anyi import AnYi
         return AnYi()
 
     @ui("myself", "anyi")
     def swipeguesture(self, assertDict=None):
-        self._wait_ui_apper(g().get_resource_infor('手势验证'))
+        self._wait_ui_appear(g().get_resource_infor('手势验证'))
         self._multiple_points_swipe(('poot(clazz="android.widget.ImageView",clickable="false",index="0")',
                                      'poot(clazz="android.widget.ImageView",clickable="false",index="1")',
                                      'poot(clazz="android.widget.ImageView",clickable="false",index="2")',
                                      'poot(clazz="android.widget.ImageView",clickable="false",index="8")'))
-        self._wait_ui_apper(g().get_resource_infor('安全密码'))
+        self._wait_ui_appear(g().get_resource_infor('安全密码'))
 
     @ui("myself")
     def clearcache(self, assertDict=None):
         self._click(g().get_resource_infor('点击设置按钮'))
-        self._wait_ui_apper(g().get_resource_infor('安全密码'))
+        self._wait_ui_appear(g().get_resource_infor('安全密码'))
         self._click(g().get_resource_infor('清理缓存'))
         self._click(g().get_resource_infor("清理缓存按钮"))
         self._click(g().get_resource_infor("确认清空"))

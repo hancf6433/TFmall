@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
-<!--其他页面：除天府安逸外的页面-->
-<page name="other" xmlns="http://www.w3school.com.cn"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.w3school.com.cn ../xsd/ui.xsd">
-    <ui name=""></ui>
-</page>

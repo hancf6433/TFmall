@@ -33,24 +33,19 @@ class Other(page.Page):
         from po.login import Login
         return Login()
 
-    @ui("anyi")
-    def enterAnYiPage(self):
+    @ui("mall")
+    def enterMallPage(self):
         '''
-        :return: 安逸页
+        :return: 商城页
         '''
-        # 关闭天府安逸
-        self._stopTFAnYi()
-        # 运行天府安逸
-        self._startTFAnYi()
-        # 等待【主界面】
-        homeUi = g().get_resource_infor('主页面导航栏第一个按钮安逸')
-        confirmButton=g().get_resource_infor('包含确定按钮的弹窗')
-        ui=self._wait_multiple_ui_appear([homeUi,confirmButton])
-        if ui==confirmButton:
-            self._click(g().get_resource_infor('包含确定按钮的弹窗'))
-            self._wait_ui_apper(homeUi)
-        from po.anyi import AnYi
-        return AnYi()
+        # # 关闭天府安逸
+        # self._stopTFBank()
+        # # 运行天府安逸
+        # self._startTFBank()
+        # 等待【商城主界面】
+        self._click(g().get_resource_infor('手机银行主导航界面商城按钮'))
+        from po.mall import Mall
+        return Mall()
 
     @ui("AnYi")
     def enterContactPage(self):
