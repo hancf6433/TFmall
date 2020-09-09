@@ -6,7 +6,7 @@ from readXml import *
 
 class logistics_management(unittest.TestCase):
     def test_01_new_address(self):
-        '''新建发货地址'''
+        '''新建发货地址111'''
         try:
             element((By.LINK_TEXT,'地址管理')).click()  # 点击 地址管理
             element(((By.XPATH,"//button[@type='button']//span"))).click()
