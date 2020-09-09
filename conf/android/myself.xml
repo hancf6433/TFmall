@@ -4,6 +4,9 @@
 <page name="myself" xmlns="http://www.w3school.com.cn"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.w3school.com.cn ../xsd/ui.xsd">
+    <!--APP包名-->
+    <ui name="app包名">com.ionicframework.cgbank122507</ui>
+
     <!--已登录页面-->
     <ui name="我的页面设置按钮">poot(text="设置")</ui>
     <ui name="我的页面退出登录按钮">poot(resource_id="com.ionicframework.cgbank122507:id/btn_login")</ui>

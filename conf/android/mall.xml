@@ -6,15 +6,17 @@
         xsi:schemaLocation="http://www.w3school.com.cn ../xsd/ui.xsd">
 
     <!--商城-->
+    <ui name="手机银行首页定位按钮">poot(resource_id="com.ionicframework.cgbank122507:id/tv_choose_city")</ui>
+    <ui name="手机银行主导航界面我的按钮">poot(resource_id="com.ionicframework.cgbank122507:id/tab_lable",text="我的")</ui>
     <ui name="手机银行主导航界面商城按钮">poot(resource_id="com.ionicframework.cgbank122507:id/tab_lable",text="商城")</ui>
     <ui name="商城首页类目按钮">poot(resource_id="com.ionicframework.cgbank122507:id/btn_mall_more")</ui>
     <ui name="商城首页购物车按钮">poot(resource_id="com.ionicframework.cgbank122507:id/btn_mall_cart")</ui>
     <ui name="商城首页搜索框">poot(text="搜索商品、商家")</ui>
-
     <ui name="搜索页面搜索框">poot(text="搜索商品名称")</ui>
     <ui name="搜索页面商城按钮">poot(text="商城")</ui>
     <ui name="搜索页面店铺按钮">poot(text="店铺")</ui>
     <ui name="搜索商品成功商品列表综合按钮">poot(text="综合")</ui>
+    <ui name="商品详情页立即购买按钮">poot(text="立即购买")</ui>
 
     <!--<></ui>-->
     <!--<></ui>-->

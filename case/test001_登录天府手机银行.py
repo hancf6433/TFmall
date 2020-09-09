@@ -5,7 +5,8 @@ __title__ = "登录"
 __author__ = "韩春芳"
 __desc__ = "用户登录手机银行"
 
-from po.other import Other
+# from po.other import Other
+from function.login import *
 from common.runer import (BaseCase, testLog)
 from airtest.core.helper import log
 
@@ -37,6 +38,6 @@ class Test(BaseCase):
 
         # 运行流程
         log('进入主界面')
-        login=Other().enterLoginPage()
+        login=EnterLoginPage().enterLoginPage()
         login.login(userName,loginPwd,assertDict=assertDict)
 

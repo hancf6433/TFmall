@@ -64,7 +64,7 @@ class Page(BasePorl):
         tools.delDevice(phone)
         return userPo.login(phone, pwd)
 
-    @ui("page")
+    @ui("myself")
     def _stopTFBank(self):
         '''
         关闭天府手机银行
@@ -72,7 +72,7 @@ class Page(BasePorl):
         '''
         self._stop_app(g().get_resource_infor("app包名"))
 
-    @ui("page")
+    @ui("myself")
     def _startTFBank(self):
         '''
         运行天府手机银行

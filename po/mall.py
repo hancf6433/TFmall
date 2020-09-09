@@ -12,7 +12,7 @@ class Mall(page.Page):
     @ui("mall")
     def searchGood(self, goodName, assertDict):
         '''
-        :return: #搜索商品
+        :return: #搜索商品并进入商品详情页面
         '''
         self._click(g().get_resource_infor('手机银行主导航界面商城按钮'))  # 点击商城
         self._click(g().get_resource_infor('商城首页搜索框'))
@@ -21,6 +21,7 @@ class Mall(page.Page):
         self._text(goodName)
         time.sleep(3)
         self._performAssert('断言搜索商品成功', assertDict)
+
         self._wait_ui_appear(g().get_resource_infor('手机银行主导航界面商城按钮'), lambda ui: ui._click_back())
 
 
