@@ -1,7 +1,8 @@
 from common.tools import ui, tools
+import time
+from common.tools import ui
 from po import page
 from common.globall import g
-import time
 
 
 class Mall(page.Page):
@@ -50,6 +51,13 @@ class Mall(page.Page):
         self._click((267 / 1080, 648 / 2244))  # 点击搜索第一个结果
         self._wait_ui_appear(g().get_resource_infor("商平详情页加入购物车按钮"))
 
+    @ui("mall")
+    def classificationEnquiry(self,assertDict):
+        """通过商品分类查询商品列表"""
+        self._click(g().get_resource_infor('手机银行主导航界面商城按钮'))  # 点击商城
+        self._click(g().get_resource_infor("商城首页分类按钮"))
+        self._wait_ui_appear(g().get_resource_infor("酒水饮料"))
+        self._click(g().get_resource_infor("葡萄酒"))
 
     @ui("AnYi")
     def scan(self, assertDict=None):
