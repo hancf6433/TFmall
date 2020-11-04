@@ -1,19 +1,9 @@
-# from poot.core.api import Poot
-# from common import *
-# from common.tools import ui
-# from po import page
-# import time
-# from common.tools import ui, tools
-# from common.globall import g
-
-#poot=poot(name="android.widget.ListView")
-
-
-#print(poot().get_tree())
-
 # -*- encoding=utf-8 -*-
 from common.globall import g
 
+__title__ = "商品详情页面中消息_搜索_首页按钮_成功进入对应页面"
+__author__ = "邵佳"
+__desc__ = "test003"
 from po.other import *
 from po.mall import *
 from common.runer import (BaseCase, testLog)
@@ -67,10 +57,4 @@ class Test(BaseCase):
 
         # 运行流程
         log('搜索商城商品')
-        Mall().searchGood(goodName, assertDict=assertDict2)  #搜索商城商品
-
-
-
-
-
-
+        Mall().getIntoGoodsDetail(goodName, assertDict=assertDict2)  #搜索商城商品

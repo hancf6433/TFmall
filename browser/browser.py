@@ -9,7 +9,7 @@ class browser():
     def resue_browser(self):
         chrome_options = Options()
         chrome_options.add_experimental_option("debuggerAddress", "127.0.0.1:9222")
-        chrome_driver = r"C:\Users\TS\AppData\Local\Google\Chrome\Application\chromedriver.exe"
+        chrome_driver = r"C:\Users\MSI\AppData\Local\Google\Chrome\Application\chromedriver.exe"
         driver = webdriver.Chrome(chrome_driver, chrome_options=chrome_options)
         driver.maximize_window()
         return driver

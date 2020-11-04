@@ -1,7 +1,7 @@
 # -*- encoding=utf-8 -*-
 from common.globall import g
 
-__title__ = "登录"
+__title__ = "登录手机银行"
 __author__ = "韩春芳"
 __desc__ = "用户登录手机银行"
 
@@ -22,22 +22,20 @@ class Test(BaseCase):
     @testLog
     def test(self):
         # 指定数据集
-        g().group='商城UI自动化测试账号1'
-
+        g().group='商城UI自动化测试账号2'
         # 构造数据
         userName = g().get_test_data("用户名")
+        vagueUserName = g().get_test_data("模糊用户名")
         loginPwd = g().get_test_data("密码")
 
         # 构造断言数据
         assertDict = {
-            "断言登录失败": '''
-                #登录失败断言
-                self.assert_ui_exists(g().get_resource_infor('我的页面设置按钮'),"登录是否失败")
+            "断言登录成功": '''
+                #登录成功断言
+                self.assert_ui_exists(g().get_resource_infor('我的页面设置按钮'),"断言登录成功")
             '''
         }
 
         # 运行流程
-        log('进入主界面')
-        login=EnterLoginPage().enterLoginPage()
-        login.login(userName,loginPwd,assertDict=assertDict)
-
+        log('登录手机银行')
+        Login().login(userName, vagueUserName, loginPwd, assertDict=assertDict)

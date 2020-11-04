@@ -13,7 +13,7 @@ def readxml(tagName):
     file_path=os.path.dirname(__file__)
     data_path=os.path.join(os.path.dirname(file_path),"data")
     xml=os.path.join(data_path,"test_data.xml")
-    domTree = parse(xml)                                               # minidom解析器打开xml文档并将其解析未内存中的一棵树
+    domTree = parse(xml)                                               # minidom解析器打开xml文档并将其解析为内存中的一棵树
     rootNode = domTree.documentElement                                 # 获取xml文档对象，就是难道树的根
     data = rootNode.getElementsByTagName(tagName)[0].firstChild.data   #获取rootnode对象中所有节点的集合
     return data

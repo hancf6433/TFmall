@@ -8,8 +8,14 @@
         <data name="密码" value="123456"/>
     </data_set>
 
+    <data_set name="商城UI自动化测试账号2">
+        <data name="用户名" value="18583370096"/>
+        <data name="模糊用户名" value="185****0096"/>
+        <data name="密码" value="123456"/>
+    </data_set>
+
     <data_set name="搜索商城商品名称">
-            <data name="商品名称" value="耳机"/>
+            <data name="商品名称" value="百岁"/>
     </data_set>
 
 </test_data>

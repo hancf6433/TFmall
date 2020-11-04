@@ -10,21 +10,45 @@ class Mall(page.Page):
     '''
 
     @ui("mall")
-    def searchGood(self, goodName, assertDict):
+    def searchGoods(self, goodName, assertDict):
         '''
         :return: #搜索商品并进入商品详情页面
         '''
-        self._click(g().get_resource_infor('手机银行主导航界面商城按钮'))  # 点击商城
+        # self._click(g().get_resource_infor('手机银行主导航界面商城按钮'))  # 点击商城
+        self._click((748/1080,2055/2244))  # 点击商城
         self._click(g().get_resource_infor('商城首页搜索框'))
         self._wait_ui_appear(g().get_resource_infor("搜索页面搜索框"))
         self._click(g().get_resource_infor("搜索页面搜索框"))
         self._text(goodName)
         time.sleep(3)
+        self._wait_ui_appear(g().get_resource_infor("搜索结果页面排序框"))
+        self._home()
+        time.sleep(1)
+        self._startTFBank()
+        time.sleep(3)
         self._performAssert('断言搜索商品成功', assertDict)
-
         self._wait_ui_appear(g().get_resource_infor('手机银行主导航界面商城按钮'), lambda ui: ui._click_back())
 
-
+    @ui("mall")
+    def getIntoGoodsDetail(self, goodName, assertDict):
+        '''
+        :return: #搜索商品并进入商品详情页面
+        '''
+        # self._click(g().get_resource_infor('手机银行主导航界面商城按钮'))  # 点击商城
+        self._click((748 / 1080, 2055 / 2244))  # 点击商城
+        self._click(g().get_resource_infor('商城首页搜索框'))
+        self._wait_ui_appear(g().get_resource_infor("搜索页面搜索框"))
+        self._click(g().get_resource_infor("搜索页面搜索框"))
+        self._text(goodName)
+        time.sleep(3)
+        self._wait_ui_appear(g().get_resource_infor("搜索结果页面排序框"))
+        self._home()
+        time.sleep(1)
+        self._startTFBank()
+        time.sleep(3)
+        self._performAssert('断言搜索商品成功', assertDict)
+        self._click((267 / 1080, 648 / 2244))  # 点击搜索第一个结果
+        self._wait_ui_appear(g().get_resource_infor("商平详情页加入购物车按钮"))
 
 
     @ui("AnYi")
