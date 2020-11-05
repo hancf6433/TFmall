@@ -212,7 +212,7 @@ class g(object):
                 for file in files:
                     module = os.path.splitext(file)[0].lower()
                     realFile = os.path.join(root, file)
-                    fileModule,uiDict=tools.resolveUiXml(realFile)
+                    fileModule,uiDict=tools.resolveUi(realFile)
                     if module!=fileModule:
                         raise BaseException("%s的文件名与根节点name属性值不一致：%s" % (file,fileModule))
                     self.__save_module=fileModule
@@ -584,6 +584,7 @@ class g(object):
         :return:
         '''
         type=self.__activeDevType
+        # type="Android"
         value=None
         tempM=None
         #取出模块
@@ -593,7 +594,7 @@ class g(object):
                 break
         if not tempM:
             raise BaseException("在{%s}的UI信息未找到{%s}模块，请检查" % (type,self.__module))
-        #取出value值
+        #取出ui对象
         for module in self.__module:
             value=self.__getInforFromDict(self.__resource_infor,[type,module.lower(),key])
             if value:
@@ -601,23 +602,7 @@ class g(object):
         if not value:
             raise BaseException("在{%s}的UI信息的{%s}模块里未找到UI名称为{%s}的定位信息，请检查文件。" % (type,self.__module,key))
         #先进行变量检查
-        orderMatcher=self.__var_pattern.findall(value)
-        nameMatcher=self.__var_name_pattern.findall(value)
-        if len(orderMatcher)!=len(args):
-            raise BaseException("需要的顺序变量数{%s},实际有{%s}" % (len(orderMatcher), len(args)))
-        if len(nameMatcher) != len(kw):
-            raise BaseException("需要的命名变量数{%s},实际有{%s}" % (len(nameMatcher), len(kw)))
-        #先替换顺序变量
-        if args!=None:
-            for a in args:
-                value = value.replace("${}", a, 1)
-        #再替换命名变量
-        if kw!=None:
-            for k,v in kw.items():
-                # 提取value中的变量
-                # #如果变量名存在于字符串中，则进行替换
-                if k in nameMatcher:
-                    value=value.replace("${%s}" % k,str(v))
+        value.replace_var(*args, **kw)
         return value
 
     def __put_android_resource_infor(self,key,value):

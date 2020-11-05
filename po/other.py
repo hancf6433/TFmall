@@ -58,7 +58,7 @@ class Other(page.Page):
         self._startTFAnYi()
         # 等待【主界面】
         homeUi = g().get_resource_infor('主页面导航栏第一个按钮安逸')
-        self._wait_ui_apper(homeUi)
+        self._wait_ui_appear(homeUi)
         # 点击通讯录
         self._click(g().get_resource_infor('主页面导航栏第二个按钮通讯录'))
         from po.contact import Contact
@@ -75,7 +75,7 @@ class Other(page.Page):
         self._startTFAnYi()
         # 等待【主界面】
         homeUi = g().get_resource_infor('主页面导航栏第一个按钮安逸')
-        self._wait_ui_apper(homeUi)
+        self._wait_ui_appear(homeUi)
         # 点击我的
         self._click(g().get_resource_infor('主页面导航栏第五个按钮我的'))
         # 点击设置
@@ -96,7 +96,7 @@ class Other(page.Page):
         self._startTFAnYi()
         # 等待【主界面】
         homeUi = g().get_resource_infor('主页面导航栏第一个按钮安逸')
-        self._wait_ui_apper(homeUi)
+        self._wait_ui_appear(homeUi)
         # 点击我的应用
         self._click(g().get_resource_infor('主页面导航栏第三个按钮我的应用'))
         # 点击智能考勤
@@ -120,7 +120,7 @@ class Other(page.Page):
         self._startTFAnYi()
         # 等待【主界面】
         homeUi = g().get_resource_infor('主页面导航栏第一个按钮安逸')
-        self._wait_ui_apper(homeUi)
+        self._wait_ui_appear(homeUi)
         # 点击我的应用
         self._click(g().get_resource_infor('主页面导航栏第三个按钮我的应用'))
         # 点击信用卡
@@ -150,7 +150,7 @@ class Other(page.Page):
         self._startTFAnYi()
         # 等待【主界面】
         homeUi = g().get_resource_infor('主页面导航栏第一个按钮安逸')
-        self._wait_ui_apper(homeUi)
+        self._wait_ui_appear(homeUi)
         # 点击我的应用
         self._click(g().get_resource_infor('主页面导航栏第三个按钮我的应用'))
         # 点击OA
@@ -161,7 +161,7 @@ class Other(page.Page):
             # 点击信用卡
             self._click(g().get_resource_infor('我的应用OA'))
         # 等待OA首页
-        self._wait_ui_apper(g().get_resource_infor('OA首页'))
+        self._wait_ui_appear(g().get_resource_infor('OA首页'))
         from po.oa import OA
         return OA()
 
@@ -191,7 +191,7 @@ class Other(page.Page):
         self._startTFAnYi()
         # 等待【主界面】
         homeUi = g().get_resource_infor('主页面导航栏第一个按钮安逸')
-        self._wait_ui_apper(homeUi)
+        self._wait_ui_appear(homeUi)
         # 点击我的应用
         self._click(g().get_resource_infor('主页面导航栏第三个按钮我的应用'))
 
@@ -206,7 +206,7 @@ class Other(page.Page):
         self._startTFAnYi()
         # 等待【主界面】
         homeUi = g().get_resource_infor('主页面导航栏第一个按钮安逸')
-        self._wait_ui_apper(homeUi)
+        self._wait_ui_appear(homeUi)
         # 点击我的应用
         self._click(g().get_resource_infor('主页面导航栏第四个按钮工作圈'))
 

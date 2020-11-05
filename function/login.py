@@ -63,7 +63,7 @@ class Login(page.Page):
         self._wait_ui_appear(g().get_resource_infor('手机银行首页定位按钮'))  # 手机银行首页
         time.sleep(3)
         #self._click(g().get_resource_infor('手机银行首页退出按钮'))
-        self._click((0.909, 2063 / 2244))        #点击手机银行主页面“我的”按钮
+        self._click(g().get_resource_infor("手机银行我的按钮"))        #点击手机银行主页面“我的”按钮
 
         # loginUi = g().get_resource_infor('登录页面手机号')  # 未登录-有手机号
         # welcomeLoginUi = g().get_resource_infor("登录页面欢迎回来")  # 未登录-欢迎回来

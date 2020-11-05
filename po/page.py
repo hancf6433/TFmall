@@ -12,6 +12,7 @@ from airtest.core.cv import Template
 from common.core import BasePorl
 from common.globall import g
 from common.tools import ui, tools
+from common.ui import Coordinate, Picture
 
 
 class Page(BasePorl):
@@ -406,27 +407,27 @@ class Page(BasePorl):
                 posKey=key.lower()
                 pos=type.get(posKey)
                 if pos:
-                    self._click((pos[0]/screenSize[0],pos[1]/screenSize[1]))
+                    self._click(Coordinate("匿名","{}/{},{}/{}".format(str(pos[0]),str(screenSize[0]),str(pos[1]),str(screenSize[1]))))
                     return
         #针对图像的点击
         board = keyboard.get("图像识别")
         if key=="删除":
             #删除键特殊处理
-            if self._exists(Template(board.get("灰删除"))):
-                self._click(Template(board.get("灰删除")))
+            if self._exists(Picture("匿名",board.get("灰删除"))):
+                self._click(Picture("匿名",board.get("灰删除")))
             else:
-                self._click(Template(board.get("黄删除")))
+                self._click(Picture("匿名",board.get("黄删除")))
             return
         elif key=="大写锁定":
-            if self._exists(Template(board.get("大写锁定锁"))):
-                self._click(Template(board.get("大写锁定锁")))
+            if self._exists(Picture("匿名",board.get("大写锁定锁"))):
+                self._click(Picture("匿名",board.get("大写锁定锁")))
             else:
-                self._click(Template(board.get("大写锁定解")))
+                self._click(Picture("匿名",board.get("大写锁定解")))
             return
         pictureKey=board.get(key)
         if not pictureKey:
             raise BaseException("还未配置此键的图像识别：{%s}" % key)
-        self._click(Template(pictureKey))
+        self._click(Picture("匿名",pictureKey))
 
     @ui('page')
     def _inputPwdByNew(self, text):
@@ -509,12 +510,12 @@ class Page(BasePorl):
         :return:
         '''
         self._flushPocoUiTree()
-        self._wait_ui_apper(searchUi)
+        self._wait_ui_appear(searchUi)
         self._click(searchUi)
         self._text(searchText,enter=False)
         if searchButton:
             self._click(searchButton)
-        self._wait_ui_apper(clickUi)
+        self._wait_ui_appear(clickUi)
         self._click(clickUi)
         time.sleep(1)
 
@@ -598,15 +599,16 @@ class Page(BasePorl):
         :param payPwd:支付密码
         :return:
         '''
-        self._wait_ui_apper(g().get_resource_infor('立即付款按钮'))
+        self._wait_ui_appear(g().get_resource_infor('立即付款按钮'))
         #获取本次支付金额
         # 点击立即付款
         self._click(g().get_resource_infor('立即付款按钮'))
         # 等待圈圈消失
         self._waitCicleDisapper()
         # 输入支付密码
-        self._wait_ui_apper(g().get_resource_infor('支付密码输入框'))
+        self._wait_ui_appear(g().get_resource_infor('支付密码输入框'))
         self._inputPwdForNumber(payPwd)
+
 
     @ui("page")
     def _payingByTipsConfirmPayment(self,payPwd:str):
@@ -625,9 +627,9 @@ class Page(BasePorl):
             self._click(apperUi)
         # 等待圈圈消失
         self._waitCicleDisapper()
-        self._wait_ui_apper(g().get_resource_infor('支付密码输入框'))
+        self._wait_ui_appear(g().get_resource_infor('支付密码输入框'))
         # 输入支付密码
-        self._wait_ui_apper(g().get_resource_infor('支付密码输入框'))
+        self._wait_ui_appear(g().get_resource_infor('支付密码输入框'))
         self._inputPwdForNumber(payPwd)
         if "日终" in self._getTipsContent():
             raise BaseException("弹出提示：{%s}" % self._getTipsContent())

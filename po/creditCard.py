@@ -23,7 +23,7 @@ class CreditCard(page.Page):
         :return: 查看信用卡首页
         '''
         # 等待首页
-        self._wait_ui_apper(g().get_resource_infor('信用卡首页'))
+        self._wait_ui_appear(g().get_resource_infor('信用卡首页'))
         self._performAssert('断言查看信用卡首页成功',assertDict)
         self._click_back()
 
@@ -34,7 +34,7 @@ class CreditCard(page.Page):
         :return: 查看信用卡二维码
         '''
         # 等待首页
-        self._wait_ui_apper(g().get_resource_infor('信用卡首页'))
+        self._wait_ui_appear(g().get_resource_infor('信用卡首页'))
         self._performAssert('断言查看信用卡二维码成功', assertDict)
         self._click_back()
 
@@ -45,7 +45,7 @@ class CreditCard(page.Page):
         :return: 查看抢单列表
         '''
         # 等待首页
-        self._wait_ui_apper(g().get_resource_infor('信用卡首页'))
+        self._wait_ui_appear(g().get_resource_infor('信用卡首页'))
         # 点击抢单
         self._click(g().get_resource_infor('信用卡抢单按钮'))
         self._performAssert('断言查看抢单列表成功',assertDict)
@@ -59,7 +59,7 @@ class CreditCard(page.Page):
         :return: 搜索抢单客户
         '''
         # 等待首页
-        self._wait_ui_apper(g().get_resource_infor('信用卡首页'))
+        self._wait_ui_appear(g().get_resource_infor('信用卡首页'))
         # 点击抢单
         self._click(g().get_resource_infor('信用卡抢单按钮'))
         # 点击搜索图标
@@ -81,7 +81,7 @@ class CreditCard(page.Page):
         :return: 查看我的待办
         '''
         # 等待首页
-        self._wait_ui_apper(g().get_resource_infor('信用卡首页'))
+        self._wait_ui_appear(g().get_resource_infor('信用卡首页'))
         # 点击我的待办
         self._click(g().get_resource_infor('信用卡我的待办按钮'))
         self._performAssert('断言查看我的待办成功',assertDict)
@@ -94,7 +94,7 @@ class CreditCard(page.Page):
         :return:  查看专属客户面签列表
         '''
         # 等待首页
-        self._wait_ui_apper(g().get_resource_infor('信用卡首页'))
+        self._wait_ui_appear(g().get_resource_infor('信用卡首页'))
         # 点击我的待办
         self._click(g().get_resource_infor('信用卡我的待办按钮'))
         # 点击面签
@@ -110,7 +110,7 @@ class CreditCard(page.Page):
         :return: 搜索专属待面签客户
         '''
         # 等待首页
-        self._wait_ui_apper(g().get_resource_infor('信用卡首页'))
+        self._wait_ui_appear(g().get_resource_infor('信用卡首页'))
         # 点击我的待办
         self._click(g().get_resource_infor('信用卡我的待办按钮'))
         # 点击面签
@@ -134,7 +134,7 @@ class CreditCard(page.Page):
         :return: 查看非专属客户面签页
         '''
         # 等待首页
-        self._wait_ui_apper(g().get_resource_infor('信用卡首页'))
+        self._wait_ui_appear(g().get_resource_infor('信用卡首页'))
         # 点击我的待办
         self._click(g().get_resource_infor('信用卡我的待办按钮'))
         # 点击面签
@@ -152,7 +152,7 @@ class CreditCard(page.Page):
         :return: 搜索非专属待面签客户未输入身份证
         '''
         # 等待首页
-        self._wait_ui_apper(g().get_resource_infor('信用卡首页'))
+        self._wait_ui_appear(g().get_resource_infor('信用卡首页'))
         # 点击我的待办
         self._click(g().get_resource_infor('信用卡我的待办按钮'))
         # 点击面签
@@ -176,7 +176,7 @@ class CreditCard(page.Page):
         :return: 搜索非专属待面签客户正确身份证
         '''
         # 等待首页
-        self._wait_ui_apper(g().get_resource_infor('信用卡首页'))
+        self._wait_ui_appear(g().get_resource_infor('信用卡首页'))
         # 点击我的待办
         self._click(g().get_resource_infor('信用卡我的待办按钮'))
         # 点击面签
@@ -201,7 +201,7 @@ class CreditCard(page.Page):
         :return: 查看我的补件列表
         '''
         # 等待首页
-        self._wait_ui_apper(g().get_resource_infor('信用卡首页'))
+        self._wait_ui_appear(g().get_resource_infor('信用卡首页'))
         # 点击我的待办
         self._click(g().get_resource_infor('信用卡我的待办按钮'))
         # 点击补件
@@ -217,7 +217,7 @@ class CreditCard(page.Page):
         :return: 搜索补件客户
         '''
         # 等待首页
-        self._wait_ui_apper(g().get_resource_infor('信用卡首页'))
+        self._wait_ui_appear(g().get_resource_infor('信用卡首页'))
         # 点击我的待办
         self._click(g().get_resource_infor('信用卡我的待办按钮'))
         # 点击补件
@@ -240,7 +240,7 @@ class CreditCard(page.Page):
         :return: 查看帮助列表
         '''
         # 等待首页
-        self._wait_ui_apper(g().get_resource_infor('信用卡首页'))
+        self._wait_ui_appear(g().get_resource_infor('信用卡首页'))
         # 点击帮助
         self._click(g().get_resource_infor('帮助按钮'))
         self._performAssert('断言查看帮助列表成功',assertDict)
@@ -253,7 +253,7 @@ class CreditCard(page.Page):
         :return: 查看我的客户
         '''
         # 等待首页
-        self._wait_ui_apper(g().get_resource_infor('信用卡首页'))
+        self._wait_ui_appear(g().get_resource_infor('信用卡首页'))
         # 点击我的客户
         self._click(g().get_resource_infor('我的客户按钮'))
         self._performAssert('断言查看我的客户成功',assertDict)
@@ -266,7 +266,7 @@ class CreditCard(page.Page):
         :return: 查看申请进度查询列表
         '''
         # 等待首页
-        self._wait_ui_apper(g().get_resource_infor('信用卡首页'))
+        self._wait_ui_appear(g().get_resource_infor('信用卡首页'))
         # 点击我的客户
         self._click(g().get_resource_infor('我的客户按钮'))
         # 点击申请进度
@@ -282,7 +282,7 @@ class CreditCard(page.Page):
         :return: 搜索客户申请进度
         '''
         # 等待首页
-        self._wait_ui_apper(g().get_resource_infor('信用卡首页'))
+        self._wait_ui_appear(g().get_resource_infor('信用卡首页'))
         # 点击我的客户
         self._click(g().get_resource_infor('我的客户按钮'))
         # 点击申请进度
@@ -305,7 +305,7 @@ class CreditCard(page.Page):
         :return: 查看客户管理列表
         '''
         # 等待首页
-        self._wait_ui_apper(g().get_resource_infor('信用卡首页'))
+        self._wait_ui_appear(g().get_resource_infor('信用卡首页'))
         # 点击我的客户
         self._click(g().get_resource_infor('我的客户按钮'))
         # 点击客户管理
@@ -321,7 +321,7 @@ class CreditCard(page.Page):
         :return: 搜索客户管理列表用户
         '''
         # 等待首页
-        self._wait_ui_apper(g().get_resource_infor('信用卡首页'))
+        self._wait_ui_appear(g().get_resource_infor('信用卡首页'))
         # 点击我的客户
         self._click(g().get_resource_infor('我的客户按钮'))
         # 点击客户管理
@@ -329,7 +329,7 @@ class CreditCard(page.Page):
         # 点击搜索图标
         self._click(g().get_resource_infor('客户管理列表搜索图标'))
         # 点击搜索输入框
-        self._wait_ui_apper(g().get_resource_infor('搜索输入框'))
+        self._wait_ui_appear(g().get_resource_infor('搜索输入框'))
         self._click(g().get_resource_infor('搜索输入框'))
         self._text(searchContent)
         # 点击搜索
@@ -345,7 +345,7 @@ class CreditCard(page.Page):
         :return: 查看客户管理成功核发未激活列表
         '''
         # 等待首页
-        self._wait_ui_apper(g().get_resource_infor('信用卡首页'))
+        self._wait_ui_appear(g().get_resource_infor('信用卡首页'))
         # 点击我的客户
         self._click(g().get_resource_infor('我的客户按钮'))
         # 点击客户管理
@@ -363,7 +363,7 @@ class CreditCard(page.Page):
         :return: 查看客户管理逾期列表
         '''
         # 等待首页
-        self._wait_ui_apper(g().get_resource_infor('信用卡首页'))
+        self._wait_ui_appear(g().get_resource_infor('信用卡首页'))
         # 点击我的客户
         self._click(g().get_resource_infor('我的客户按钮'))
         # 点击客户管理
@@ -381,7 +381,7 @@ class CreditCard(page.Page):
         :return: 搜索非专属待面签客户，输入少于18位身份证号
         '''
         # 等待首页
-        self._wait_ui_apper(g().get_resource_infor('信用卡首页'))
+        self._wait_ui_appear(g().get_resource_infor('信用卡首页'))
         # 点击我的待办
         self._click(g().get_resource_infor('信用卡我的待办按钮'))
         # 点击面签
@@ -406,7 +406,7 @@ class CreditCard(page.Page):
         :return: 搜索非专属待面签客户，输入非数字
         '''
         # 等待首页
-        self._wait_ui_apper(g().get_resource_infor('信用卡首页'))
+        self._wait_ui_appear(g().get_resource_infor('信用卡首页'))
         # 点击我的待办
         self._click(g().get_resource_infor('信用卡我的待办按钮'))
         # 点击面签
@@ -431,7 +431,7 @@ class CreditCard(page.Page):
         :return: 查看帮助详情
         '''
         # 等待首页
-        self._wait_ui_apper(g().get_resource_infor('信用卡首页'))
+        self._wait_ui_appear(g().get_resource_infor('信用卡首页'))
         # 点击帮助
         self._click(g().get_resource_infor('帮助按钮'))
         # 点击帮助内容
@@ -447,7 +447,7 @@ class CreditCard(page.Page):
         :return: 客户管理逾期列表切换到成功核发未激活列表
         '''
         # 等待首页
-        self._wait_ui_apper(g().get_resource_infor('信用卡首页'))
+        self._wait_ui_appear(g().get_resource_infor('信用卡首页'))
         # 点击我的客户
         self._click(g().get_resource_infor('我的客户按钮'))
         # 点击客户管理

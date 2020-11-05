@@ -112,7 +112,7 @@ class OA(page.Page):
         self._click(g().get_resource_infor('接收人输入框'))
         self._text(firstReceiver)
         # 选择接收人
-        self._wait_ui_apper(g().get_resource_infor('接收人ui_test1'))
+        self._wait_ui_appear(g().get_resource_infor('接收人ui_test1'))
         self._click(g().get_resource_infor('接收人ui_test1'))
         # 点击接收人
         self._click(g().get_resource_infor('再次点击接收人输入框'))
@@ -126,7 +126,7 @@ class OA(page.Page):
         self._text(content)
         # 点击发送
         self._click(g().get_resource_infor('发送按钮'))
-        self._wait_ui_apper(g().get_resource_infor('协同待办按钮'))
+        self._wait_ui_appear(g().get_resource_infor('协同待办按钮'))
         self._performAssert('断言发送自由协同成功',assertDict)
 
     @ui("OA")
@@ -154,7 +154,7 @@ class OA(page.Page):
         self._click(g().get_resource_infor('确定按钮'))
         # 点击确认撤销
         self._click(g().get_resource_infor('撤销确定按钮'))
-        self._wait_ui_apper(g().get_resource_infor('协同已发按钮'))
+        self._wait_ui_appear(g().get_resource_infor('协同已发按钮'))
 
     @ui("OA")
     def deleteDaiFaXieTong(self,assertDict=None):
@@ -230,12 +230,12 @@ class OA(page.Page):
         # 点击OA系统业务申请表
         self._click(g().get_resource_infor('OA系统业务申请表'))
         # 点击问题描述输入框
-        self._wait_ui_apper(g().get_resource_infor('问题描述输入框'))
+        self._wait_ui_appear(g().get_resource_infor('问题描述输入框'))
         self._click(g().get_resource_infor('问题描述输入框'))
         self._text('test')
         # 点击发送
         self._click(g().get_resource_infor('发送按钮'))
-        self._wait_ui_apper(g().get_resource_infor('协同待办按钮'))
+        self._wait_ui_appear(g().get_resource_infor('协同待办按钮'))
         # 点击已发
         self._click(g().get_resource_infor('协同已发按钮'))
         self._performAssert('断言发送表单协同成功',assertDict)
@@ -262,7 +262,7 @@ class OA(page.Page):
         self._click(g().get_resource_infor('关闭按钮'))
         # 点击保存到待发
         self._click(g().get_resource_infor('保存到待发按钮'))
-        self._wait_ui_apper(g().get_resource_infor('协同待办按钮'))
+        self._wait_ui_appear(g().get_resource_infor('协同待办按钮'))
         # 点击待发
         self._click(g().get_resource_infor('协同待发按钮'))
         self._performAssert('断言协同保存待发成功',assertDict)
@@ -375,7 +375,7 @@ class OA(page.Page):
         # self._text('测试转发协同')
         # 点击发送
         self._click(g().get_resource_infor('转发协同发送按钮'))
-        self._wait_ui_apper(g().get_resource_infor('协同待办按钮'))
+        self._wait_ui_appear(g().get_resource_infor('协同待办按钮'))
         # 点击已发
         self._click(g().get_resource_infor('协同已发按钮'))
         self._performAssert('断言转发待办协同成功',assertDict)
@@ -412,7 +412,7 @@ class OA(page.Page):
         self._click(g().get_resource_infor('取回按钮'))
         # 点击否，重新处理
         self._click(g().get_resource_infor('重新处理按钮'))
-        self._wait_ui_apper(g().get_resource_infor('协同处理按钮'))
+        self._wait_ui_appear(g().get_resource_infor('协同处理按钮'))
         self._click_back()
         # 点击待办
         self._click(g().get_resource_infor('协同待办按钮'))
@@ -492,7 +492,7 @@ class OA(page.Page):
         # self._text('测试转发协同')
         # 点击发送
         self._click(g().get_resource_infor('转发协同发送按钮'))
-        self._wait_ui_apper(g().get_resource_infor('协同待办按钮'))
+        self._wait_ui_appear(g().get_resource_infor('协同待办按钮'))
         # 点击已发
         self._click(g().get_resource_infor('协同已发按钮'))
         self._performAssert('断言转发已办协同成功',assertDict)
@@ -510,7 +510,7 @@ class OA(page.Page):
         if self._exists(g().get_resource_infor('知道了提示语')):
             self._click(g().get_resource_infor('知道了提示语'))
         # 点击流程
-        self._wait_ui_apper(g().get_resource_infor('流程按钮'))
+        self._wait_ui_appear(g().get_resource_infor('流程按钮'))
         self._click(g().get_resource_infor('流程按钮'))
         # 点击催办
         self._click(g().get_resource_infor('催办按钮'))
@@ -581,7 +581,7 @@ class OA(page.Page):
         # 点击归档
         self._click(g().get_resource_infor('归档按钮'))
         # 点击我的文档
-        self._wait_ui_apper(g().get_resource_infor('我的文档按钮'))
+        self._wait_ui_appear(g().get_resource_infor('我的文档按钮'))
         self._click(g().get_resource_infor('我的文档按钮'))
         # 点击确定
         self._click(g().get_resource_infor('归档确定按钮'))
@@ -630,7 +630,7 @@ class OA(page.Page):
         # 点击编辑
         self._click(g().get_resource_infor('编辑按钮'))
         # 点击问题描述输入框
-        self._wait_ui_apper(g().get_resource_infor('问题描述输入框'))
+        self._wait_ui_appear(g().get_resource_infor('问题描述输入框'))
         self._click(g().get_resource_infor('问题描述输入框'))
         self._text('test')
         # 点击发送
@@ -676,7 +676,7 @@ class OA(page.Page):
         # 点击新闻
         self._click(g().get_resource_infor('新闻按钮'))
         # 点击搜索
-        self._wait_ui_apper(g().get_resource_infor('搜索按钮'))
+        self._wait_ui_appear(g().get_resource_infor('搜索按钮'))
         self._click(g().get_resource_infor('搜索按钮'))
         # 点击搜索框
         self._click(g().get_resource_infor('新闻搜索输入框'))
@@ -696,7 +696,7 @@ class OA(page.Page):
         # 点击新闻
         self._click(g().get_resource_infor('新闻按钮'))
         # 点击搜索
-        self._wait_ui_apper(g().get_resource_infor('搜索按钮'))
+        self._wait_ui_appear(g().get_resource_infor('搜索按钮'))
         self._click(g().get_resource_infor('搜索按钮'))
         # 点击搜索框
         self._click(g().get_resource_infor('新闻搜索输入框'))
@@ -867,7 +867,7 @@ class OA(page.Page):
         # 点击公文
         self._click(g().get_resource_infor('公文按钮'))
         # 点击要撤销的公文
-        self._wait_ui_apper(g().get_resource_infor("撤销的公文"))
+        self._wait_ui_appear(g().get_resource_infor("撤销的公文"))
         self._click(g().get_resource_infor('撤销的公文'))
         # 点击菜单选项
         self._click(g().get_resource_infor('菜单栏按钮'))
@@ -951,8 +951,8 @@ class OA(page.Page):
         self._click(g().get_resource_infor('要加签的公文'))
         # 点击处理
         self._click(g().get_resource_infor('公文处理按钮'))
-        self._wait_ui_apper(g().get_resource_infor('公文菜单栏'))
-        self._wait_ui_apper(g().get_resource_infor('加签按钮'), lambda ui: ui._click(g().get_resource_infor('公文菜单栏'),focus=(0.7,0.5)))
+        self._wait_ui_appear(g().get_resource_infor('公文菜单栏'))
+        self._wait_ui_appear(g().get_resource_infor('加签按钮'), lambda ui: ui._click(g().get_resource_infor('公文菜单栏'),focus=(0.7,0.5)))
         # 点击加签
         self._click(g().get_resource_infor('加签按钮'))
         # 点击加签人员
@@ -1001,7 +1001,7 @@ class OA(page.Page):
         # 点击提交
         self._click(g().get_resource_infor('提交按钮'))
         # 点击收文
-        self._wait_ui_apper((g().get_resource_infor('收文按钮')))
+        self._wait_ui_appear((g().get_resource_infor('收文按钮')))
         self._click(g().get_resource_infor('收文按钮'))
         # 点击已办
         self._click(g().get_resource_infor('已办按钮'))
@@ -1088,10 +1088,10 @@ class OA(page.Page):
         # 点击发起表单
         self._click(g().get_resource_infor('发起表单'))
         # 点击搜索
-        self._wait_ui_apper(g().get_resource_infor('表单搜索图标'))
+        self._wait_ui_appear(g().get_resource_infor('表单搜索图标'))
         self._click(g().get_resource_infor('表单搜索图标'),focus=(0.8,0.5))
         # 点击搜索框
-        self._wait_ui_apper(g().get_resource_infor('搜索框'))
+        self._wait_ui_appear(g().get_resource_infor('搜索框'))
         self._click(g().get_resource_infor('搜索框'))
         self._text(searchContent)
         self._performAssert('断言搜索表单模板成功',assertDict)
@@ -1113,7 +1113,7 @@ class OA(page.Page):
         # 点击OA系统业务申请表
         self._click(g().get_resource_infor('OA系统业务申请表'))
         # 点击问题描述输入框
-        self._wait_ui_apper(g().get_resource_infor('问题描述输入框'))
+        self._wait_ui_appear(g().get_resource_infor('问题描述输入框'))
         self._click(g().get_resource_infor('问题描述输入框'))
         self._text('test')
         # 点击发送
@@ -1148,8 +1148,8 @@ class OA(page.Page):
         self._click(g().get_resource_infor('要加签的公文'))
         # 点击处理
         self._click(g().get_resource_infor('公文处理按钮'))
-        self._wait_ui_apper(g().get_resource_infor('公文菜单栏'))
-        self._wait_ui_apper(g().get_resource_infor('知会按钮'), lambda ui: ui._click(g().get_resource_infor('公文菜单栏'), focus=(0.7, 0.5)))
+        self._wait_ui_appear(g().get_resource_infor('公文菜单栏'))
+        self._wait_ui_appear(g().get_resource_infor('知会按钮'), lambda ui: ui._click(g().get_resource_infor('公文菜单栏'), focus=(0.7, 0.5)))
         # 点击加签
         self._click(g().get_resource_infor('知会按钮'))
         # 点击要知会的人员
@@ -1176,7 +1176,7 @@ class OA(page.Page):
         self._click(g().get_resource_infor('协同处理按钮'))
         # 点击协同菜单栏
         self._click(g().get_resource_infor('协同菜单栏'))
-        self._wait_ui_apper(g().get_resource_infor('回退按钮'), lambda ui: ui._click(g().get_resource_infor('协同菜单栏')))
+        self._wait_ui_appear(g().get_resource_infor('回退按钮'), lambda ui: ui._click(g().get_resource_infor('协同菜单栏')))
         # 点击回退
         self._click(g().get_resource_infor('回退按钮'))
         # 点击确定
@@ -1199,7 +1199,7 @@ class OA(page.Page):
         self._click(g().get_resource_infor('协同处理按钮'))
         # 点击协同菜单栏
         self._click(g().get_resource_infor('协同菜单栏'))
-        self._wait_ui_apper(g().get_resource_infor('指定回退按钮'), lambda ui: ui._click(g().get_resource_infor('协同菜单栏')))
+        self._wait_ui_appear(g().get_resource_infor('指定回退按钮'), lambda ui: ui._click(g().get_resource_infor('协同菜单栏')))
         # 点击回退
         self._click(g().get_resource_infor('指定回退按钮'))
         # 点击回退人员
@@ -1226,7 +1226,7 @@ class OA(page.Page):
         self._click(g().get_resource_infor('协同处理按钮'))
         # 点击协同菜单栏
         self._click(g().get_resource_infor('协同菜单栏'))
-        self._wait_ui_apper(g().get_resource_infor('移交按钮'), lambda ui: ui._click(g().get_resource_infor('协同菜单栏')))
+        self._wait_ui_appear(g().get_resource_infor('移交按钮'), lambda ui: ui._click(g().get_resource_infor('协同菜单栏')))
         # 点击移交
         self._click(g().get_resource_infor('移交按钮'))
         # 点击移交人员
@@ -1252,7 +1252,7 @@ class OA(page.Page):
         self._click(g().get_resource_infor('协同处理按钮'))
         # 点击协同菜单栏
         self._click(g().get_resource_infor('协同菜单栏'))
-        self._wait_ui_apper(g().get_resource_infor('终止按钮'), lambda ui: ui._click(g().get_resource_infor('协同菜单栏')))
+        self._wait_ui_appear(g().get_resource_infor('终止按钮'), lambda ui: ui._click(g().get_resource_infor('协同菜单栏')))
         # 点击回退
         self._click(g().get_resource_infor('终止按钮'))
         # 点击确定

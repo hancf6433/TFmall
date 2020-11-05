@@ -77,7 +77,7 @@ class Contact(page.Page):
         self._click(g().get_resource_infor('加为联系人按钮'))
         time.sleep(1)
         contact=g().get_resource_infor('主页面导航栏第二个按钮通讯录')
-        self._wait_ui_apper(contact, lambda ui: ui._click_back())
+        self._wait_ui_appear(contact, lambda ui: ui._click_back())
         self._performAssert('断言通讯录添加联系人成功',assertDict)
 
     @ui("AnYi","Contact")
@@ -96,7 +96,7 @@ class Contact(page.Page):
         self._click(g().get_resource_infor('加为联系人按钮'))
         time.sleep(1)
         contact = g().get_resource_infor('主页面导航栏第二个按钮通讯录')
-        self._wait_ui_apper(contact, lambda ui: ui._click_back())
+        self._wait_ui_appear(contact, lambda ui: ui._click_back())
         self._performAssert('断言公司通讯录添加联系人成功', assertDict)
         # 点击已添加的联系人
         self._click(g().get_resource_infor('已添加的联系人'))
@@ -144,11 +144,11 @@ class Contact(page.Page):
         # 点击群组图标
         self._click(g().get_resource_infor('群聊页右上角群组图标'))
         # 等待群管理图标出现
-        self._wait_ui_apper(g().get_resource_infor('群管理按钮'))
+        self._wait_ui_appear(g().get_resource_infor('群管理按钮'))
         # 点击群管理
         self._click(g().get_resource_infor('群管理按钮'))
         # 等待解散群聊图标出现
-        self._wait_ui_apper(g().get_resource_infor('群管理页解散群聊按钮'))
+        self._wait_ui_appear(g().get_resource_infor('群管理页解散群聊按钮'))
         # 点击解散群聊
         self._click(g().get_resource_infor('群管理页解散群聊按钮'))
         # 点击解散群聊确认框确认
@@ -207,7 +207,7 @@ class Contact(page.Page):
         time.sleep(2)
         self._performAssert('断言向通讯录联系人发送短信成功',assertDict)
         contact=g().get_resource_infor('主页面导航栏第二个按钮通讯录')
-        self._wait_ui_apper(contact, lambda ui: ui._click_back())
+        self._wait_ui_appear(contact, lambda ui: ui._click_back())
 
     @ui("AnYi", "Contact")
     def viewCompanyContact(self,assertDict):
@@ -218,7 +218,7 @@ class Contact(page.Page):
         # 点击公司通讯录
         self._click(g().get_resource_infor('通讯录页公司通讯录按钮'))
         # 等待进入通讯录页
-        self._wait_ui_apper(g().get_resource_infor('公司通讯录详情页'))
+        self._wait_ui_appear(g().get_resource_infor('公司通讯录详情页'))
         self._performAssert('断言查看公司通讯录页成功', assertDict)
         self._click_back()
 
@@ -428,7 +428,7 @@ class Contact(page.Page):
         self._click(g().get_resource_infor('加为联系人按钮'))
         time.sleep(1)
         contact = g().get_resource_infor('主页面导航栏第二个按钮通讯录')
-        self._wait_ui_apper(contact, lambda ui: ui._click_back())
+        self._wait_ui_appear(contact, lambda ui: ui._click_back())
         # 点击已添加的联系人
         self._click(g().get_resource_infor('已添加的联系人'))
         self._performAssert('断言添加联系人后不能进行再次添加成功',assertDict)

@@ -5,33 +5,34 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.w3school.com.cn ../xsd/ui.xsd">
     <!--APP包名-->
-    <ui name="app包名">com.ionicframework.cgbank122507</ui>
+    <key name="app包名">com.ionicframework.cgbank122507</key>
+
+    <coordinate name="手机银行我的按钮">954/1080, 2060/2244</coordinate>
 
     <!--未登录-主页面-->
-    <ui name="手机银行主导航界面我的按钮">poot(text="我的")</ui>
+    <poot name="手机银行主导航界面我的按钮">(text="我的")</poot>
 
     <!--已登录页面-->
-    <ui name="我的页面设置按钮">poot(text="设置")</ui>
-    <ui name="我的页面退出登录按钮">poot(resource_id="com.ionicframework.cgbank122507:id/btn_login")</ui>
-    <ui name="我的页面确定退出按钮">poot(text="确定")</ui>
+    <poot name="我的页面设置按钮">(text="设置")</poot>
+    <poot name="我的页面退出登录按钮">(resource_id="com.ionicframework.cgbank122507:id/btn_login")</poot>
+    <poot name="我的页面确定退出按钮">(text="确定")</poot>
 
 
     <!--未登录-有手机号页面-->
-    <ui name="登录页面已存账号">poot(resource_id="com.ionicframework.cgbank122507:id/tv_account")</ui>
-    <ui name="登录页面更多登录按钮">poot(text="更多登录")</ui>
-    <ui name="登录页面切换账户按钮">poot(text="切换账户")</ui>
+    <poot name="登录页面已存账号">(resource_id="com.ionicframework.cgbank122507:id/tv_account")</poot>
+    <poot name="登录页面更多登录按钮">(text="更多登录")</poot>
+    <poot name="登录页面切换账户按钮">(text="切换账户")</poot>
 
     <!--未登录-欢迎回来页面-->
-    <ui name="登录页面欢迎回来">poot(text="手机号/熊猫金融账号")</ui>
+    <poot name="登录页面欢迎回来">(text="手机号/熊猫金融账号")</poot>
 
     <!--账号，密码，协议-->
-    <ui name="登录页用户名输入框">poot(resource_id="com.ionicframework.cgbank122507:id/tv_hint_account")</ui>
-    <ui name="登录页密码输入框">poot(resource_id="com.ionicframework.cgbank122507:id/tv_hint_pwd")</ui>
-    <ui name="登录页同意协议按钮">poot(resource_id="com.ionicframework.cgbank122507:id/cb_agree")</ui>
-    <ui name="登录页登录按钮">poot(text="登录")</ui>
+    <poot name="登录页用户名输入框">(resource_id="com.ionicframework.cgbank122507:id/tv_hint_account")</poot>
+    <poot name="登录页密码输入框">(resource_id="com.ionicframework.cgbank122507:id/tv_hint_pwd")</poot>
+    <poot name="登录页同意协议按钮">(resource_id="com.ionicframework.cgbank122507:id/cb_agree")</poot>
+    <poot name="登录页登录按钮">(text="登录")</poot>
 
     <!--登录成功后提示信息不再提醒-->
-    <ui name="登录成功不再提醒按钮">poot(text="不再提醒")</ui>
-
+    <poot name="登录成功不再提醒按钮">(text="不再提醒")</poot>
 
 </page>

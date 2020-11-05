@@ -9,7 +9,7 @@ from po.mall import *
 from common.runer import (BaseCase, testLog)
 from airtest.core.helper import log
 from function.login import *
-from airtest.core.helper import log
+from common.core import *
 
 
 class Test(BaseCase):
@@ -49,12 +49,31 @@ class Test(BaseCase):
 
         # 构造断言数据
         assertDict2 = {
-            "断言搜索商品成功": '''
-                        #断言搜索商品是否成功
-                        self.assert_ui_exists(g().get_resource_infor('搜索有结果'),"断言搜索商品成功")
-                    '''
+            "断言进入商品详情页成功": '''
+                       #断言进入商品详情页成功
+                       self.assert_ui_exists(g().get_resource_infor('商品详情页加入购物车按钮'),"断言进入商品详情页成功")
+                    ''',
+            "断言进入消息页面成功": '''
+                               #断言进入消息页面成功
+                               self.assert_ui_exists(g().get_resource_infor('消息页面'),"断言进入消息页面成功")
+                           ''',
+            "断言进入搜索页面成功": '''
+                               #断言进入搜索页面成功
+                               self.assert_ui_exists(g().get_resource_infor('商城搜索页面'),"断言进入搜索页面成功")
+                           ''',
+            "断言进入首页页面成功": '''
+                       #断言进入首页页面成功
+                       self.assert_ui_exists(g().get_resource_infor('商城首页'),"断言进入首页页面成功")
+                   '''
         }
 
         # 运行流程
         log('搜索商城商品')
-        Mall().getIntoGoodsDetail(goodName, assertDict=assertDict2)  #搜索商城商品
+        Mall().getIntoGoodsDetail(goodName, assertDict=assertDict2)  #搜索商城商品并进入商品详情页面
+
+        Mall().checkMessageInGoodsDetail(assertDict=assertDict3)   #检验商品详情页面消息按钮
+        time.sleep(2)
+        Mall().checkSearchInGoodsDetail(assertDict=assertDict4)    #检验商品详情页面搜索按钮
+        time.sleep(2)
+        Mall().checkHomepageInGoodsDetail(assertDict=assertDict5)  #检验商品详情页面首页按钮
+

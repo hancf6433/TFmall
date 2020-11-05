@@ -57,4 +57,4 @@ class Test(BaseCase):
 
         # 运行流程
         log('搜索商城商品')
-        Mall().searchGood(goodName, assertDict=assertDict2)  #搜索商城商品
+        Mall().searchGoods(goodName, assertDict=assertDict2)  #搜索商城商品

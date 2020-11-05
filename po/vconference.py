@@ -21,7 +21,7 @@ class vconference(page.Page):
             # 点击视频客服
             self._click(g().get_resource_infor('我的应用视频会议'))
         # 等待视频会议首页
-        self._wait_ui_apper(g().get_resource_infor('加入视频会议'))
+        self._wait_ui_appear(g().get_resource_infor('加入视频会议'))
 
     @ui("vconference")
     def enterVconfrenceFail(self,assertDict=None):
