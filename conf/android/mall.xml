@@ -19,7 +19,14 @@
     <ui name="搜索页面店铺按钮">poot(text="店铺")</ui>
     <ui name="搜索商品成功商品列表综合按钮">poot(text="综合")</ui>
     <ui name="商品详情页立即购买按钮">poot(text="立即购买")</ui>
-    <ui name="商平详情页加入购物车按钮">poot(text="加入购物车")</ui>
+    <ui name="商品详情页加入购物车按钮">poot(text="加入购物车")</ui>
+    <ui name="商品详情页客服按钮">poot(text="客服")</ui>
+    <ui name="商品详情页右上角首页按钮">poot(text="首页")</ui>
+    <ui name="商城首页">poot(text="搜索商品名称/店铺名称")</ui>
+    <ui name="商品详情页右上角消息按钮">poot(text="消息")</ui>
+    <ui name="消息页面">poot(text="消息")</ui>
+    <ui name="商品详情页右上角搜索按钮">poot(text="搜索")</ui>
+    <ui name="商城搜索页面">poot(text="热门搜索")</ui>
     <ui name="手机银行首页退出按钮">poot(resource_id="com.ionicframework.cgbank122507:id/iv_logout")</ui>
     
     <!--<></ui>-->

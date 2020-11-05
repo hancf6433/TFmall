@@ -10,9 +10,9 @@ class Mall(page.Page):
     '''
 
     @ui("mall")
-    def searchGoods(self, goodName, assertDict):
+    def searchGoods(self, goodName, assertDict=None):
         '''
-        :return: #搜索商品并进入商品详情页面
+        :return: #搜索商品,停留在搜索结果页面
         '''
         # self._click(g().get_resource_infor('手机银行主导航界面商城按钮'))  # 点击商城
         self._click((748/1080,2055/2244))  # 点击商城
@@ -30,7 +30,7 @@ class Mall(page.Page):
         self._wait_ui_appear(g().get_resource_infor('手机银行主导航界面商城按钮'), lambda ui: ui._click_back())
 
     @ui("mall")
-    def getIntoGoodsDetail(self, goodName, assertDict):
+    def getIntoGoodsDetail(self, goodName, assertDict=None):
         '''
         :return: #搜索商品并进入商品详情页面
         '''
@@ -42,14 +42,50 @@ class Mall(page.Page):
         self._text(goodName)
         time.sleep(3)
         self._wait_ui_appear(g().get_resource_infor("搜索结果页面排序框"))
-        self._home()
-        time.sleep(1)
-        self._startTFBank()
         time.sleep(3)
-        self._performAssert('断言搜索商品成功', assertDict)
         self._click((267 / 1080, 648 / 2244))  # 点击搜索第一个结果
-        self._wait_ui_appear(g().get_resource_infor("商平详情页加入购物车按钮"))
+        self._wait_ui_appear(g().get_resource_infor("商品详情页加入购物车按钮"))
+        time.sleep(3)
+        self._performAssert('断言进入商品详情页成功', assertDict)
 
+
+    @ui("mall")
+    def checkMessageInGoodsDetail(self, assertDict=None):
+        '''
+        :return: #检验商品详情页面消息按钮
+        '''
+        time.sleep(3)
+        self._click((1027 / 1080, 152 / 2244))  # 点击商品详情页右上角...按钮
+        time.sleep(2)
+        self._click((938 / 1080, 389 / 2244))  # 点击弹出菜单的消息按钮
+        time.sleep(2)
+        self._performAssert('断言进入消息页面成功', assertDict)
+        self._click_back()
+
+    @ui("mall")
+    def checkSearchInGoodsDetail(self, assertDict=None):
+        '''
+        :return: #检验商品详情页面搜索按钮
+        '''
+        time.sleep(3)
+        self._click((1027 / 1080, 152 / 2244))  # 点击商品详情页右上角...按钮
+        time.sleep(2)
+        self._click((938 / 1080, 522 / 2244))  # 点击弹出菜单的搜索按钮
+        time.sleep(2)
+        self._performAssert('断言进入搜索页面成功', assertDict)
+        self._click_back()
+
+    @ui("mall")
+    def checkHomepageInGoodsDetail(self, assertDict=None):
+        '''
+        :return: #检验商品详情页面首页按钮
+        '''
+        time.sleep(3)
+        self._click((1027 / 1080, 152 / 2244))  # 点击商品详情页右上角...按钮
+        time.sleep(3)
+        self._click((938 / 1080, 270 / 2244))  # 点击弹出菜单的首页按钮
+        time.sleep(2)
+        self._performAssert('断言进入首页页面成功', assertDict)
 
     @ui("AnYi")
     def scan(self, assertDict=None):
