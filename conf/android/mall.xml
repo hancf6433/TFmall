@@ -20,6 +20,7 @@
     <ui name="搜索商品成功商品列表综合按钮">poot(text="综合")</ui>
     <ui name="商品详情页立即购买按钮">poot(text="立即购买")</ui>
     <ui name="商品详情页加入购物车按钮">poot(text="加入购物车")</ui>
+    <ui name="商品详情页收藏按钮">poot(text=".*收藏")</ui>
     <ui name="商品详情页客服按钮">poot(text="客服")</ui>
     <ui name="商品详情页右上角首页按钮">poot(text="首页")</ui>
     <ui name="商城首页">poot(text="搜索商品名称/店铺名称")</ui>

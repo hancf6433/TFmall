@@ -35,7 +35,7 @@ class Mall(page.Page):
         :return: #搜索商品并进入商品详情页面
         '''
         # self._click(g().get_resource_infor('手机银行主导航界面商城按钮'))  # 点击商城
-        self._click((748 / 1080, 2055 / 2244))  # 点击商城
+        self._click((748 / 1080, 2055 / 2244))  # 点击主页面商城按钮
         self._click(g().get_resource_infor('商城首页搜索框'))
         self._wait_ui_appear(g().get_resource_infor("搜索页面搜索框"))
         self._click(g().get_resource_infor("搜索页面搜索框"))
@@ -46,6 +46,7 @@ class Mall(page.Page):
         self._click((267 / 1080, 648 / 2244))  # 点击搜索第一个结果
         self._wait_ui_appear(g().get_resource_infor("商品详情页加入购物车按钮"))
         time.sleep(3)
+        #self.assert_ui_exists(g().get_resource_infor('商品详情页加入购物车按钮'), "断言进入商品详情页成功")
         self._performAssert('断言进入商品详情页成功', assertDict)
 
 

@@ -7,6 +7,8 @@
     <!--商城页面-->
 
     <ui name="手机银行主导航界面生活">poot(resource_id="com.ionicframework.cgbank122507:id/tab_lable",text="生活")</ui>
+    <ui name="手机银行主导航界面生活" type="pic">page/a.png</ui>
+    <ui name="手机银行主导航界面生活" type="pic">(111,111)</ui>
 
     <!--<></ui>-->
     <!--<></ui>-->

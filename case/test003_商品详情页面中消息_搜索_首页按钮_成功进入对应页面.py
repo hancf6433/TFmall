@@ -51,7 +51,7 @@ class Test(BaseCase):
         assertDict2 = {
             "断言进入商品详情页成功": '''
                        #断言进入商品详情页成功
-                       self.assert_ui_exists(g().get_resource_infor('商品详情页客服按钮'),"断言进入商品详情页成功")
+                       self.assert_ui_exists(g().get_resource_infor('商品详情页加入购物车按钮'),"断言进入商品详情页成功")
                     '''
         }
 
@@ -78,7 +78,7 @@ class Test(BaseCase):
 
         # 运行流程
         log('搜索商城商品')
-        Mall().getIntoGoodsDetail(goodName, assertDict=assertDict2)  #搜索商城商品并进入商品详情页面
+        Mall().getIntoGoodsDetail(goodName, assertDict=None)  #搜索商城商品并进入商品详情页面
 
         Mall().checkMessageInGoodsDetail(assertDict=assertDict3)   #检验商品详情页面消息按钮
         time.sleep(2)
