@@ -31,8 +31,9 @@
     <coordinate name="商城按钮">748/1080,2055/2244</coordinate>
     <coordinate name="搜索第一个结果">267 / 1080, 648 / 2244</coordinate>
     <picture name="我的账户按钮图片">conf/template/tpl1604889012266.png</picture>
-    <!--<></ui>-->
-    <!--<></ui>-->
-    <!--<></ui>-->
-    <!--<></ui>-->
+    <coordinate name="购物车页面消息按钮">996 / 1080, 125 / 1920</coordinate>
+    <poot name="购物车页面编辑按钮">(text="编辑")</poot>
+    <poot name="返回到商城界面">(name="com.ionicframework.cgbank122507:id/tab_lable",text="商城")</poot>
+    <poot name="返回到我的界面">(text="我的服务")</poot>
+
 </page>

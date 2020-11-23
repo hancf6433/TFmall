@@ -769,4 +769,4 @@ def assert_contains(first,second,msg=""):
 
 
 
-BasePorl()._get_screen_size()
+BasePorl()._click_back()

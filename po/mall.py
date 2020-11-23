@@ -1,15 +1,22 @@
-from common.tools import ui, tools
+from common.tools import tools
 import time
+from common.globall import g
 from common.tools import ui
 from po import page
-from common.globall import g
-
+from common.core import *
 
 class Mall(page.Page):
     '''
     商城
     '''
-
+    @ui("mall")
+    def back(self):
+        while True:
+            if self._exists(g().get_resource_infor("商城首页购物车按钮")) or self._exists(g().get_resource_infor("返回到我的界面")):
+                break
+            else:
+                self._click_back()
+                time.sleep(2)
     @ui("mall")
     def searchGoods(self, goodName:str, assertDict=None):
         '''
@@ -96,28 +103,7 @@ class Mall(page.Page):
         '''
         #确认返回主界面
         self._wait_ui_appear(g().get_resource_infor('手机银行主导航界面商城按钮'), lambda ui: ui._click_back())
-
-
-
         self._performAssert('断言进入首页页面成功', assertDict)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     @ui("mall")
     def classificationEnquiry(self,assertDict):
@@ -127,37 +113,17 @@ class Mall(page.Page):
         self._wait_ui_appear(g().get_resource_infor("酒水饮料"))
         self._click(g().get_resource_infor("葡萄酒"))
 
-    @ui("AnYi")
-    def scan(self, assertDict=None):
-        '''
-        :return: 点击扫一扫
-        '''
-        self._click(g().get_resource_infor('安逸页面扫一扫按钮'))
-        self._performAssert('断言启动扫一扫成功', assertDict)
-        self._click_back()
-
-    @ui("AnYi")
-    def sendMessage(self, sendTo):
-        '''
-        :return: 发送消息
-        '''
-        # 点击添加
-        self._click(g().get_resource_infor('安逸页面添加按钮'))
-        # 点击添加联系人
-        self._click(g().get_resource_infor('添加联系人按钮'))
-        # 点击按姓名查找
-        self._click(g().get_resource_infor('按姓名查找按钮'))
-        # 输入姓名
-        self._click(g().get_resource_infor('按姓名查找输入框'))
-        self._text(sendTo)
-        # 点击查找
-        self._click(g().get_resource_infor('查找按钮'))
-
-        self._wait_ui_appear(g().get_resource_infor('查找用户'))
-        self._click(g().get_resource_infor('查找用户'))
-        # 点击发消息
-        time.sleep(2)
-        self._click(g().get_resource_infor('发消息按钮'))
+    @ui("mall")
+    def enterShoppingCart(self,assertDict=None):
+        """
+        商城首页进入购物车
+        """
+        self._click(g().get_resource_infor("商城首页购物车按钮"))  #点击购物车按钮
+        self._wait_ui_appear(g().get_resource_infor("购物车页面编辑按钮")) #等待编辑按钮出现
+        time.sleep(4)
+        self._click(g().get_resource_infor("购物车页面消息按钮"))
+        time.sleep(4)
+        self._performAssert('断言进入消息页面成功', assertDict)
 
     @ui("AnYi")
     def sendLinkMessage(self):
