@@ -37,7 +37,7 @@ def infowrap(fux):
         data=method
         for arg in args:
             if type(arg) in [PocoUi,PootUi,Picture,Coordinate,Key]:
-                data+="%s ," % str(arg.print)
+                data+="%s:%s ," % (str(arg.name),str(arg.print))
             else:
                 data+="%s ," % str(arg)
         for key,value in kwargs.items():
@@ -51,9 +51,7 @@ def infowrap(fux):
             result=fux(self,*args,**kwargs)
         except PocoNoSuchNodeException as e:
             # 回到桌面
-            home()
             # 再次打开app
-            self._start_app(ST.TEST_APP_PACKAGE_NAME)
             time.sleep(1)
             try:
                 result = fux(self, *args, **kwargs)
@@ -328,13 +326,13 @@ class BasePorl(object):
         '''
         self.__pre_action()
         if g().activeDevType=="IOS":
-            self._click((0.06933333333333333, 0.06296851574212893))
+            self._click(Coordinate("匿名","0.069, 0.062"))
             pass
         else:
             self._keyevent('KEYCODE_BACK')
 
     @infowrap
-    def _wait_multiple_ui_appear(self,uiList:list,timeout=ST.TIME_OUT_ABOUT_WAIT_METHOD)->Union[UIObjectProxy,Template]:
+    def _wait_multiple_ui_appear(self,uiList:list,timeout=ST.TIME_OUT_ABOUT_WAIT_METHOD)->Union[PocoUi,PootUi,Picture]:
         '''
         等待多个控件出现，并将出现的控件返回
         :param uiList: 待出现控件列表   图像识别、qs和链式调用字符串
@@ -354,11 +352,11 @@ class BasePorl(object):
             time.sleep(self.__find_time_gaps)
 
     @infowrap
-    def _swipe(self, ui1: Union[Picture,Template,str,list],ui2:Union[tuple,Template,list] = None, direction:tuple=None, focus:tuple=None,duration=0.5,**kw):
+    def _swipe(self, ui1: Union[Picture,Coordinate,PocoUi],ui2:Union[Picture,Coordinate] = None, direction:tuple=None, focus:tuple=None,duration=0.5,**kw):
         '''
         根据指定的点或者方向进行滑动
-        :param ui1: 滑动起始点\图像\poco字符串
-        :param ui2: 滑动结束点\图像
+        :param ui1: 滑动起始坐标、图像
+        :param ui2: 滑动结束坐标、图像
         :param direction: 滑动方向
         :param duration: 滑动时长
         :return:
@@ -367,35 +365,47 @@ class BasePorl(object):
         if self.__last_tree == nowUiTree:
             return True
         #校验参数
-        self.__para_check(ui1,[tuple,Template,str,list])
-        self.__para_check(ui2,[tuple,Template,list])
-        #逻辑
-        if type(ui1)==Template or type(ui2)==Template:
-            self.__last_tree = self._get_ui_tree()
-            swipe(ui1,ui2,direction,duration,**kw)
-        elif type(ui1)==str:
-            u1 = self.__poco(ui1)
-            self.__last_tree = self._get_ui_tree()
+        self.__para_check(ui1,[Picture,Coordinate,PocoUi])
+        self.__para_check(ui2,[Picture,Coordinate])
+        #同时都为图片
+        self.__last_tree = self._get_ui_tree()
+        if type(ui1)==Picture and type(ui2)==Picture:
+            swipe(ui1.getTemplate(),ui2.getTemplate(),direction,duration,**kw)
+        #同时都为坐标
+        elif type(ui1)==Coordinate and type(ui2)==Coordinate:
+            if g().isThePootUsed():
+                g().activePoot.swipe(ui1.x,ui1.y,ui2.x,ui2.y,int(duration))
+            else:
+                g().activePoco.swipe((ui1.x,ui1.y),(ui2.x,ui2.y),direction,duration)
+        #ui1为poco，方向不为空时
+        elif type(ui1)==PocoUi and direction!=None:
+            u1=self.__poco(ui1.info)
             u1.swipe(direction,focus,duration)
-        elif type(ui1) in [list,tuple] or type(ui2) in [list,tuple]:
-            self.__last_tree=self._get_ui_tree()
-            g().activePoco.swipe(ui1,ui2,direction,duration)
+        else:
+            raise BaseException("不支持的类型组合操作")
 
     @infowrap
-    def _drag_to_center(self,ui:str):
+    def _drag_to_center(self,ui:Union[PocoUi,PootUi]):
         '''
         尝试将ui拖至屏幕中央
         :param ui1:
         :return:
         '''
         #校验参数
-        self.__para_check(ui,[str])
-        if type(ui)==str:
-            u1 = self.__poco(ui)
-            u1.drag_to((0.5,0.5))
+        self.__para_check(ui,[PocoUi,PootUi])
+        if type(ui)==PocoUi:
+            u1 = self.__poco(ui.info)
+            u1.drag_to((0.5, 0.5))
+        elif type(ui)==PootUi:
+            x,y=self.__poot(ui.info).get_focus_x_y()
+            g().activePoot.swipe(x,y,0.5,0.5)
+        else:
+            raise BaseException("不支持对类型为{}的操作".format(type(ui)))
+
+
 
     @infowrap
-    def _drag(self,ui1:Union[Template,str],ui2:Union[Template,str,list,tuple],ui1focus:tuple=None,ui2focus:tuple=None,duration=2):
+    def _drag(self,ui1:Union[PocoUi,Picture,PootUi],ui2:Union[PocoUi,Picture,PootUi],ui1focus:tuple=None,ui2focus:tuple=None,duration=2):
         '''
         从ui1拖动至ui2，支持图像和poco
         :param ui1:
@@ -406,20 +416,28 @@ class BasePorl(object):
         :return:
         '''
         #校验参数
-        self.__para_check(ui2, [str, Template,list,tuple])
-        if type(ui1)==str:
-            self.__para_check(ui2,[str])
-            u1 = self.__poco(ui1)
+        self.__para_check(ui2, [PocoUi,Picture,PootUi])
+        #坐标
+        if type(ui1)==PocoUi and type(ui2)==PocoUi:
+            u1=self.__poco(ui1.info)
             self.__set_focus(u1,ui1focus)
-            u2=self.__poco(ui2)
-            self.__set_focus(u2,ui2focus)
+            u2 = self.__poco(ui2.info)
+            self.__set_focus(u2, ui2focus)
             u1.drag_to(u2, duration)
-        if type(ui1)==Template:
-            self.__para_check(ui2,[Template])
-            swipe(ui1,ui2)
+        elif type(ui1)==Picture and type(ui2)==Picture:
+            swipe(ui1.getTemplate(),ui2.getTemplate())
+        elif type(ui1)==PootUi and type(ui2)==PootUi:
+            ui1x,ui1y=self.__poot(ui1.info).get_focus_x_y(ui1focus)
+            ui2x,ui2y=self.__poot(ui2.info).get_focus_x_y(ui2focus)
+            g().activePoot.swipe(ui1x,ui1y,ui2x,ui2y,duration)
+        else:
+            raise BaseException("不支持的类型组合操作")
+
+
+
 
     @infowrap
-    def _scroll(self,ui:str=None,direction:str="vertical",percent:float=0.6,duration:float=2.0,**kw):
+    def _scroll(self,ui:[PocoUi]=None,direction:str="vertical",percent:float=0.6,duration:float=2.0,**kw):
         '''
         滚动,
         :param ui:滚动的ui
@@ -428,19 +446,21 @@ class BasePorl(object):
         :param duration:滚动时间 秒
         :return:if True 已滚动到底部
         '''
+        # 校验参数
         nowUiTree=self._get_ui_tree()
         if self.__last_tree==nowUiTree:
             return True
-        if ui!=None:
-            self.__para_check(ui,[str])
-            u = self.__poco(ui,**kw)
+        if type(ui)==PocoUi:
+            u = self.__poco(ui.info, **kw)
             u.scroll(direction, percent, duration)
-            self.__last_tree=self._get_ui_tree()
-        else:
+            self.__last_tree = self._get_ui_tree()
+        elif ui==None:
            if g().isThePootUsed():
                g().activePoot.scroll(direction=direction,percent=percent,duration=duration*1000)
            else:
                g().activePoco.scroll(direction,percent,duration)
+        else:
+            raise BaseException("不支持对类型为{}的操作".format(type(ui)))
 
     def _get_ui_tree(self):
         '''
@@ -454,20 +474,20 @@ class BasePorl(object):
             return json.dumps(ui, indent=4)
 
     @infowrap
-    def _get_pos(self,ui:str,focus:Union[tuple,list]=None,**kw):
+    def _get_pos(self,ui:PocoUi,focus:Union[tuple,list]=None,**kw):
         '''
         返回此控件的pos
         :param ui: QS字符串、POCO链式调用字符串
         :return:
         '''
         # 参数校验
-        self.__para_check(ui, [str])
+        self.__para_check(ui, [PocoUi])
         # 逻辑处理
-        u = self.__poco(ui, **kw)
+        u = self.__poco(ui.info, **kw)
         return u.get_position(focus)
 
     @infowrap
-    def _get_size(self,ui:str,**kw):
+    def _get_size(self,ui:PocoUi,**kw):
         '''
         返回控件尺寸
         :param ui:
@@ -475,9 +495,9 @@ class BasePorl(object):
         :return:
         '''
         #参数校验
-        self.__para_check(ui,[str])
+        self.__para_check(ui,[PocoUi])
         #逻辑处理
-        u = self.__poco(ui, **kw)
+        u = self.__poco(ui.info, **kw)
         return u.get_size()
 
     #参数检查

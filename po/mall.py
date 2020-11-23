@@ -10,7 +10,7 @@ class Mall(page.Page):
     '''
 
     @ui("mall")
-    def searchGoods(self, goodName, assertDict=None):
+    def searchGoods(self, goodName:str, assertDict=None):
         '''
         :return: #搜索商品,停留在搜索结果页面
         '''
@@ -30,7 +30,7 @@ class Mall(page.Page):
         self._wait_ui_appear(g().get_resource_infor('手机银行主导航界面商城按钮'), lambda ui: ui._click_back())
 
     @ui("mall")
-    def getIntoGoodsDetail(self, goodName, assertDict=None):
+    def getIntoGoodsDetail(self, goodName:str, assertDict=None):
         '''
         :return: #搜索商品并进入商品详情页面
         '''
@@ -87,6 +87,37 @@ class Mall(page.Page):
         self._click((938 / 1080, 270 / 2244))  # 点击弹出菜单的首页按钮
         time.sleep(2)
         self._performAssert('断言进入首页页面成功', assertDict)
+
+    @ui("mall")
+    def getIntoOrderList(self, orderType: str, assertDict=None):
+        '''
+        :return: #进入不同的订单列表页面
+        '''
+        #确认返回主界面
+        self._wait_ui_appear(g().get_resource_infor('手机银行主导航界面商城按钮'), lambda ui: ui._click_back())
+
+
+
+        self._performAssert('断言进入首页页面成功', assertDict)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @ui("AnYi")
     def scan(self, assertDict=None):

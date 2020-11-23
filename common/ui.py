@@ -58,10 +58,11 @@ class PocoUi(object):
         #初始化
         self.__name=name
         self.__info="poco{}".format(info)
+        self.__resource=self.__info
 
     def replace_var(self, *args, **kw):
         # 先替换变量
-        value = self.__info
+        value = self.__resource
         orderMatcher = var_pattern.findall(value)
         nameMatcher = var_name_pattern.findall(value)
         if len(orderMatcher) != len(args):

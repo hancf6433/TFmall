@@ -1,9 +1,9 @@
 # -*- encoding=utf-8 -*-
 from common.globall import g
 
-__title__ = "商品详情页面中消息_搜索_首页按钮_成功进入对应页面"
+__title__ = "待付款订单列表为空时点击去逛逛"
 __author__ = "邵佳"
-__desc__ = "test003"
+__desc__ = "test004"
 from po.other import *
 from po.mall import *
 from common.runer import (BaseCase, testLog)
@@ -33,21 +33,9 @@ class Test(BaseCase):
 
         # 构造断言数据
         assertDict = {
-            "断言进入商品详情页成功": '''
-                               #断言进入商品详情页成功
-                               self.assert_ui_exists(g().get_resource_infor('商品详情页加入购物车按钮'),"断言进入商品详情页成功")
-                            ''',
-            "断言进入消息页面成功": '''
-                               #断言进入消息页面成功
-                               self.assert_ui_exists(g().get_resource_infor('消息页面'),"断言进入消息页面成功")
-                            ''',
-            "断言进入搜索页面成功": '''
-                               #断言进入搜索页面成功
-                               self.assert_ui_exists(g().get_resource_infor('商城搜索页面'),"断言进入搜索页面成功")
-                            ''',
-            "断言进入首页页面成功": '''
-                               #断言进入首页页面成功
-                               self.assert_ui_exists(g().get_resource_infor('商城首页'),"断言进入首页页面成功")
+            "去逛逛页面跳转成功": '''
+                               #断言去逛逛页面跳转成功
+                               self.assert_ui_exists(g().get_resource_infor('商品详情页加入购物车按钮'),"断言去逛逛页面跳转成功")
                             '''
         }
 

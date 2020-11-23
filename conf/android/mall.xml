@@ -7,8 +7,8 @@
 
     <!--商城-->
     <poot name="手机银行首页定位按钮">(resource_id="com.ionicframework.cgbank122507:id/tv_choose_city")</poot>
-    <poot name="手机银行主导航界面我的按钮">(resource_id="com.ionicframework.cgbank122507:id/tab_lable",text="我的")</poot>
-    <poot name="手机银行主导航界面商城按钮">(resource_id="com.ionicframework.cgbank122507:id/tab_lable",text="商城")</poot>
+    <coordinate name="手机银行主导航界面我的按钮">971/1080,2061/2244</coordinate>
+    <coordinate name="手机银行主导航界面商城按钮">755/1080,2061/2244</coordinate>
     <poot name="商城首页类目按钮">(resource_id="com.ionicframework.cgbank122507:id/btn_mall_more")</poot>
     <poot name="商城首页购物车按钮">(resource_id="com.ionicframework.cgbank122507:id/btn_mall_cart")</poot>
     <poot name="商城首页搜索框">(text="搜索商品、商家")</poot>
@@ -31,8 +31,6 @@
     <coordinate name="商城按钮">748/1080,2055/2244</coordinate>
     <coordinate name="搜索第一个结果">267 / 1080, 648 / 2244</coordinate>
     <picture name="我的账户按钮图片">conf/template/tpl1604889012266.png</picture>
-
-    <key name="apppackage"></key>
     <!--<></ui>-->
     <!--<></ui>-->
     <!--<></ui>-->
