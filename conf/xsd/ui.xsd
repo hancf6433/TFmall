@@ -6,7 +6,13 @@
     <xs:element name="page" >
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="ui" type="ui" maxOccurs="unbounded"/>
+                <xs:choice maxOccurs="unbounded">
+                    <xs:element name="poot" type="ui"/>
+                    <xs:element name="poco" type="ui"/>
+                    <xs:element name="key" type="ui"/>
+                    <xs:element name="picture" type="ui"/>
+                    <xs:element name="coordinate" type="ui"/>
+                </xs:choice>
             </xs:sequence>
             <xs:attribute name="name" type="xs:string" use="required"/>
         </xs:complexType>

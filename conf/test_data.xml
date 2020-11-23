@@ -18,4 +18,18 @@
             <data name="商品名称" value="百岁"/>
     </data_set>
 
+    <data_set name="商城测试案例002">
+        <data name="用户名" value="18583370096"/>
+        <data name="模糊用户名" value="185****0096"/>
+        <data name="密码" value="123456"/>
+        <data name="商品名称" value="百岁"/>
+    </data_set>
+
+    <data_set name="商城测试案例003">
+        <data name="用户名" value="18583370096"/>
+        <data name="模糊用户名" value="185****0096"/>
+        <data name="密码" value="123456"/>
+        <data name="商品名称" value="百岁"/>
+    </data_set>
+
 </test_data>

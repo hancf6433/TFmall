@@ -23,7 +23,7 @@ class Attendance(page.Page):
         :return: 查看智能考勤首页
         '''
         # 等待首页
-        self._wait_ui_apper(g().get_resource_infor('智能考勤首页'))
+        self._wait_ui_appear(g().get_resource_infor('智能考勤首页'))
         # 点击取消
         self._click(g().get_resource_infor('智能考勤打卡位置选择取消按钮'))
         time.sleep(1)
@@ -36,11 +36,11 @@ class Attendance(page.Page):
         :return: 智能考勤打卡
         '''
         # 等待首页
-        self._wait_ui_apper(g().get_resource_infor('智能考勤首页'))
+        self._wait_ui_appear(g().get_resource_infor('智能考勤首页'))
         # 点击取消
         self._click(g().get_resource_infor('智能考勤打卡位置选择取消按钮'))
         # 打卡
-        self._wait_ui_apper(g().get_resource_infor('智能考勤打卡图标'))
+        self._wait_ui_appear(g().get_resource_infor('智能考勤打卡图标'))
         self._click(g().get_resource_infor('智能考勤打卡图标'))
         time.sleep(10)
         # 点击取消
@@ -57,11 +57,11 @@ class Attendance(page.Page):
         :return: 智能考勤取消打卡
         '''
         # 等待首页
-        self._wait_ui_apper(g().get_resource_infor('智能考勤首页'))
+        self._wait_ui_appear(g().get_resource_infor('智能考勤首页'))
         # 点击取消
         self._click(g().get_resource_infor('智能考勤打卡位置选择取消按钮'))
         # 打卡
-        self._wait_ui_apper(g().get_resource_infor('智能考勤打卡图标'))
+        self._wait_ui_appear(g().get_resource_infor('智能考勤打卡图标'))
         self._click(g().get_resource_infor('智能考勤打卡图标'))
         # 点击取消
         self._click(g().get_resource_infor('智能考勤打卡位置选择取消按钮'))
@@ -77,11 +77,11 @@ class Attendance(page.Page):
         :return: 查看智能记录
         '''
         # 等待首页
-        self._wait_ui_apper(g().get_resource_infor('智能考勤首页'))
+        self._wait_ui_appear(g().get_resource_infor('智能考勤首页'))
         # 点击取消
         self._click(g().get_resource_infor('智能考勤打卡位置选择取消按钮'))
         # 等待打卡图标出现
-        self._wait_ui_apper(g().get_resource_infor('智能考勤打卡图标'))
+        self._wait_ui_appear(g().get_resource_infor('智能考勤打卡图标'))
         # 点击考勤记录
         self._click(g().get_resource_infor('考勤记录按钮'))
         self._performAssert('',assertDict)
@@ -95,13 +95,13 @@ class Attendance(page.Page):
         :return: 查看勤劳小蜜蜂行部日榜
         '''
         # 等待首页
-        self._wait_ui_apper(g().get_resource_infor('智能考勤首页'))
+        self._wait_ui_appear(g().get_resource_infor('智能考勤首页'))
         # 点击取消
         self._click(g().get_resource_infor('智能考勤打卡位置选择取消按钮'))
         # 等待打卡图标出现
-        self._wait_ui_apper(g().get_resource_infor('智能考勤打卡图标'))
+        self._wait_ui_appear(g().get_resource_infor('智能考勤打卡图标'))
         # 滑动到勤劳小蜜蜂行部日榜
-        self._wait_ui_apper(g().get_resource_infor('勤劳小蜜蜂行部日榜'), lambda ui: ui._swipe((0.6,0.9),(0.6,0.6)))
+        self._wait_ui_appear(g().get_resource_infor('勤劳小蜜蜂行部日榜'), lambda ui: ui._swipe((0.6,0.9),(0.6,0.6)))
         self._performAssert('断言查看勤劳小蜜蜂行部日榜成功',assertDict)
         self._click_back()
 
@@ -112,13 +112,13 @@ class Attendance(page.Page):
         :return: 查看勤劳小蜜蜂行部日榜
         '''
         # 等待首页
-        self._wait_ui_apper(g().get_resource_infor('智能考勤首页'))
+        self._wait_ui_appear(g().get_resource_infor('智能考勤首页'))
         # 点击取消
         self._click(g().get_resource_infor('智能考勤打卡位置选择取消按钮'))
         # 等待打卡图标出现
-        self._wait_ui_apper(g().get_resource_infor('智能考勤打卡图标'))
+        self._wait_ui_appear(g().get_resource_infor('智能考勤打卡图标'))
         # 滑动到勤劳小蜜蜂个人排行榜
-        self._wait_ui_apper(g().get_resource_infor('勤劳小蜜蜂个人排行榜'), lambda ui: ui._swipe((0.6, 0.9), (0.6, 0.6)))
+        self._wait_ui_appear(g().get_resource_infor('勤劳小蜜蜂个人排行榜'), lambda ui: ui._swipe((0.6, 0.9), (0.6, 0.6)))
         self._performAssert('断言查看勤劳小蜜蜂个人排行榜成功', assertDict)
         self._click_back()
 

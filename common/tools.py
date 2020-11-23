@@ -6,6 +6,9 @@ import re
 import xml.sax
 import requests
 #项目根目录
+from common.ui import PootUi, PocoUi, Coordinate, Picture, Key
+from common.xml_parser import XmlParser
+
 BASE_PATH=os.path.dirname(os.path.dirname(__file__))
 #atestVcfFile
 atestVcfFile=os.path.join(BASE_PATH,"static","Atest.vcf")
@@ -57,6 +60,8 @@ class readTestDataXml(xml.sax.ContentHandler):
                 temp={}
             temp[attributes["name"]]=attributes["value"]
             self._lements[self._now_data_set]=temp
+
+
 
 
 class tools(object):
@@ -186,6 +191,49 @@ class tools(object):
         parser.setContentHandler(handler)
         parser.parse(xmlFile)
         return str(handler._rootName).lower(),handler._lements
+
+    @classmethod
+    def resolveUi(cls,xmlFile):
+        #uidict
+        ui=dict()
+        #读取xml
+        root = XmlParser(xmlFile).parse_xml()
+        #将其转化为ui对象
+        poots=root.get("page").get("poot")
+        poots=[] if poots is None else poots
+        if type(poots)==dict:
+            poots=[poots]
+        for poot in poots:
+            ui[poot.get("name")]=PootUi(poot.get("name"),poot.get("$value"))
+        #poco
+        pocos=root.get("page").get("poco")
+        pocos = [] if pocos is None else pocos
+        if type(pocos)==dict:
+            pocos=[pocos]
+        for poco in pocos:
+            ui[poco.get("name")]=PocoUi(poco.get("name"),poco.get("$value"))
+        # coordinate
+        coordinates = root.get("page").get("coordinate")
+        coordinates = [] if coordinates is None else coordinates
+        if type(coordinates) == dict:
+            coordinates = [coordinates]
+        for coordinate in coordinates:
+            ui[coordinate.get("name")] = Coordinate(coordinate.get("name"), coordinate.get("$value"))
+        # picture
+        pictures = root.get("page").get("picture")
+        pictures = [] if pictures is None else pictures
+        if type(pictures) == dict:
+            pictures = [pictures]
+        for picture in pictures:
+            ui[picture.get("name")] = Picture(picture.get("name"), picture.get("$value"))
+        # key
+        keies = root.get("page").get("key")
+        keies = [] if keies is None else keies
+        if type(keies) == dict:
+            keies = [keies]
+        for key in keies:
+            ui[key.get("name")] = Key(key.get("name"), key.get("$value"))
+        return root.get("page").get("name").lower(),ui
 
     @classmethod
     def resolveTestDataXml(cls,xmlFile):

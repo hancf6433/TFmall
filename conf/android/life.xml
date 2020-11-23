@@ -5,11 +5,11 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.w3school.com.cn ../xsd/ui.xsd">
     <!--商城页面-->
-
-    <ui name="手机银行主导航界面生活">poot(resource_id="com.ionicframework.cgbank122507:id/tab_lable",text="生活")</ui>
-
-    <!--<></ui>-->
-    <!--<></ui>-->
-    <!--<></ui>-->
-    <!--<></ui>-->
+    <poot name="手机银行主导航界面生活">(resource_id="com.ionicframework.cgbank122507:id/tab_lable",text="生活")</poot>
+    <poco name="poco示例">(text=1)</poco>
+    <poco name="poco示例2">(text=1)</poco>
+    <coordinate name="坐标示例">1.0/2,2</coordinate>
+    <coordinate name="坐标示例2">1,2</coordinate>
+    <picture name="图片示例">conf/template/page/0.png</picture>
+    <picture name="图片示例2">conf/template/page/0.png</picture>
 </page>

@@ -36,6 +36,7 @@ class Test(BaseCase):
             '''
         }
 
+
         # 运行流程
         log('登录手机银行')
         Login().login(userName, vagueUserName, loginPwd, assertDict=assertDict)

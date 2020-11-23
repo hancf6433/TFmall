@@ -167,7 +167,7 @@ class mail(page.Page):
     @ui("mail", "anyi")
     def selectall(self, assertDict=None):
         self._click(g().get_resource_infor('编辑'))
-        self._wait_ui_apper(g().get_resource_infor('全选'))
+        self._wait_ui_appear(g().get_resource_infor('全选'))
         self._click(g().get_resource_infor('全选'))
         self._performAssert('断言出现取消全选', assertDict)
         self._click(g().get_resource_infor('取消全选'))

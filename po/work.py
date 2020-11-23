@@ -54,7 +54,7 @@ class work(page.Page):
         self._click(g().get_resource_infor('拍照片'))
         time.sleep(3.0)
         self._click(g().get_resource_infor('拍照'))
-        self._wait_ui_apper(g().get_resource_infor('拍照确定'))
+        self._wait_ui_appear(g().get_resource_infor('拍照确定'))
         self._click(g().get_resource_infor('拍照确定'))
 
     @ui("work", "anyi")
@@ -98,7 +98,7 @@ class work(page.Page):
         self._click(g().get_resource_infor('第一个更多按钮'))
         self._click(g().get_resource_infor('分享'))
         self._click(g().get_resource_infor('分享给同事'))
-        self._wait_ui_apper(g().get_resource_infor('分享页标题'))
+        self._wait_ui_appear(g().get_resource_infor('分享页标题'))
         if self._exists(g().get_resource_infor('联系人')):
             self._click(g().get_resource_infor('联系人'))
         else:
@@ -120,7 +120,7 @@ class work(page.Page):
 
     @ui("work", "anyi")
     def addworkcircle(self,assertDict=None):
-        self._wait_ui_apper(g().get_resource_infor('确定创建'))
+        self._wait_ui_appear(g().get_resource_infor('确定创建'))
         self._click(g().get_resource_infor('确定创建'))
         self._click(g().get_resource_infor('搜索按钮'))
         self._text('test')
@@ -211,7 +211,7 @@ class work(page.Page):
         self._click(g().get_resource_infor('拍照片'))
         time.sleep(3.0)
         self._click(g().get_resource_infor('拍照'))
-        self._wait_ui_apper(g().get_resource_infor('拍照确定'))
+        self._wait_ui_appear(g().get_resource_infor('拍照确定'))
         self._click(g().get_resource_infor('拍照确定'))
 
     @ui("work", "anyi")
@@ -238,7 +238,7 @@ class work(page.Page):
     @ui("work", "anyi")
     def addtasktopic(self,topicname,assertDict=None):
         self._click(g().get_resource_infor('添加话题'))
-        self._wait_ui_apper(g().get_resource_infor('新建话题'))
+        self._wait_ui_appear(g().get_resource_infor('新建话题'))
         self._click(g().get_resource_infor('新建话题'))
         self._text(topicname)
         self._click(g().get_resource_infor('确定'))

@@ -113,7 +113,7 @@ class AnYi(page.Page):
         '''
         # 点击+号
         self._click(g().get_resource_infor('聊天界面加号图标'))
-        self._wait_ui_apper(g().get_resource_infor('聊天界面拍摄按钮'))
+        self._wait_ui_appear(g().get_resource_infor('聊天界面拍摄按钮'))
         #点击拍摄
         self._click(g().get_resource_infor('聊天界面拍摄按钮'),focus=(0.5,-0.5))
         #等待拍照按钮出现，出现后点击
@@ -142,14 +142,14 @@ class AnYi(page.Page):
         self._click(g().get_resource_infor('聊天界面录像按钮'),focus=(0.5,-0.5))
         #点击录像
         self._click(g().get_resource_infor('手机自带相机录像按钮'))
-        self._wait_ui_apper(g().get_resource_infor('手机自带相机停止录像按钮'))
+        self._wait_ui_appear(g().get_resource_infor('手机自带相机停止录像按钮'))
         #点击停止录像
         self._click(g().get_resource_infor('手机自带相机停止录像按钮'))
         #点击发送
-        self._wait_ui_apper(g().get_resource_infor('录像页发送按钮'))
+        self._wait_ui_appear(g().get_resource_infor('录像页发送按钮'))
         self._click(g().get_resource_infor('录像页发送按钮'))
         #等待发送成功
-        self._wait_ui_apper(g().get_resource_infor('发送的视频消息'))
+        self._wait_ui_appear(g().get_resource_infor('发送的视频消息'))
         self._performAssert('断言发送视频消息成功', assertDict)
         self._click_back()
         self._click_back()
@@ -171,13 +171,13 @@ class AnYi(page.Page):
         self._click(g().get_resource_infor('选择文件页本机按钮'))
         self._click(g().get_resource_infor('本机文件夹'))
         checkBox=g().get_resource_infor('本机文件夹多选框')
-        self._wait_ui_apper(checkBox)
+        self._wait_ui_appear(checkBox)
         self._click(g().get_resource_infor('Excel文件'))
         self._click(g().get_resource_infor('PDF文件'))
         self._click(g().get_resource_infor('PPT文件'))
         self._click(g().get_resource_infor('Txt文件'))
         wordFile=g().get_resource_infor('Word文件')
-        self._wait_ui_apper(wordFile, lambda ui: ui._swipe((0.6, 0.7), (0.6, 0.4)))
+        self._wait_ui_appear(wordFile, lambda ui: ui._swipe((0.6, 0.7), (0.6, 0.4)))
         self._click(g().get_resource_infor('Word文件'))
         # while self._exists(checkBox):
         #     self._click(checkBox)
@@ -203,7 +203,7 @@ class AnYi(page.Page):
             #点击预览
             self._click(g().get_resource_infor('文件预览按钮'))
             #等待文件加载完成
-            self._wait_ui_apper(g().get_resource_infor('Excel文件正文'))
+            self._wait_ui_appear(g().get_resource_infor('Excel文件正文'))
             self._performAssert('断言查看Excel文件消息成功',assertDict)
         elif fileType=='Word':
             # 点击Word文件
@@ -211,7 +211,7 @@ class AnYi(page.Page):
             # 点击预览
             self._click(g().get_resource_infor('文件预览按钮'))
             # 等待文件加载完成
-            self._wait_ui_apper(g().get_resource_infor('Word文件正文'))
+            self._wait_ui_appear(g().get_resource_infor('Word文件正文'))
             self._performAssert('断言查看Word文件消息成功', assertDict)
         elif fileType=='Txt':
             # 点击Txt文件
@@ -219,7 +219,7 @@ class AnYi(page.Page):
             # 点击预览
             self._click(g().get_resource_infor('文件预览按钮'))
             # 等待文件加载完成
-            self._wait_ui_apper(g().get_resource_infor('Txt文件正文'))
+            self._wait_ui_appear(g().get_resource_infor('Txt文件正文'))
             self._performAssert('断言查看Txt文件消息成功', assertDict)
         elif fileType=='PDF':
             # 点击PDF文件
@@ -228,7 +228,7 @@ class AnYi(page.Page):
             self._click(g().get_resource_infor('文件预览按钮'))
             # 等待文件加载完成
             self._flushUiTree()
-            self._wait_ui_apper(g().get_resource_infor('PDF文件正文'))
+            self._wait_ui_appear(g().get_resource_infor('PDF文件正文'))
             self._performAssert('断言查看PDF文件消息成功', assertDict)
         elif fileType=='PPT':
             # 点击PPT文件
@@ -236,7 +236,7 @@ class AnYi(page.Page):
             # 点击预览
             self._click(g().get_resource_infor('文件预览按钮'))
             # 等待文件加载完成
-            self._wait_ui_apper(g().get_resource_infor('PPT文件正文'))
+            self._wait_ui_appear(g().get_resource_infor('PPT文件正文'))
             self._performAssert('断言查看PPT文件消息成功', assertDict)
         self._click_back()
 
@@ -283,7 +283,7 @@ class AnYi(page.Page):
             #点击手机通讯录
             self._click(g().get_resource_infor('手机通讯录'))
             #点击手机联系人
-            self._wait_ui_apper(g().get_resource_infor('手机联系人'))
+            self._wait_ui_appear(g().get_resource_infor('手机联系人'))
             self._click(g().get_resource_infor('手机联系人'))
             #点击确定
             self._click(g().get_resource_infor('手机通讯录确定按钮'))
@@ -297,7 +297,7 @@ class AnYi(page.Page):
         :param assertDict:
         :return: 搜索会话内容
         '''
-        self._wait_ui_apper(g().get_resource_infor('安逸页面搜索按钮'),lambda ui:ui._click_back())
+        self._wait_ui_appear(g().get_resource_infor('安逸页面搜索按钮'),lambda ui:ui._click_back())
         #点击搜索
         self._click(g().get_resource_infor('安逸页面搜索按钮'))
         #输入搜索关键字
@@ -318,7 +318,7 @@ class AnYi(page.Page):
         #点击发起群聊
         self._click(g().get_resource_infor('发起群聊按钮'))
         #点击公司通讯录
-        self._wait_ui_apper(g().get_resource_infor('公司通讯录按钮'))
+        self._wait_ui_appear(g().get_resource_infor('公司通讯录按钮'))
         self._click(g().get_resource_infor('公司通讯录按钮'))
         #选择群聊用户
         self._click(g().get_resource_infor('通讯录联系人ui_test2'))
@@ -326,7 +326,7 @@ class AnYi(page.Page):
         #点击确定
         self._click(g().get_resource_infor('选择人员页确定按钮'))
         #等待群聊出现
-        self._wait_ui_apper(g().get_resource_infor('群聊页'))
+        self._wait_ui_appear(g().get_resource_infor('群聊页'))
         self._performAssert("断言发起群聊成功",assertDict)
 
     @ui("AnYi")
@@ -344,9 +344,9 @@ class AnYi(page.Page):
         self._text('enterGroupChat')
         # 点击保存群聊名称
         self._click(g().get_resource_infor('群聊名称页保存按钮'))
-        self._wait_ui_apper(g().get_resource_infor('群管理按钮'))
+        self._wait_ui_appear(g().get_resource_infor('群管理按钮'))
         saveToContact=g().get_resource_infor('保存到通讯录按钮')
-        self._wait_ui_apper(saveToContact,lambda ui:ui._swipe((0.6, 0.8), (0.6, 0.4)))
+        self._wait_ui_appear(saveToContact,lambda ui:ui._swipe((0.6, 0.8), (0.6, 0.4)))
         # 点击保存到通讯录
         self._click(g().get_resource_infor('保存到通讯录按钮'))
         self._click_back()
@@ -357,7 +357,7 @@ class AnYi(page.Page):
         # 运行天府安逸
         self._startTFAnYi()
         homeUi = g().get_resource_infor('主页面导航栏第一个按钮安逸')
-        self._wait_ui_apper(homeUi)
+        self._wait_ui_appear(homeUi)
         # 长按群聊
         self._click(g().get_resource_infor('群聊'),times=3)
         # 点击删除该聊天
@@ -397,9 +397,9 @@ class AnYi(page.Page):
         self._text(groupChatName)
         # 点击保存群聊名称
         self._click(g().get_resource_infor('群聊名称页保存按钮'))
-        self._wait_ui_apper(g().get_resource_infor('群管理按钮'))
+        self._wait_ui_appear(g().get_resource_infor('群管理按钮'))
         saveToContact = g().get_resource_infor('保存到通讯录按钮')
-        self._wait_ui_apper(saveToContact,lambda ui:ui._swipe((0.6, 0.8), (0.6, 0.4)))
+        self._wait_ui_appear(saveToContact,lambda ui:ui._swipe((0.6, 0.8), (0.6, 0.4)))
         # 点击保存到通讯录
         self._click(g().get_resource_infor('保存到通讯录按钮'))
         self._click_back()
@@ -412,7 +412,7 @@ class AnYi(page.Page):
         :return: 邀请联系人加入群聊
         '''
         # 等待群聊出现
-        self._wait_ui_apper(g().get_resource_infor('群聊页'))
+        self._wait_ui_appear(g().get_resource_infor('群聊页'))
         # 点击群组图标
         self._click(g().get_resource_infor('群聊页右上角群组图标'))
         #点击加号邀请联系人
@@ -423,7 +423,7 @@ class AnYi(page.Page):
         self._click(g().get_resource_infor('通讯录联系人ui_test'))
         #点击确定按钮
         self._click(g().get_resource_infor('公司通讯录选择人员页确定按钮'))
-        self._wait_ui_apper(g().get_resource_infor('群聊人数显示'))
+        self._wait_ui_appear(g().get_resource_infor('群聊人数显示'))
         self._performAssert('断言邀请联系人加入群聊成功',assertDict)
         self._click_back()
 
@@ -434,7 +434,7 @@ class AnYi(page.Page):
         :return: 移除群聊人员
         '''
         # 等待群聊出现
-        self._wait_ui_apper(g().get_resource_infor('群聊页'))
+        self._wait_ui_appear(g().get_resource_infor('群聊页'))
         # 点击群组图标
         self._click(g().get_resource_infor('群聊页右上角群组图标'))
         #点击减号移除群聊人员
@@ -451,7 +451,7 @@ class AnYi(page.Page):
         :return:搜索群聊成员
         '''
         # 等待群聊出现
-        self._wait_ui_apper(g().get_resource_infor('群聊页'))
+        self._wait_ui_appear(g().get_resource_infor('群聊页'))
         # 点击群组图标
         self._click(g().get_resource_infor('群聊页右上角群组图标'))
         #点击全部群成员
@@ -481,7 +481,7 @@ class AnYi(page.Page):
         # 点击保存群聊名称
         self._click(g().get_resource_infor('群聊名称页保存按钮'))
         # 等待群管理图标出现
-        self._wait_ui_apper(g().get_resource_infor('群管理按钮'))
+        self._wait_ui_appear(g().get_resource_infor('群管理按钮'))
         self._performAssert('断言设置群聊名称成功',assertDict)
 
     @ui("AnYi")
@@ -509,7 +509,7 @@ class AnYi(page.Page):
         :return: 发送群公告
         '''
         # 等待群聊出现
-        self._wait_ui_apper(g().get_resource_infor('群聊页'))
+        self._wait_ui_appear(g().get_resource_infor('群聊页'))
         # 点击群组图标
         self._click(g().get_resource_infor('群聊页右上角群组图标'))
         # 点击群公告
@@ -521,11 +521,11 @@ class AnYi(page.Page):
         self._click(g().get_resource_infor('群公告页完成按钮'))
         # 点击发布
         self._click(g().get_resource_infor('群公告发布按钮'))
-        self._wait_ui_apper(g().get_resource_infor('群管理按钮'))
+        self._wait_ui_appear(g().get_resource_infor('群管理按钮'))
         self._performAssert('断言发送群公告成功', assertDict)
         self._click_back()
         # 等待群聊出现
-        self._wait_ui_apper(g().get_resource_infor('群聊页'))
+        self._wait_ui_appear(g().get_resource_infor('群聊页'))
 
     @ui("AnYi")
     def cancelSendGroupChatNotice(self,sendContent,assertDict):
@@ -534,7 +534,7 @@ class AnYi(page.Page):
         :return: 取消发送群公告
         '''
         # 等待群聊出现
-        self._wait_ui_apper(g().get_resource_infor('群聊页'))
+        self._wait_ui_appear(g().get_resource_infor('群聊页'))
         # 点击群组图标
         self._click(g().get_resource_infor('群聊页右上角群组图标'))
         # 点击群公告
@@ -555,7 +555,7 @@ class AnYi(page.Page):
         :return: 添加群特别关注人员
         '''
         # 等待群聊出现
-        self._wait_ui_apper(g().get_resource_infor('群聊页'))
+        self._wait_ui_appear(g().get_resource_infor('群聊页'))
         # 点击群组图标
         self._click(g().get_resource_infor('群聊页右上角群组图标'))
         # 点击特别关注人员
@@ -575,7 +575,7 @@ class AnYi(page.Page):
         :return:设置群聊邀请确认
         '''
         # 等待群聊出现
-        self._wait_ui_apper(g().get_resource_infor('群聊页'))
+        self._wait_ui_appear(g().get_resource_infor('群聊页'))
         # 点击群组图标
         self._click(g().get_resource_infor('群聊页右上角群组图标'))
         # 点击群管理
@@ -585,7 +585,7 @@ class AnYi(page.Page):
         self._click_back()
         # 点击群聊二维码
         self._click(g().get_resource_infor('聊天信息页群聊二维码'))
-        self._wait_ui_apper(g().get_resource_infor('群聊邀请提示语'))
+        self._wait_ui_appear(g().get_resource_infor('群聊邀请提示语'))
         self._performAssert('断言设置群聊邀请确认成功',assertDict)
         self._click_back()
         self._click_back()
@@ -597,7 +597,7 @@ class AnYi(page.Page):
         :return:设置仅允许群管理员修改群聊名称
         '''
         # 等待群聊出现
-        self._wait_ui_apper(g().get_resource_infor('群聊页'))
+        self._wait_ui_appear(g().get_resource_infor('群聊页'))
         # 点击群组图标
         self._click(g().get_resource_infor('群聊页右上角群组图标'))
         # 点击群管理
@@ -618,17 +618,17 @@ class AnYi(page.Page):
             # 点击群组图标
             self._click(g().get_resource_infor('群聊页右上角群组图标'))
         #等待群管理图标出现
-        self._wait_ui_apper(g().get_resource_infor('群管理按钮'))
+        self._wait_ui_appear(g().get_resource_infor('群管理按钮'))
         #点击群管理
         self._click(g().get_resource_infor('群管理按钮'))
         #等待解散群聊图标出现
-        self._wait_ui_apper(g().get_resource_infor('群管理页解散群聊按钮'))
+        self._wait_ui_appear(g().get_resource_infor('群管理页解散群聊按钮'))
         #点击解散群聊
         self._click(g().get_resource_infor('群管理页解散群聊按钮'))
         #点击解散群聊确认框确认
         self._click(g().get_resource_infor('解散群聊确认框确认按钮'))
         #等待回到安逸页
-        self._wait_ui_apper(g().get_resource_infor('主页面导航栏第一个按钮安逸'))
+        self._wait_ui_appear(g().get_resource_infor('主页面导航栏第一个按钮安逸'))
         #判断解散群聊是否仍显示在安逸页
         deleteGroupChatName=g().get_resource_infor('发起群聊名称')
         if self._exists(deleteGroupChatName):
@@ -645,7 +645,7 @@ class AnYi(page.Page):
         '''
         #滑动到删除并退出按钮出现
         logOut = g().get_resource_infor('聊天信息页删除并退出群聊按钮')
-        self._wait_ui_apper(logOut,lambda ui:ui._swipe((0.6, 0.8), (0.6, 0.4)))
+        self._wait_ui_appear(logOut,lambda ui:ui._swipe((0.6, 0.8), (0.6, 0.4)))
         # 点击删除并退出
         self._click(logOut)
         # 点击确定
@@ -659,7 +659,7 @@ class AnYi(page.Page):
         :return: 群管理转让
         '''
         # 等待群聊出现
-        self._wait_ui_apper(g().get_resource_infor('群聊页'))
+        self._wait_ui_appear(g().get_resource_infor('群聊页'))
         # 点击群组图标
         self._click(g().get_resource_infor('群聊页右上角群组图标'))
         # 点击群管理
@@ -697,7 +697,7 @@ class AnYi(page.Page):
         self._click(g().get_resource_infor('公司通讯录选择人员页确定按钮'))
         time.sleep(2)
         anYi=g().get_resource_infor('主页面导航栏第一个按钮安逸')
-        self._wait_ui_apper(anYi,lambda ui:ui._click_back())
+        self._wait_ui_appear(anYi,lambda ui:ui._click_back())
         # 点击已转发消息的联系人
         self._click(g().get_resource_infor('联系人ui_test3'))
         self._performAssert('断言转发消息成功',assertDict)
@@ -716,7 +716,7 @@ class AnYi(page.Page):
         # 点击收藏
         self._click(g().get_resource_infor('消息收藏按钮'))
         anYi = g().get_resource_infor('主页面导航栏第一个按钮安逸')
-        self._wait_ui_apper(anYi, lambda ui: ui._click_back())
+        self._wait_ui_appear(anYi, lambda ui: ui._click_back())
         # 点击我的
         self._click(g().get_resource_infor('主页面导航栏第五个按钮我的'))
         # 点击我的收藏
@@ -741,10 +741,10 @@ class AnYi(page.Page):
         self._click(g().get_resource_infor('撤回的消息'), times=3)
         # 点击撤回
         self._click(g().get_resource_infor('消息撤回按钮'))
-        self._wait_ui_apper(g().get_resource_infor('消息撤回成功提示'))
+        self._wait_ui_appear(g().get_resource_infor('消息撤回成功提示'))
         self._performAssert('断言撤回消息成功',assertDict)
         anYi = g().get_resource_infor('主页面导航栏第一个按钮安逸')
-        self._wait_ui_apper(anYi, lambda ui: ui._click_back())
+        self._wait_ui_appear(anYi, lambda ui: ui._click_back())
 
     @ui("AnYi")
     def deleteMessage(self,assertDict):
@@ -760,7 +760,7 @@ class AnYi(page.Page):
         self._click(g().get_resource_infor('消息删除按钮'))
         self._performAssert('断言删除消息成功',assertDict)
         anYi = g().get_resource_infor('主页面导航栏第一个按钮安逸')
-        self._wait_ui_apper(anYi, lambda ui: ui._click_back())
+        self._wait_ui_appear(anYi, lambda ui: ui._click_back())
 
     @ui("AnYi")
     def deleteManyMessage(self,assertDict):
@@ -790,7 +790,7 @@ class AnYi(page.Page):
         self._click(g().get_resource_infor('确认删除按钮'))
         self._performAssert('断言删除多条消息成功',assertDict)
         anYi = g().get_resource_infor('主页面导航栏第一个按钮安逸')
-        self._wait_ui_apper(anYi, lambda ui: ui._click_back())
+        self._wait_ui_appear(anYi, lambda ui: ui._click_back())
 
     @ui("AnYi")
     def forwardManyMessage(self,assertDict):
@@ -821,7 +821,7 @@ class AnYi(page.Page):
         # 点击公司通讯录
         self._click(g().get_resource_infor('公司通讯录按钮'))
         # 选择要转发消息的联系人
-        self._wait_ui_apper(g().get_resource_infor('通讯录联系人ui_test3'))
+        self._wait_ui_appear(g().get_resource_infor('通讯录联系人ui_test3'))
         self._click(g().get_resource_infor('通讯录联系人ui_test3'))
         # 点击确定
         self._click(g().get_resource_infor('公司通讯录选择人员页确定按钮'))
@@ -829,12 +829,12 @@ class AnYi(page.Page):
         self._click(g().get_resource_infor('转发多条消息发送按钮'))
         time.sleep(2)
         anYi = g().get_resource_infor('主页面导航栏第一个按钮安逸')
-        self._wait_ui_apper(anYi, lambda ui: ui._click_back())
+        self._wait_ui_appear(anYi, lambda ui: ui._click_back())
         # 点击已转发消息的联系人
         self._click(g().get_resource_infor('联系人ui_test3'))
         self._performAssert('断言转发多条消息成功', assertDict)
         anYi = g().get_resource_infor('主页面导航栏第一个按钮安逸')
-        self._wait_ui_apper(anYi, lambda ui: ui._click_back())
+        self._wait_ui_appear(anYi, lambda ui: ui._click_back())
 
     @ui("AnYi")
     def shareLinkMessage(self,assertDict):
@@ -845,8 +845,8 @@ class AnYi(page.Page):
         # 点击链接消息
         self._click(g().get_resource_infor('分享的链接消息'))
         # 点击菜单选项
-        self._wait_ui_apper(g().get_resource_infor('链接消息正文内容'))
-        self._wait_ui_apper(g().get_resource_infor('链接消息操作菜单图标'))
+        self._wait_ui_appear(g().get_resource_infor('链接消息正文内容'))
+        self._wait_ui_appear(g().get_resource_infor('链接消息操作菜单图标'))
         self._click(g().get_resource_infor('链接消息操作菜单图标'))
         # 点击分享给同事
         self._click(g().get_resource_infor('分享给同事按钮'))
@@ -860,12 +860,12 @@ class AnYi(page.Page):
         self._click(g().get_resource_infor('公司通讯录选择人员页确定按钮'))
         time.sleep(2)
         anYi = g().get_resource_infor('主页面导航栏第一个按钮安逸')
-        self._wait_ui_apper(anYi, lambda ui: ui._click_back())
+        self._wait_ui_appear(anYi, lambda ui: ui._click_back())
         # 点击已分享消息的联系人
         self._click(g().get_resource_infor('联系人ui_test3'))
         self._performAssert('断言分享链接消息给同事成功', assertDict)
         anYi = g().get_resource_infor('主页面导航栏第一个按钮安逸')
-        self._wait_ui_apper(anYi,lambda ui:ui._click_back())
+        self._wait_ui_appear(anYi,lambda ui:ui._click_back())
 
     @ui("AnYi")
     def shareLinkMessageToWorkCicle(self,assertDict):
@@ -878,8 +878,8 @@ class AnYi(page.Page):
         # 点击链接消息
         self._click(g().get_resource_infor('分享的链接消息'))
         # 点击菜单选项
-        self._wait_ui_apper(g().get_resource_infor('链接消息正文内容'))
-        self._wait_ui_apper(g().get_resource_infor('链接消息操作菜单图标'))
+        self._wait_ui_appear(g().get_resource_infor('链接消息正文内容'))
+        self._wait_ui_appear(g().get_resource_infor('链接消息操作菜单图标'))
         self._click(g().get_resource_infor('链接消息操作菜单图标'))
         # 点击分享到工作圈
         self._click(g().get_resource_infor('分享到工作圈按钮'))
@@ -888,10 +888,10 @@ class AnYi(page.Page):
         # 点击确定
         self._click(g().get_resource_infor('分享到工作圈确定按钮'))
         anYi = g().get_resource_infor('主页面导航栏第一个按钮安逸')
-        self._wait_ui_apper(anYi,lambda ui:ui._click_back())
+        self._wait_ui_appear(anYi,lambda ui:ui._click_back())
         # 点击工作圈
         self._click(g().get_resource_infor('主页面导航栏第四个按钮工作圈'))
-        self._wait_ui_apper(g().get_resource_infor('分享的链接消息内容'))
+        self._wait_ui_appear(g().get_resource_infor('分享的链接消息内容'))
         self._performAssert('断言分享链接消息到工作圈成功',assertDict)
         #点击删除
         self._click(g().get_resource_infor('工作圈删除消息按钮'))
@@ -908,7 +908,7 @@ class AnYi(page.Page):
         # 点击链接消息
         self._click(g().get_resource_infor('分享的链接消息'))
         # 点击菜单选项
-        self._wait_ui_apper(g().get_resource_infor('链接消息正文内容'))
+        self._wait_ui_appear(g().get_resource_infor('链接消息正文内容'))
         self._click(g().get_resource_infor('链接消息操作菜单图标'))
         #点击在浏览器中打开
         self._click(g().get_resource_infor('在浏览器中打开按钮'))
@@ -934,7 +934,7 @@ class AnYi(page.Page):
         # 点击链接消息
         self._click(g().get_resource_infor('分享的链接消息'))
         # 点击菜单选项
-        self._wait_ui_apper(g().get_resource_infor('链接消息正文内容'))
+        self._wait_ui_appear(g().get_resource_infor('链接消息正文内容'))
         self._click(g().get_resource_infor('链接消息操作菜单图标'))
         # 点击复制链接
         self._click(g().get_resource_infor('复制链接按钮'))
@@ -961,12 +961,12 @@ class AnYi(page.Page):
         # 点击链接消息
         self._click(g().get_resource_infor('分享的链接消息'))
         # 点击菜单选项
-        self._wait_ui_apper(g().get_resource_infor('链接消息正文内容'))
+        self._wait_ui_appear(g().get_resource_infor('链接消息正文内容'))
         self._click(g().get_resource_infor('链接消息操作菜单图标'))
         # 点击收藏
         self._click(g().get_resource_infor('收藏按钮'))
         anYi = g().get_resource_infor('主页面导航栏第一个按钮安逸')
-        self._wait_ui_apper(anYi,lambda ui:ui._click_back())
+        self._wait_ui_appear(anYi,lambda ui:ui._click_back())
         # 点击我的
         self._click(g().get_resource_infor('主页面导航栏第五个按钮我的'))
         # 点击我的收藏
@@ -996,7 +996,7 @@ class AnYi(page.Page):
         self._text('ui_test2')
         self._performAssert('断言发送名片详细页关键字搜索成功',assertDict)
         anYi = g().get_resource_infor('主页面导航栏第一个按钮安逸')
-        self._wait_ui_apper(anYi,lambda ui:ui._click_back())
+        self._wait_ui_appear(anYi,lambda ui:ui._click_back())
 
     @ui("AnYi")
     def searchDownloadFile(self,assertDict):
@@ -1027,7 +1027,7 @@ class AnYi(page.Page):
         self._text('测试EXCEL文件')
         self._performAssert('断言我的下载搜索关键字成功',assertDict)
         anYi = g().get_resource_infor('主页面导航栏第一个按钮安逸')
-        self._wait_ui_apper(anYi, lambda ui: ui._click_back())
+        self._wait_ui_appear(anYi, lambda ui: ui._click_back())
 
     @ui("AnYi")
     def sendLargeFileMessage(self,assertDict):
@@ -1050,7 +1050,7 @@ class AnYi(page.Page):
         # self._click(g().get_resource_infor('选择文件页确定按钮'))
         self._performAssert('断言发送文件大于50M失败，提示成功',assertDict)
         anYi = g().get_resource_infor('主页面导航栏第一个按钮安逸')
-        self._wait_ui_apper(anYi,lambda ui:ui._click_back())
+        self._wait_ui_appear(anYi,lambda ui:ui._click_back())
 
     @ui("AnYi")
     def setMessageOnTop(self,assertDict):
@@ -1093,14 +1093,14 @@ class AnYi(page.Page):
         # 点击加号
         self._click(g().get_resource_infor('个人聊天信息页+号'))
         # 点击公司通讯录
-        self._wait_ui_apper(g().get_resource_infor('公司通讯录按钮'))
+        self._wait_ui_appear(g().get_resource_infor('公司通讯录按钮'))
         self._click(g().get_resource_infor('公司通讯录按钮'))
         # 选择群聊用户
         self._click(g().get_resource_infor('通讯录联系人ui_test3'))
         # 点击确定
         self._click(g().get_resource_infor('选择人员页确定按钮'))
         # 等待群聊出现
-        self._wait_ui_apper(g().get_resource_infor('群聊页'))
+        self._wait_ui_appear(g().get_resource_infor('群聊页'))
         self._performAssert('断言个人聊天加入人员自动生成群成功',assertDict)
         self._click_back()
 
@@ -1142,7 +1142,7 @@ class AnYi(page.Page):
         self._click(g().get_resource_infor('清除按钮'))
         self._performAssert('断言按姓名查找，清除输入内容成功',assertDict)
         anYi = g().get_resource_infor('主页面导航栏第一个按钮安逸')
-        self._wait_ui_apper(anYi,lambda ui:ui._click_back())
+        self._wait_ui_appear(anYi,lambda ui:ui._click_back())
 
     @ui("mall")
     def searchGood(self,goodName,assertDict):
@@ -1162,7 +1162,7 @@ class AnYi(page.Page):
         # 点击查找
         self._click(g().get_resource_infor('查找按钮'))
         self._performAssert('断言查找联系人成功',assertDict)
-        self._wait_ui_apper(g().get_resource_infor('主页面导航栏第一个按钮安逸'), lambda ui: ui._click_back())
+        self._wait_ui_appear(g().get_resource_infor('主页面导航栏第一个按钮安逸'), lambda ui: ui._click_back())
 
     @ui("AnYi")
     def findCompanyContacts(self,assertDict):
@@ -1177,9 +1177,9 @@ class AnYi(page.Page):
         #点击公司通讯录
         self._click(g().get_resource_infor('添加联系人页公司通讯录按钮'))
         #等待进入通讯录页
-        self._wait_ui_apper(g().get_resource_infor('公司通讯录详情页'))
+        self._wait_ui_appear(g().get_resource_infor('公司通讯录详情页'))
         siChuanTFBank=g().get_resource_infor('公司通讯录四川天府银行机构')
-        self._wait_ui_apper(siChuanTFBank,lambda ui:ui._swipe((0.6,0.9),(0.6,0.4)))
+        self._wait_ui_appear(siChuanTFBank,lambda ui:ui._swipe((0.6,0.9),(0.6,0.4)))
         self._performAssert('断言查看公司通讯录成功',assertDict)
         self._click_back()
         self._click_back()
@@ -1202,7 +1202,7 @@ class AnYi(page.Page):
         #点击发送确认框确认
         self._click(g().get_resource_infor('发送确认框确认按钮'))
         #等待发送成功，回到主页面
-        self._wait_ui_apper(g().get_resource_infor('主页面导航栏第一个按钮安逸'))
+        self._wait_ui_appear(g().get_resource_infor('主页面导航栏第一个按钮安逸'))
         #点击工作圈
         self._click(g().get_resource_infor('主页面导航栏第四个按钮工作圈'))
         self._performAssert('断言工作分享成功',assertDict)
@@ -1247,7 +1247,7 @@ class AnYi(page.Page):
         :return: 恢复已删除会话
         '''
         anYi = g().get_resource_infor('主页面导航栏第一个按钮安逸')
-        self._wait_ui_apper(anYi,lambda ui:ui._click_back())
+        self._wait_ui_appear(anYi,lambda ui:ui._click_back())
         self._performAssert('断言恢复已删除会话成功',assertDict)
 
     @ui("AnYi")
@@ -1271,7 +1271,7 @@ class AnYi(page.Page):
         self._click(g().get_resource_infor('选择文件页本机按钮'))
         self._click(g().get_resource_infor('本机文件夹'))
         checkBox = g().get_resource_infor('本机文件夹多选框')
-        self._wait_ui_apper(checkBox)
+        self._wait_ui_appear(checkBox)
         self._click(g().get_resource_infor('Excel文件'))
         # 点击确定按钮
         self._click(g().get_resource_infor('选择文件页确定按钮'))
@@ -1425,7 +1425,7 @@ class AnYi(page.Page):
         # 点击进入公众号
         self._click(g().get_resource_infor('进入公众号按钮'))
         self._performAssert('断言进入公众号对话框成功',assertDict)
-        self._wait_ui_apper(g().get_resource_infor('主页面导航栏第二个按钮通讯录'), lambda ui: ui._click_back())
+        self._wait_ui_appear(g().get_resource_infor('主页面导航栏第二个按钮通讯录'), lambda ui: ui._click_back())
 
     @ui("AnYi")
     def viewOfficialAccount(self,assertDict):
@@ -1443,9 +1443,9 @@ class AnYi(page.Page):
         self._click(g().get_resource_infor('会议室公众号设置按钮'))
         # 点击查看历史消息
         self._click(g().get_resource_infor('查看历史消息'))
-        self._wait_ui_apper(g().get_resource_infor('公众号历史消息'))
+        self._wait_ui_appear(g().get_resource_infor('公众号历史消息'))
         self._performAssert('断言查看公众号历史消息成功',assertDict)
-        self._wait_ui_apper(g().get_resource_infor('主页面导航栏第二个按钮通讯录'), lambda ui: ui._click_back())
+        self._wait_ui_appear(g().get_resource_infor('主页面导航栏第二个按钮通讯录'), lambda ui: ui._click_back())
 
     @ui("AnYi")
     def cancelSubscribOfficialAccount(self,assertDict):
@@ -1464,7 +1464,7 @@ class AnYi(page.Page):
          # 点击取消订阅
          self._click(g().get_resource_infor('取消订阅按钮'))
          self._performAssert('断言取消订阅公众号成功',assertDict)
-         self._wait_ui_apper(g().get_resource_infor('主页面导航栏第二个按钮通讯录'), lambda ui: ui._click_back())
+         self._wait_ui_appear(g().get_resource_infor('主页面导航栏第二个按钮通讯录'), lambda ui: ui._click_back())
 
     @ui("AnYi")
     def addApplication(self,assertDict):
